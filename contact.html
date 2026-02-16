@@ -196,7 +196,7 @@
                         The easiest way to reach me is via email. I try to respond personally to everyone, though it may 
                         take a few days—especially as I navigate surgery and recovery.
                     </p>
-                    <a href="mailto:info@pecksmission.com?subject=Message from Website" class="btn btn-primary">Email Me</a>
+                    <button onclick="openPopup('message')" class="btn btn-primary">Email Me</button>
                     <p class="contact-note">info@pecksmission.com</p>
                 </div>
 
@@ -224,7 +224,7 @@
                             If you're living with Chiari, have been through surgery, or face another chronic condition—your 
                             story can help others. I'm collecting experiences to build community and understanding.
                         </p>
-                        <a href="mailto:info@pecksmission.com?subject=My Story&body=I'd like to share my story with you..." class="btn btn-secondary" style="margin-top: 1rem;">Share Your Experience</a>
+                        <button onclick="openPopup('story')" class="btn btn-secondary" style="margin-top: 1rem;">Share Your Experience</button>
                     </div>
                     
                     <div class="info-item" style="background: #f8f9fa; padding: 2rem; border-radius: 8px;">
@@ -233,7 +233,7 @@
                             Words of encouragement, prayers, or just knowing someone is thinking of me means more than I can 
                             express. Feel free to reach out with support—it truly makes a difference.
                         </p>
-                        <a href="mailto:info@pecksmission.com?subject=Encouragement and Prayer" class="btn btn-secondary" style="margin-top: 1rem;">Send Encouragement</a>
+                        <button onclick="openPopup('encouragement')" class="btn btn-secondary" style="margin-top: 1rem;">Send Encouragement</button>
                     </div>
                     
                     <div class="info-item" style="background: #f8f9fa; padding: 2rem; border-radius: 8px;">
@@ -242,7 +242,7 @@
                             If you're a healthcare provider interested in understanding the patient perspective better, I'd 
                             love to connect. My unique position offers insights that can improve patient care.
                         </p>
-                        <a href="mailto:info@pecksmission.com?subject=Healthcare Professional Inquiry" class="btn btn-secondary" style="margin-top: 1rem;">Connect as Provider</a>
+                        <button onclick="openPopup('provider')" class="btn btn-secondary" style="margin-top: 1rem;">Connect as Provider</button>
                     </div>
                 </div>
             </div>
@@ -251,18 +251,18 @@
             <div class="info-box success" style="margin-top: 3rem; color: white;">
                 <h3 style="color: white;">Questions I Often Receive</h3>
                 <p style="color: white;"><strong style="color: white;">Q: Can I share your posts with others?</strong><br>
-                A: Absolutely! If something I've shared helps you, please share it. That's why I'm being so open about this journey.</p>
+                <span style="color: white;">A: Absolutely! If something I've shared helps you, please share it. That's why I'm being so open about this journey.</span></p>
                 
                 <p style="color: white;"><strong style="color: white;">Q: How can I best support someone facing surgery?</strong><br>
-                A: I'm documenting specific insights about this. Subscribe for updates, or read my blog posts for practical suggestions.</p>
+                <span style="color: white;">A: I'm documenting specific insights about this. Subscribe for updates, or read my blog posts for practical suggestions.</span></p>
                 
                 <p style="color: white;"><strong style="color: white;">Q: When will you post surgery updates?</strong><br>
-                A: I'll share updates as I'm able—before surgery, immediately after (when someone can post for me), and throughout 
-                recovery. Subscribe to get notified.</p>
+                <span style="color: white;">A: I'll share updates as I'm able—before surgery, immediately after (when someone can post for me), and throughout 
+                recovery. Subscribe to get notified.</span></p>
                 
                 <p style="color: white;"><strong style="color: white;">Q: Is it okay to ask how you're doing?</strong><br>
-                A: Yes! I appreciate genuine care. Sometimes I may not have the energy to respond in detail, but knowing people 
-                care matters immensely.</p>
+                <span style="color: white;">A: Yes! I appreciate genuine care. Sometimes I may not have the energy to respond in detail, but knowing people 
+                care matters immensely.</span></p>
             </div>
 
         </div>
@@ -291,6 +291,11 @@
                     <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
                 </div>
                 
+                <div class="form-group" id="messageGroup" style="display: none;">
+                    <label for="message">Your Message *</label>
+                    <textarea id="message" name="message" placeholder="Type your message here..."></textarea>
+                </div>
+                
                 <div class="form-group" id="storyGroup" style="display: none;">
                     <label for="story">Your Story</label>
                     <textarea id="story" name="story" placeholder="Share your experience with Chiari, surgery, or chronic illness..."></textarea>
@@ -306,7 +311,7 @@
             </form>
             
             <div id="successMessage" class="success-message" style="display: none;">
-                <p>✓ Thank you! You'll receive updates as I go through this journey.</p>
+                <p>✓ Thank you! I'll get back to you soon.</p>
             </div>
         </div>
     </div>
@@ -341,22 +346,51 @@
             const popup = document.getElementById('emailPopup');
             const title = document.getElementById('popupTitle');
             const description = document.getElementById('popupDescription');
+            const messageGroup = document.getElementById('messageGroup');
+            const messageField = document.getElementById('message');
             const storyGroup = document.getElementById('storyGroup');
             const phoneGroup = document.getElementById('phoneGroup');
             const formType = document.getElementById('formType');
             const submitBtn = document.getElementById('submitBtn');
             
-            if (type === 'story') {
+            // Reset all fields
+            messageGroup.style.display = 'none';
+            messageField.required = false;
+            storyGroup.style.display = 'none';
+            phoneGroup.style.display = 'none';
+            
+            if (type === 'message') {
+                title.textContent = 'Send Me a Message';
+                description.textContent = 'Share your thoughts, questions, or just say hello.';
+                messageGroup.style.display = 'block';
+                messageField.required = true;
+                formType.value = 'message';
+                submitBtn.textContent = 'Send Message';
+            } else if (type === 'story') {
                 title.textContent = 'Share Your Story';
                 description.textContent = 'Tell me about your experience. Your story can help others feel less alone.';
                 storyGroup.style.display = 'block';
-                phoneGroup.style.display = 'none';
                 formType.value = 'story';
                 submitBtn.textContent = 'Share Story';
+            } else if (type === 'encouragement') {
+                title.textContent = 'Send Encouragement';
+                description.textContent = 'Your words of encouragement and prayers mean so much.';
+                messageGroup.style.display = 'block';
+                messageField.required = true;
+                formType.value = 'encouragement';
+                submitBtn.textContent = 'Send Encouragement';
+            } else if (type === 'provider') {
+                title.textContent = 'Connect as Healthcare Provider';
+                description.textContent = 'I'd love to connect with healthcare professionals interested in the patient perspective.';
+                messageGroup.style.display = 'block';
+                messageField.required = true;
+                phoneGroup.style.display = 'block';
+                formType.value = 'provider';
+                submitBtn.textContent = 'Send Message';
             } else {
+                // updates
                 title.textContent = 'Subscribe for Updates';
                 description.textContent = 'Stay connected with real-time surgery updates and patient insights.';
-                storyGroup.style.display = 'none';
                 phoneGroup.style.display = 'block';
                 formType.value = 'updates';
                 submitBtn.textContent = 'Subscribe';
@@ -387,6 +421,7 @@
                 email: document.getElementById('email').value,
                 name: document.getElementById('name').value,
                 phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value,
                 story: document.getElementById('story').value,
                 formType: document.getElementById('formType').value,
                 timestamp: new Date().toISOString()
