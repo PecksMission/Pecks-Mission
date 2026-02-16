@@ -48,7 +48,7 @@ window.addEventListener('click', (e) => {
 // 5. Copy the deployment URL and paste it below
 
 const GOOGLE_SHEETS_URLS = {
-    story: 'https://script.google.com/macros/s/AKfycbwSOTawOgwHpkJpliKXTO-RP2M0D6rZ-9TajRusVWQRSt7wDfllOU7Auepe7IK313A/exec',
+    story: 'https://script.google.com/macros/s/AKfycbwaAXt1nW_uJzVAUaGNZsjcZ_hWuNxgr8fqjTunwIHa8yUk2kbaKunQOa-GBG3xg8zz/exec',
     subscribe: 'YOUR_SUBSCRIBE_FORM_WEB_APP_URL_HERE'
 };
 
