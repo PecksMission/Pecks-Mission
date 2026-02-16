@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="From military medic to CVICU nurse to Chiari patient. My journey of service, struggle, and finding purpose through faith and ministry.">
     <meta name="keywords" content="military medic story, CVICU nurse, Chiari patient story, chronic illness journey, faith and healing, ministry calling">
-    <title>About Me - From Medic to Patient | My Chiari Journey</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>About Me - From Medic to Patient | My Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     
     <!-- Google tag (gtag.js) -->
@@ -49,7 +47,7 @@
         <div class="container content-narrow">
             <div class="about-intro">
                 <p class="lead-text">
-                    Hi, I'm sharing my journey not as an expert, but as someone living through it.
+                    Hi, I'm sharing my journey not as an expert, but as someone living through it—anchored by faith and driven by purpose.
                 </p>
             </div>
 
@@ -96,6 +94,14 @@
                 feel less alone, or find hope in their own struggle, then it's worth it.
             </p>
 
+            <div class="mission">
+                <div class="mission-content">
+                    <p class="mission-quote">
+                        "I've learned that our trials don't define us—our response to them does. And when we anchor ourselves in faith, we find strength we never knew we had."
+                    </p>
+                </div>
+            </div>
+
             <h2>What's Next</h2>
             <p>
                 Over time, I hope to explore different ways of sharing messages of hope, faith, and resilience. 
@@ -118,18 +124,37 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 - Sharing hope, one story at a time.</p>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="chiari.html">Chiari Info</a>
-                <a href="blog.html">Updates</a>
-                <a href="contact.html">Contact</a>
-            </div>
+        <p class="footer-verse">"For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope." — Jeremiah 29:11</p>
+        <p class="footer-text">© 2026 - Walking by faith, sharing hope, honoring service.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="chiari.html">Chiari Info</a>
+            <a href="blog.html">Updates</a>
+            <a href="contact.html">Contact</a>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

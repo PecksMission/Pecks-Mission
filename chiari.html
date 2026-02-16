@@ -6,9 +6,7 @@
     <meta name="description" content="Learn about Chiari malformation symptoms, diagnosis challenges, and why awareness matters. Personal insights from someone living with Chiari.">
     <meta name="keywords" content="Chiari malformation symptoms, what is Chiari, Chiari diagnosis, Chiari awareness, brain malformation, neurological condition">
     <title>What is Chiari Malformation? Symptoms, Diagnosis & Awareness</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     
     <!-- Google tag (gtag.js) -->
@@ -109,7 +107,8 @@
             </p>
             <p>
                 The journey taught me the importance of advocating for yourself in the healthcare system—something 
-                I now encourage everyone to do.
+                I now encourage everyone to do. Trust your instincts. If something doesn't feel right, keep pushing 
+                for answers.
             </p>
 
             <div class="info-box success">
@@ -145,6 +144,15 @@
                 <li><strong>National Institute of Neurological Disorders:</strong> <a href="https://www.ninds.nih.gov" target="_blank">ninds.nih.gov</a></li>
             </ul>
 
+            <div class="mission">
+                <div class="mission-content">
+                    <p class="mission-quote">
+                        "Sometimes the hardest part of living with a chronic condition isn't the physical symptoms—it's the isolation. 
+                        You don't have to walk this path alone."
+                    </p>
+                </div>
+            </div>
+
             <div class="cta-box">
                 <h3>Questions or Want to Share Your Story?</h3>
                 <p>I'm here to listen and support. Whether you're newly diagnosed, seeking answers, or just want to connect—reach out.</p>
@@ -155,18 +163,25 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 - Sharing hope, one story at a time.</p>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="chiari.html">Chiari Info</a>
-                <a href="blog.html">Updates</a>
-                <a href="contact.html">Contact</a>
-            </div>
+        <p class="footer-verse">"For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope." — Jeremiah 29:11</p>
+        <p class="footer-text">© 2026 - Walking by faith, sharing hope, honoring service.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="chiari.html">Chiari Info</a>
+            <a href="blog.html">Updates</a>
+            <a href="contact.html">Contact</a>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Updates, reflections, and messages of hope from my journey living with Chiari malformation. Personal stories of faith, healing, and resilience.">
     <meta name="keywords" content="Chiari blog, living with chronic illness, faith journey, healing stories, Chiari awareness updates">
-    <title>Updates & Blog - My Journey with Chiari | Peck's Mission</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Updates & Blog - My Journey with Chiari</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     
     <!-- Google tag (gtag.js) -->
@@ -48,7 +46,7 @@
     <section class="content-section">
         <div class="container">
             
-            <!-- Example Blog Post 1 -->
+            <!-- Featured Blog Post -->
             <article class="blog-post">
                 <div class="post-date">February 15, 2026</div>
                 <h2>Why I'm Starting This Journey</h2>
@@ -68,7 +66,12 @@
                     for a condition that too many people suffer with in silence. And it's about faith, hope, and 
                     finding purpose even in our struggles.
                 </p>
-                <a href="#" class="read-more">Read full post →</a>
+                <p>
+                    As it says in Romans 8:28, "And we know that in all things God works for the good of those who 
+                    love him, who have been called according to his purpose." I believe this journey, difficult as 
+                    it is, has purpose—and sharing it with you is part of that.
+                </p>
+                <a href="#" class="read-more">Continue reading →</a>
             </article>
 
             <!-- Placeholder for future posts -->
@@ -83,7 +86,7 @@
                 </p>
             </div>
 
-            <!-- Blog ideas template (you can uncomment and customize these) -->
+            <!-- Future blog post ideas (commented out) -->
             <!--
             <article class="blog-post">
                 <div class="post-date">Coming Soon</div>
@@ -117,28 +120,35 @@
     </section>
 
     <!-- Newsletter CTA -->
-    <section class="newsletter-cta">
+    <section class="newsletter">
         <div class="container">
             <h2>Never Miss an Update</h2>
-            <p>Get new posts and Chiari awareness resources delivered to your inbox.</p>
-            <a href="contact.html" class="btn btn-primary">Subscribe to Updates</a>
+            <p class="newsletter-description">Get new posts and Chiari awareness resources delivered to your inbox.</p>
+            <a href="contact.html" class="btn btn-primary email-btn">Subscribe to Updates</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 - Sharing hope, one story at a time.</p>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="chiari.html">Chiari Info</a>
-                <a href="blog.html">Updates</a>
-                <a href="contact.html">Contact</a>
-            </div>
+        <p class="footer-verse">"For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope." — Jeremiah 29:11</p>
+        <p class="footer-text">© 2026 - Walking by faith, sharing hope, honoring service.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="chiari.html">Chiari Info</a>
+            <a href="blog.html">Updates</a>
+            <a href="contact.html">Contact</a>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
