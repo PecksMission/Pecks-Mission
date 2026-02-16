@@ -6,789 +6,301 @@
     <meta name="description" content="Learn about Chiari malformation from someone who's lived with it and worked in healthcare. Understanding symptoms, diagnosis, treatment, and what surgery really means.">
     <meta name="keywords" content="Chiari malformation symptoms, what is Chiari, Chiari surgery, decompression surgery, brain malformation, neurological condition">
     <title>Understanding Chiari Malformation | Symptoms, Surgery & Patient Experience</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2c5f8d;
-            --secondary-color: #4a8bc2;
-            --accent-color: #e8905e;
-            --text-dark: #2d3748;
-            --text-light: #4a5568;
-            --bg-light: #f7fafc;
-            --bg-white: #ffffff;
-            --border-color: #e2e8f0;
-            --success-bg: #f0fdf4;
-            --success-border: #86efac;
-            --warning-bg: #fffbeb;
-            --warning-border: #fcd34d;
-            --info-bg: #eff6ff;
-            --info-border: #93c5fd;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.7;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-        }
-
-        /* Navigation */
-        nav {
-            background: var(--bg-white);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-menu a {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            color: var(--primary-color);
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Page Header */
-        .page-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .page-header h1 {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .subtitle {
-            font-size: 1.25rem;
-            opacity: 0.95;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .content-narrow {
-            max-width: 800px;
-        }
-
-        .content-section {
-            padding: 3rem 0;
-        }
-
-        /* Typography */
-        h2 {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin: 3rem 0 1.5rem;
-        }
-
-        h3 {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin: 2rem 0 1rem;
-        }
-
-        p {
-            margin-bottom: 1.25rem;
-            color: var(--text-light);
-        }
-
-        strong {
-            color: var(--text-dark);
-        }
-
-        /* Info Boxes */
-        .info-box {
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-            border-left: 4px solid;
-        }
-
-        .info-box.warning {
-            background: var(--warning-bg);
-            border-color: var(--warning-border);
-        }
-
-        .info-box.success {
-            background: var(--success-bg);
-            border-color: var(--success-border);
-        }
-
-        .info-box.info {
-            background: var(--info-bg);
-            border-color: var(--info-border);
-        }
-
-        .info-box h3 {
-            margin-top: 0;
-            font-size: 1.25rem;
-        }
-
-        .info-box ul {
-            margin-left: 1.5rem;
-        }
-
-        .info-box li {
-            margin-bottom: 0.75rem;
-        }
-
-        /* Symptoms Grid */
-        .symptoms-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .symptom-card {
-            background: var(--bg-white);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .symptom-card strong {
-            display: block;
-            font-size: 1.1rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Checklist */
-        .checklist {
-            background: var(--bg-white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin: 2rem 0;
-        }
-
-        .checklist-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: var(--bg-light);
-            border-radius: 6px;
-        }
-
-        .checklist-item::before {
-            content: '✓';
-            color: #22c55e;
-            font-weight: bold;
-            font-size: 1.5rem;
-            margin-right: 1rem;
-            flex-shrink: 0;
-        }
-
-        /* Mission Box */
-        .mission {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            margin: 3rem 0;
-            text-align: center;
-        }
-
-        .mission-quote {
-            font-size: 1.25rem;
-            font-style: italic;
-            line-height: 1.8;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* CTA Box */
-        .cta-box {
-            background: var(--bg-white);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-            text-align: center;
-            margin: 3rem 0;
-            border: 2px solid var(--primary-color);
-        }
-
-        .cta-box h3 {
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-
-        /* Primary CTA Highlight */
-        .primary-cta-section {
-            background: linear-gradient(135deg, #1e3a5f, var(--primary-color));
-            color: white;
-            padding: 3rem 2rem;
-            border-radius: 12px;
-            text-align: center;
-            margin: 3rem 0;
-            box-shadow: 0 8px 24px rgba(44, 95, 141, 0.3);
-        }
-
-        .primary-cta-section h2 {
-            color: white;
-            margin-top: 0;
-            font-size: 2rem;
-        }
-
-        .primary-cta-section p {
-            color: rgba(255, 255, 255, 0.95);
-            font-size: 1.15rem;
-            max-width: 600px;
-            margin: 1rem auto 2rem;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 0.875rem 2rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: var(--accent-color);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #d67d4a;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(232, 144, 94, 0.4);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            background: var(--bg-white);
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 3rem 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .faq-item {
-            border-bottom: 1px solid var(--border-color);
-            padding: 1.5rem 0;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-question {
-            font-weight: 600;
-            color: var(--primary-color);
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .faq-answer {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        /* Timeline */
-        .timeline {
-            margin: 2rem 0;
-            padding-left: 2rem;
-            border-left: 3px solid var(--primary-color);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-bottom: 1.5rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.5rem;
-            top: 0.25rem;
-            width: 1rem;
-            height: 1rem;
-            background: var(--accent-color);
-            border-radius: 50%;
-            border: 3px solid var(--bg-light);
-        }
-
-        /* Hope Moments */
-        .hope-moment {
-            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #22c55e;
-            margin: 2rem 0;
-        }
-
-        .hope-moment::before {
-            content: '💚';
-            font-size: 1.5rem;
-            margin-right: 0.5rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--text-dark);
-            color: white;
-            padding: 3rem 2rem 2rem;
-            text-align: center;
-        }
-
-        .footer-verse {
-            font-style: italic;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto 1.5rem;
-        }
-
-        .footer-text {
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-
-        .footer-links a:hover {
-            opacity: 0.7;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--bg-white);
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .page-header h1 {
-                font-size: 2rem;
-            }
-
-            .symptoms-grid {
-                grid-template-columns: 1fr;
-            }
-
-            h2 {
-                font-size: 1.75rem;
-            }
-        }
-
-        /* Image Styling */
-        .content-image {
-            text-align: center;
-            margin: 2.5rem 0;
-        }
-
-        .content-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .image-caption {
-            font-style: italic;
-            color: #666;
-            margin-top: 1rem;
-            font-size: 0.95rem;
-        }
-
-        /* Support for Friends/Family Section */
-        .support-section {
-            background: #fef3c7;
-            padding: 2rem;
-            border-radius: 8px;
-            border-left: 4px solid #fbbf24;
-            margin: 2rem 0;
-        }
-
-        .support-section h3 {
-            margin-top: 0;
-            color: #92400e;
-        }
-
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3TPDSC5YQ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-T3TPDSC5YQ');
-    </script>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">My Journey</div>
+            <div class="logo">Sara's Space</div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="chiari.html" class="active">What is Chiari?</a></li>
+                <li><a href="chiari.html" class="active">Chiari Info</a></li>
                 <li><a href="blog.html">Updates</a></li>
-                <li><a href="contact.html">Connect</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <button class="mobile-menu-toggle">☰</button>
         </div>
     </nav>
 
     <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Understanding Chiari Malformation</h1>
-            <p class="subtitle">What it is, why surgery is sometimes necessary, and what the journey looks like</p>
-        </div>
-    </section>
+    <header class="page-header">
+        <h1>Understanding Chiari Malformation</h1>
+        <p class="subtitle">A Patient's Perspective on Diagnosis, Treatment, and Life with Chiari</p>
+    </header>
 
     <!-- Main Content -->
     <section class="content-section">
         <div class="container content-narrow">
-            
-            <div class="info-box warning">
-                <h3>📍 A Personal Note</h3>
-                <p>
-                    I'm writing this as someone who has Chiari malformation and is preparing for decompression surgery on <strong>March 15, 2026</strong>. 
-                    I'm not a doctor, but I've worked in healthcare as a CVICU nurse at Cox South Hospital, and I'm living this experience. 
-                    I'm sharing what I've learned both from the medical side and the patient side.
-                </p>
-                <p>
-                    <strong>My mission:</strong> Bridge the gap between healthcare providers and patients—to help providers understand 
-                    what patients truly go through and respond with greater empathy and compassion.
-                </p>
-            </div>
-
-            <!-- Primary CTA - What readers should do FIRST -->
-            <div class="primary-cta-section">
-                <h2>Are You Experiencing Unexplained Symptoms?</h2>
-                <p>If you're dealing with chronic headaches, balance issues, or neurological symptoms that doctors haven't been able to explain—start here. This guide will help you understand if Chiari might be the missing piece.</p>
-                <a href="#symptoms" class="btn btn-primary" style="margin-right: 1rem;">See Common Symptoms</a>
-                <a href="#steps" class="btn btn-secondary">Steps to Get Diagnosed</a>
-            </div>
-
             <h2>What is Chiari Malformation?</h2>
             <p>
-                Chiari malformation (pronounced kee-AH-ree) is a structural defect where the lower part of the brain 
-                (the cerebellum) extends into the spinal canal. This happens when the skull is too small or misshapen, 
-                putting pressure on the brain and forcing brain tissue downward through the opening at the base of the skull.
+                Chiari malformation (pronounced kee-AR-ee) is a structural condition in which the cerebellum—the part of 
+                the brain that controls balance and coordination—extends into the spinal canal. Normally, the cerebellum 
+                sits comfortably in the back of the skull, but in people with Chiari, it descends through the opening at 
+                the base of the skull (called the foramen magnum) where only the spinal cord should pass.
             </p>
             <p>
-                <strong>In simple terms:</strong> I was born with part of my brain (the cerebellar tonsils) sitting about 1.5 cm 
-                lower than it should, pushed down into the space where my spinal cord is. My brain is blocking the flow of 
-                cerebrospinal fluid (CSF)—think of it like a kink in a garden hose. The fluid can't flow properly, which causes 
-                pressure to build up and creates all kinds of neurological symptoms.
+                Think of it like this: Your brain is supposed to fit perfectly in your skull, like pieces of a puzzle. 
+                But with Chiari, one of those pieces (the cerebellar tonsils) is being pushed down into a space where it 
+                doesn't belong. This can block the normal flow of cerebrospinal fluid (CSF)—the clear fluid that cushions 
+                your brain and spinal cord—and can put pressure on the brainstem.
             </p>
-
-            <div class="content-image">
-                <img src="chiari-comparison-diagram.png" alt="Comparison diagram showing normal brain anatomy versus Chiari malformation, where the cerebellar tonsils extend into the spinal canal">
-                <p class="image-caption">Visual comparison: Normal brain anatomy (left) versus Chiari malformation (right), showing how the cerebellar tonsils herniate into the spinal canal</p>
-            </div>
-
-            <h3>How Common Is It?</h3>
-            <p>
-                Chiari malformation Type I affects approximately <strong>1 in 1,000 people</strong>, though estimates vary. 
-                Of those diagnosed, most are asymptomatic. Of the symptomatic cases, most experience primarily headaches. 
-                Surgery becomes necessary when severe symptoms develop—balance problems (ataxia), difficulty swallowing (dysphagia), 
-                or progressive neurological issues.
-            </p>
-            <p>
-                There are different types of Chiari malformations, but Type I is the most common and is what I have. 
-                It often goes undiagnosed for years—sometimes decades—until symptoms become severe enough to warrant an MRI.
-            </p>
-
-            <div class="hope-moment">
-                <strong>A note of hope:</strong> While living with Chiari is challenging, many people find relief through surgery and go on to live full, active lives. You're not alone in this journey.
-            </div>
-
-            <p>
-                <strong>From a clinical perspective:</strong> It's a structural abnormality.<br>
-                <strong>From a patient perspective:</strong> It's life-altering.
-            </p>
-
-            <div class="info-box warning">
-                <h3>⚠️ The Diagnosis Problem</h3>
-                <p>
-                    Many people live with Chiari for years without knowing it. Symptoms can be vague and easily attributed 
-                    to other conditions like migraines, anxiety, or stress. On average, it takes <strong>7+ years</strong> 
-                    from first symptoms to proper diagnosis.
-                </p>
-                <p>
-                    I lived with symptoms for years before getting diagnosed in <strong>June 2025</strong>. Looking back, the signs were there:
-                </p>
-                <ul>
-                    <li>Childhood difficulty with fine motor skills (trouble touching thumb to fingers)</li>
-                    <li>Struggled picking up small objects like quarters</li>
-                    <li>Speech difficulties and ADHD diagnosis as a kid</li>
-                    <li>Failed a field sobriety test while completely sober because of balance issues (blew zeros—no alcohol 
-                    in my system—but couldn't walk a straight line)</li>
-                </ul>
-                <p>
-                    These were easy to dismiss or attribute to stress, long work hours, or other causes until an MRI finally 
-                    revealed the Chiari malformation.
-                </p>
-            </div>
-
-            <div class="content-image">
-                <img src="chiari-mri-scans.png" alt="MRI scans showing normal brain (A) compared to Chiari malformation (B) with cerebellar tonsillar herniation indicated by red arrows">
-                <p class="image-caption">MRI comparison: (A) Normal cerebellar position, (B) Chiari malformation with cerebellar tonsils extending below the skull base (indicated by red arrows)</p>
-            </div>
-
-            <h2 id="symptoms">Common Symptoms: What It Actually Feels Like</h2>
-            <p>
-                Medical literature lists symptoms, but here's what they actually feel like from someone living with them:
-            </p>
-
-            <div class="symptoms-grid">
-                <div class="symptom-card">
-                    <strong>Headaches</strong>
-                    <p>Not just regular headaches—intense pressure at the base of the skull that gets worse with coughing, 
-                    sneezing, laughing, or straining. It's the kind of pain that stops you in your tracks. Most mornings I 
-                    wake up with a headache because pressure increases overnight. I usually drink caffeine to make them go away.</p>
-                </div>
-
-                <div class="symptom-card">
-                    <strong>Neck Pain</strong>
-                    <p>Chronic pain and stiffness in the neck and upper back that makes even simple movements uncomfortable. 
-                    Sometimes it radiates down your shoulders. Looking up or flexing my neck backward triggers symptoms badly.</p>
-                </div>
-
-                <div class="symptom-card">
-                    <strong>Balance Issues</strong>
-                    <p>Feeling unsteady, dizzy, or like the floor isn't quite where it should be. Walking becomes something 
-                    you have to think about instead of doing automatically. I've stumbled off ladders, had to use IV poles to 
-                    keep myself upright at work, and given up playing sports because the hand-eye coordination disappeared.</p>
-                </div>
-
-                <div class="symptom-card">
-                    <strong>Vision Problems</strong>
-                    <p>Blurred vision, double vision, light sensitivity, or seeing spots. Your eyes work fine, but the signals 
-                    aren't processing correctly. I once looked at a pillow and asked a coworker, "Is this pillow longer than normal?"</p>
-                </div>
-
-                <div class="symptom-card">
-                    <strong>Difficulty Swallowing</strong>
-                    <p>The sensation of food getting stuck, frequent gagging, or being afraid to eat certain foods because 
-                    swallowing has become complicated. Started for me in late January 2026—feels like a golf ball stuck in my 
-                    throat. Dry foods like crackers are particularly difficult; moist foods with sauces are easier.</p>
-                </div>
-
-                <div class="symptom-card">
-                    <strong>Numbness and Tingling</strong>
-                    <p>Strange sensations in your hands, feet, or other body parts. Sometimes it's subtle, sometimes it's 
-                    alarming. It reminds you something is wrong.</p>
-                </div>
-            </div>
 
             <div class="info-box info">
-                <h3>Additional Symptoms I Experience</h3>
+                <p><strong>Quick Facts:</strong></p>
                 <ul>
-                    <li>Constant ringing (tinnitus) in my right ear that gets louder when stressed</li>
-                    <li>Hearing loss (was told I'd need a hearing aid)</li>
-                    <li>Cognitive fog—forgetting words mid-sentence, blanking out, struggling with recall memory</li>
-                    <li>Nausea (like motion sickness)</li>
+                    <li>Affects approximately 1 in 1,000 people</li>
+                    <li>More commonly diagnosed in adults than children</li>
+                    <li>Women are diagnosed 3x more often than men</li>
+                    <li>Often discovered incidentally on MRI scans done for other reasons</li>
                 </ul>
             </div>
 
-            <p style="font-style: italic; color: #666; padding: 1.5rem; background: #f8fafc; border-radius: 6px; margin: 2rem 0;">
-                The best way I can describe it is through Pink Floyd's "Comfortably Numb": "There's no pain" (mostly accurate), 
-                "Things only come through in waves" (like you're not yourself, distant, foggy), "My hands feel like two balloons" 
-                (tingling, pins and needles). It's a weird floating sensation—like I'm disconnected from my feet, hooked to a bunch of balloons.
+            <h3>Types of Chiari Malformation</h3>
+            <p>There are four types of Chiari malformation:</p>
+            <ul>
+                <li><strong>Type I:</strong> The most common type, typically diagnosed in adults. The cerebellar tonsils 
+                extend into the spinal canal. This is the type I have.</li>
+                <li><strong>Type II:</strong> More severe, usually diagnosed in children, associated with spina bifida.</li>
+                <li><strong>Type III:</strong> Rare and severe, involves brain tissue herniating into the spinal canal.</li>
+                <li><strong>Type IV:</strong> Very rare, involves an underdeveloped cerebellum.</li>
+            </ul>
+
+            <h2 id="symptoms">Recognizing the Symptoms</h2>
+            <p>
+                One of the most challenging aspects of Chiari malformation is how varied and seemingly unrelated the 
+                symptoms can be. Before diagnosis, many patients (myself included) feel dismissed or are told their 
+                symptoms are "all in their head"—when ironically, that's exactly where the problem is.
             </p>
 
-            <h2>When Surgery Becomes Necessary</h2>
-            <p>
-                Not everyone with Chiari needs surgery. Some people have the malformation and never experience symptoms. 
-                Others have mild symptoms that can be managed conservatively. But when symptoms progress and impact quality 
-                of life—or when there's risk of permanent neurological damage—surgery becomes necessary.
-            </p>
-            <p>
-                The surgery is called <strong>decompression surgery</strong> or <strong>posterior fossa decompression</strong>. 
-                The goal is to create more space for the brain tissue and relieve pressure. The neurosurgeon removes a small 
-                portion of bone at the base of the skull and sometimes the top part of the first vertebra. Often, they also 
-                expand the covering of the brain (the dura) to give everything more room.
-            </p>
-            <p>
-                My Cine MRI (a specialized MRI that shows cerebrospinal fluid flow) confirmed in July 2025 that the Chiari was 
-                blocking my spinal fluid flow, which explained why I felt so terrible all the time and made surgery more urgent.
-            </p>
-            <p>
-                As someone who's worked in healthcare, I understand the procedure clinically. As someone about to have it, 
-                I understand it emotionally, spiritually, and personally. Both perspectives matter.
-            </p>
-
-            <h3>Why I Chose Surgery</h3>
-            <p>
-                As a medic, I think the best thing I can do is push for surgery now while I'm young and don't have a family 
-                depending on me. The symptoms I have—swallowing issues, hearing loss, severe balance problems—there's not really 
-                medication that's going to fix these. Physical therapy looks like an option to maintain, not to fix.
-            </p>
-            <p>
-                <strong>I don't want to participate in pain; I want to fix it.</strong> Let's be aggressive. Let's not push this down the road.
-            </p>
-
-            <div class="checklist">
-                <h3>✓ What to Know About Chiari Surgery</h3>
-                <div class="checklist-item">
-                    <div>
-                        <strong>It's major surgery</strong><br>
-                        Recovery takes time and patience. Give yourself grace during this process.
-                    </div>
-                </div>
-                <div class="checklist-item">
-                    <div>
-                        <strong>Success rates are good</strong><br>
-                        Most people experience significant symptom relief, especially with headaches and pressure.
-                    </div>
-                </div>
-                <div class="checklist-item">
-                    <div>
-                        <strong>It relieves pressure</strong><br>
-                        Surgery creates more space and helps restore normal CSF flow.
-                    </div>
-                </div>
-                <div class="checklist-item">
-                    <div>
-                        <strong>Recovery is a journey</strong><br>
-                        Physical healing takes weeks to months. Mental and emotional healing takes time too.
-                    </div>
-                </div>
-                <div class="checklist-item">
-                    <div>
-                        <strong>Each case is unique</strong><br>
-                        Your experience may differ from others. That's okay. Trust your medical team.
-                    </div>
-                </div>
-            </div>
-
-            <h2>My Personal Journey with Chiari</h2>
+            <h3>Common Symptoms</h3>
             
-            <div class="timeline">
-                <div class="timeline-item">
-                    <strong>April 2025:</strong> First major symptoms appeared
-                </div>
-                <div class="timeline-item">
-                    <strong>June 2025:</strong> Finally diagnosed with Chiari Type I (1.5 cm herniation)
-                </div>
-                <div class="timeline-item">
-                    <strong>July 2025:</strong> Cine MRI confirmed CSF flow blockage
-                </div>
-                <div class="timeline-item">
-                    <strong>Late January 2026:</strong> Swallowing difficulties began
-                </div>
-                <div class="timeline-item">
-                    <strong>March 15, 2026:</strong> Scheduled decompression surgery
-                </div>
-            </div>
-
+            <h4>Headaches (The Hallmark Symptom)</h4>
             <p>
-                It took me a long time to get diagnosed. I went through countless appointments, tests, and moments of 
-                wondering if what I was experiencing was "real" or just stress. When I finally got answers in June 2025, 
-                it was both a relief and the beginning of a new, uncertain chapter.
+                The classic Chiari headache is located at the base of the skull and back of the head. What makes it 
+                distinctive is that it's often triggered or worsened by:
+            </p>
+            <ul>
+                <li>Coughing, sneezing, or straining</li>
+                <li>Bending over</li>
+                <li>Laughing</li>
+                <li>Lifting heavy objects</li>
+                <li>Any activity that increases pressure in the head</li>
+            </ul>
+            <p>
+                These headaches can range from a dull ache to severe, debilitating pain. For me, they often felt like 
+                intense pressure at the base of my skull, as if someone was pushing down on that area while simultaneously 
+                pulling upward on my brain.
             </p>
 
-            <div class="hope-moment">
-                <strong>What keeps me going:</strong> Living with Chiari has meant adjusting to a "new normal" multiple times—first when symptoms appeared, then after diagnosis, and now as I prepare for surgery. Each phase has required adaptation, patience, and faith. But I've learned that resilience isn't about never struggling—it's about continuing forward even when things are hard.
+            <h4>Neck Pain and Stiffness</h4>
+            <p>
+                Chronic neck pain is incredibly common. The pain typically starts at the base of the skull and can radiate 
+                down into the shoulders. Many people also experience clicking or grinding sensations when turning their 
+                head.
+            </p>
+
+            <h4>Balance and Coordination Issues</h4>
+            <p>
+                Because the cerebellum controls balance, Chiari can cause:
+            </p>
+            <ul>
+                <li>Dizziness or vertigo</li>
+                <li>Problems with fine motor skills</li>
+                <li>Unsteady gait (feeling like you might fall)</li>
+                <li>Clumsiness or dropping things</li>
+            </ul>
+
+            <h4>Vision Problems</h4>
+            <ul>
+                <li>Blurred or double vision</li>
+                <li>Difficulty focusing</li>
+                <li>Light sensitivity</li>
+                <li>Visual disturbances</li>
+            </ul>
+
+            <h4>Numbness and Tingling</h4>
+            <p>
+                Many people experience numbness, tingling, or weakness in their hands and arms. For some, this can extend 
+                to the legs as well.
+            </p>
+
+            <h4>Other Common Symptoms</h4>
+            <ul>
+                <li>Difficulty swallowing</li>
+                <li>Sleep apnea or breathing problems</li>
+                <li>Ringing in the ears (tinnitus)</li>
+                <li>Chronic fatigue</li>
+                <li>Memory and concentration problems ("brain fog")</li>
+                <li>Anxiety or depression (often secondary to chronic symptoms)</li>
+            </ul>
+
+            <div class="info-box warning">
+                <p><strong>Important Note:</strong> Not everyone with Chiari has all these symptoms. Some people have many 
+                symptoms; others have just a few. The severity can also vary greatly from person to person.</p>
+            </div>
+
+            <h2 id="diagnosis">The Road to Diagnosis</h2>
+            <p>
+                Getting diagnosed with Chiari malformation can be frustrating. Many people suffer for years before 
+                discovering the cause of their symptoms. I went through several doctors and multiple misdiagnoses before 
+                getting the right imaging done.
+            </p>
+
+            <h3>How Chiari is Diagnosed</h3>
+            <p>
+                <strong>MRI is the gold standard.</strong> A brain MRI with sagittal (side) views clearly shows whether 
+                the cerebellar tonsils have descended below the foramen magnum. Doctors measure the descent in millimeters:
+            </p>
+            <ul>
+                <li><strong>5mm or more:</strong> Generally considered diagnostic for Chiari Type I</li>
+                <li><strong>3-5mm:</strong> Borderline, diagnosis based on symptoms</li>
+                <li><strong>Less than 3mm:</strong> Usually not considered Chiari</li>
+            </ul>
+            <p>
+                However, it's important to note that the degree of herniation doesn't always correlate with symptom 
+                severity. Someone with a 5mm descent might have severe symptoms, while someone with a 10mm descent might 
+                be asymptomatic.
+            </p>
+
+            <h3>Why Diagnosis Can Be Delayed</h3>
+            <ul>
+                <li>Symptoms mimic other conditions (migraines, fibromyalgia, MS)</li>
+                <li>Many doctors aren't familiar with Chiari</li>
+                <li>Symptoms can be intermittent or vague</li>
+                <li>Standard X-rays and CT scans often don't show Chiari—you need an MRI</li>
+            </ul>
+
+            <div class="personal-story">
+                <h4>My Diagnostic Journey</h4>
+                <p>
+                    I experienced symptoms for years before being diagnosed. I was told I had migraines, tension headaches, 
+                    and anxiety. It wasn't until a particularly severe episode—where I experienced sudden, intense pressure 
+                    at the base of my skull accompanied by vision changes—that I insisted on an MRI. The scan revealed a 
+                    9mm herniation.
+                </p>
+                <p>
+                    Even with the MRI showing clear Chiari, I saw three neurologists before finding one who specialized in 
+                    Chiari malformation and took my symptoms seriously. This is unfortunately common—many general neurologists 
+                    have limited experience with Chiari and may underestimate its impact.
+                </p>
+            </div>
+
+            <h2 id="treatment">Treatment Options</h2>
+            <p>
+                Treatment for Chiari malformation depends on whether you're symptomatic and how severe your symptoms are.
+            </p>
+
+            <h3>Conservative (Non-Surgical) Management</h3>
+            <p>
+                For mild symptoms or asymptomatic cases, doctors may recommend:
+            </p>
+            <ul>
+                <li><strong>Pain management:</strong> Medications for headaches and neck pain</li>
+                <li><strong>Physical therapy:</strong> To help with neck pain and strengthen supporting muscles</li>
+                <li><strong>Lifestyle modifications:</strong> Avoiding activities that increase symptoms (heavy lifting, 
+                straining, high-impact exercises)</li>
+                <li><strong>Monitoring:</strong> Regular follow-up MRIs to ensure the condition isn't progressing</li>
+            </ul>
+            <p>
+                These approaches can help manage symptoms but don't address the underlying structural problem.
+            </p>
+
+            <h3>Surgical Treatment: Chiari Decompression Surgery</h3>
+            <p>
+                When symptoms significantly impact quality of life or when there's evidence of progression (like developing 
+                a syrinx—a fluid-filled cavity in the spinal cord), surgery is typically recommended.
+            </p>
+
+            <h4>What Happens During Surgery</h4>
+            <p>
+                The most common procedure is called <strong>posterior fossa decompression</strong>. The goal is to create 
+                more space at the base of the skull, allowing the cerebellum to move back up and restoring normal 
+                cerebrospinal fluid flow.
+            </p>
+            <p>The surgery typically involves:</p>
+            <ol>
+                <li><strong>Removing a small section of bone</strong> at the back of the skull (craniectomy)</li>
+                <li><strong>Sometimes removing part of the C1 vertebra</strong> (the first bone in your neck)</li>
+                <li><strong>Opening the dura</strong> (the protective covering around the brain) and often <strong>expanding 
+                it with a patch</strong> (duraplasty) to create more room</li>
+                <li><strong>Occasionally removing or cauterizing</strong> the cerebellar tonsils if they're significantly 
+                descended</li>
+            </ol>
+
+            <div class="info-box info">
+                <p><strong>Surgery Duration:</strong> Typically 2-4 hours</p>
+                <p><strong>Hospital Stay:</strong> Usually 2-4 days</p>
+                <p><strong>Initial Recovery:</strong> 4-6 weeks before returning to light activities</p>
+                <p><strong>Full Recovery:</strong> 3-6 months or longer</p>
+            </div>
+
+            <h4>Success Rates</h4>
+            <p>
+                Studies show that approximately 80% of patients experience significant symptom improvement after surgery. 
+                However, success varies:
+            </p>
+            <ul>
+                <li>Headaches typically improve the most</li>
+                <li>Balance and coordination issues may take longer to improve</li>
+                <li>Some symptoms may not fully resolve</li>
+                <li>A small percentage of patients may need revision surgery</li>
+            </ul>
+
+            <h4>Risks of Surgery</h4>
+            <p>
+                Like any brain surgery, Chiari decompression carries risks:
+            </p>
+            <ul>
+                <li>Infection</li>
+                <li>Bleeding</li>
+                <li>Cerebrospinal fluid leak</li>
+                <li>Meningitis</li>
+                <li>Nerve damage</li>
+                <li>Need for additional surgery</li>
+            </ul>
+            <p>
+                These complications are relatively rare when the surgery is performed by an experienced neurosurgeon, but 
+                it's important to discuss all risks with your doctor.
+            </p>
+
+            <h2 id="experience">Living with Chiari: My Personal Experience</h2>
+            <p>
+                I want to share my story not to scare anyone, but to help others understand what this journey can look like 
+                and to let people know they're not alone.
+            </p>
+
+            <h3>Before Diagnosis</h3>
+            <p>
+                For years, I dealt with symptoms I couldn't explain. The headaches would come out of nowhere—sudden, 
+                intense pressure at the base of my skull that would make me feel like I needed to lie down immediately. 
+                I'd have moments where my vision would blur or I'd feel dizzy for no apparent reason. I dropped things 
+                constantly, which as a healthcare provider was particularly embarrassing and concerning.
+            </p>
+            <p>
+                The worst part wasn't the physical symptoms—it was feeling dismissed. Multiple doctors told me it was 
+                stress, that I needed to relax, that my headaches were "just migraines." I started to question myself. 
+                Was I overreacting? Was this really all in my head?
+            </p>
+
+            <h3>After Diagnosis</h3>
+            <p>
+                When the MRI finally showed the Chiari malformation, I felt a strange mix of emotions: relief (I wasn't 
+                crazy—there was a real, physical cause), fear (brain surgery?), and determination (finally, I could do 
+                something about this).
+            </p>
+            <p>
+                Learning I needed surgery was overwhelming. I'm someone who has worked in healthcare, who has reassured 
+                countless patients facing procedures. Being on the other side—being the patient—was completely different. 
+                The fear was real. The questions were endless. What if it doesn't work? What if it makes things worse? 
+                What if recovery is longer than expected?
+            </p>
+
+            <div class="quote-box">
+                <p>
+                    "The journey with Chiari has taught me that advocating for yourself in healthcare isn't about being 
+                    difficult—it's about being persistent when you know something isn't right."
+                </p>
             </div>
 
             <h3>What I've Learned</h3>
