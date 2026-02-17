@@ -423,7 +423,7 @@ section {
 
 .feature-link,
 .card-link {
-    color: var(--burgundy);
+    color: var(--white);
     font-weight: 500;
     font-size: 0.95rem;
     display: inline-flex;
