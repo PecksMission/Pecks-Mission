@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why I Built This — Peck's Mission</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0a0a0a; --white: #f5f0e8; --gold: #c9a84c; --gold-light: #e8c97a; --red: #8b2020; --gray: #4a4a4a; --gray-light: #9a9a9a; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Crimson Pro', Georgia, serif; font-size: 19px; line-height: 1.8; overflow-x: hidden; }
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.15em; color: var(--gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { color: var(--gray-light); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .post-header { padding: 10rem 3rem 5rem; max-width: 820px; margin: 0 auto; }
+    .post-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .post-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 2rem; }
+    .post-meta { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-light); padding-bottom: 3rem; border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .post-body { max-width: 720px; margin: 0 auto; padding: 4rem 3rem 6rem; }
+    .post-body p { font-size: 1.15rem; font-weight: 300; color: #d4cfc7; margin-bottom: 1.8rem; line-height: 1.85; }
+    .post-body p.opening { font-size: 1.3rem; font-style: italic; color: var(--white); font-weight: 300; }
+    .post-body h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.05em; color: var(--white); margin: 3.5rem 0 1.2rem; }
+    .quote-block { background: rgba(201,168,76,0.05); border-left: 3px solid var(--gold); padding: 2rem 2.5rem; margin: 2.5rem 0; }
+    .quote-text { font-family: 'Crimson Pro', serif; font-size: 1.25rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.6; margin-bottom: 0.8rem; }
+    .quote-attr { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+    .verse-block { background: rgba(139,32,32,0.08); border-left: 3px solid var(--red); padding: 2rem 2.5rem; margin: 2.5rem 0; }
+    .verse-text { font-family: 'Crimson Pro', serif; font-size: 1.2rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.6; margin-bottom: 0.6rem; }
+    .verse-ref { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); }
+    .parallel-block { background: rgba(255,255,255,0.02); border: 1px solid rgba(201,168,76,0.12); padding: 0; margin: 3rem 0; overflow: hidden; }
+    .parallel-header { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid rgba(201,168,76,0.12); }
+    .parallel-col-header { padding: 1rem 1.5rem; font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; }
+    .parallel-col-header.chart { color: var(--gray-light); border-right: 1px solid rgba(201,168,76,0.12); }
+    .parallel-col-header.reality { color: var(--gold); }
+    .parallel-row { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .parallel-row:last-child { border-bottom: none; }
+    .parallel-cell { padding: 1.5rem; font-size: 0.95rem; font-weight: 300; line-height: 1.7; }
+    .parallel-cell.chart { color: var(--gray-light); border-right: 1px solid rgba(255,255,255,0.04); font-style: italic; }
+    .parallel-cell.reality { color: #ccc; }
+    .divider { width: 4rem; height: 1px; background: rgba(201,168,76,0.3); margin: 3rem auto; }
+    .audience-section { background: rgba(201,168,76,0.04); border: 1px solid rgba(201,168,76,0.1); padding: 2.5rem; margin: 3rem 0; }
+    .audience-section h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em; color: var(--gold); margin-bottom: 1.2rem; }
+    .audience-item { padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 1rem; color: #bbb; font-weight: 300; }
+    .audience-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .closing-cta { text-align: center; padding: 3rem 0; border-top: 1px solid rgba(201,168,76,0.15); margin-top: 3rem; }
+    .closing-cta p { font-size: 1.2rem; font-weight: 300; color: #ccc; margin-bottom: 1.5rem; }
+    .btn { display: inline-block; background: var(--gold); color: var(--black); padding: 0.9rem 2.5rem; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .btn:hover { background: var(--gold-light); }
+    .author-block { display: flex; align-items: center; gap: 1.5rem; padding: 2.5rem 0; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 3rem; }
+    .author-info h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.08em; color: var(--white); margin-bottom: 0.3rem; }
+    .author-info p { font-size: 0.9rem !important; color: var(--gray-light) !important; margin: 0 !important; }
+    footer { padding: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 1rem; }
+    .footer-kipling { font-family: 'Crimson Pro', serif; font-size: 1rem; font-style: italic; color: var(--gray-light); margin-bottom: 0.5rem; }
+    .footer-line { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+    .nav-footer { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-top: 1.5rem; }
+    .nav-footer a { color: var(--gray); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-footer a:hover { color: var(--gold); }
+    @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .post-header, .post-body { padding-left: 1.5rem; padding-right: 1.5rem; } .post-header { padding-top: 7rem; } .parallel-header, .parallel-row { grid-template-columns: 1fr; } .parallel-cell.chart { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.04); } .parallel-col-header.chart { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.12); } }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Peck's Mission</a>
+  <ul class="nav-links">
+    <li><a href="about.html">My Story</a></li>
+    <li><a href="chiari.html">What is Chiari</a></li>
+    <li><a href="blog.html">Updates</a></li>
+    <li><a href="connect.html">Connect</a></li>
+  </ul>
+</nav>
+
+<div class="post-header">
+  <p class="post-eyebrow">Updates &nbsp;·&nbsp; February 2026</p>
+  <h1 class="post-title">Why I Built This</h1>
+  <p class="post-meta">By Peck &nbsp;·&nbsp; Combat Medic &nbsp;·&nbsp; CVICU Nurse &nbsp;·&nbsp; Chiari Patient</p>
+</div>
+
+<article class="post-body">
+
+  <p class="opening">I was a good medic. I want to be clear about that. I got awards for exceptional patient care. I had patients email the president of the hospital I worked at. I was Doc to my men in the army, and that's not a title that is given lightly.</p>
+
+  <p>But somewhere along the way, I started struggling with something I couldn't name.</p>
+
+  <p>I had never been a patient.</p>
+
+  <h2>The Gap I Didn't Know Existed</h2>
+
+  <p>I didn't know what it felt like to be the one in the bed. To have lines coming out of you that you don't understand. To have alarms going off and not know what they mean. To wait for someone to tell you what's happening and have nobody come. To be 80 years old with no family visiting and look up at your nurse hoping he gets it — and watch him walk past because he's got eight other patients and a chart to finish.</p>
+
+  <p>I didn't get it. Not really. I was good at treating the disease. I wasn't always good at treating the person who had it.</p>
+
+  <p>There's a gap between what the chart says and what the patient is actually going through. I knew it existed. I just didn't know how wide it was until I ended up on the other side of it.</p>
+
+  <div class="quote-block">
+    <p class="quote-text">"Good physicians treat the disease. Great physicians treat the patient who has the disease."</p>
+    <p class="quote-attr">— William Osler, Founder of Johns Hopkins</p>
+  </div>
+
+  <p>That gap is why I built this.</p>
+
+  <h2>What The Parallel Document Is</h2>
+
+  <p>I've spent my career on the treating side. Now I'm on the receiving end, and I'm figuring out in real time what that actually feels like — what it means to look fine on the outside while something is quietly failing on the inside. What it means to be a fit 25-year-old that nobody looks at twice, but whose brain has been compressed his entire life without anyone knowing.</p>
+
+  <p>So here's what I'm going to do. I'm going to take the clinical chart — what the documentation says about my condition, my surgery, my recovery — and I'm going to put it next to what I'm actually experiencing. Side by side. Honest. Unfiltered. The gap made visible.</p>
+
+  <div class="parallel-block">
+    <div class="parallel-header">
+      <div class="parallel-col-header chart">What The Chart Says</div>
+      <div class="parallel-col-header reality">What I'm Actually Going Through</div>
+    </div>
+    <div class="parallel-row">
+      <div class="parallel-cell chart">"Patient presents with wide-based gait and balance disturbance."</div>
+      <div class="parallel-cell reality">I walked across the Vanderbilt campus after my consultation — refused the shuttle — and my legs started swinging out like I was heading into a duel. I thought it was funny. It was also a little terrifying.</div>
+    </div>
+    <div class="parallel-row">
+      <div class="parallel-cell chart">"Three episodes of lower extremity weakness upon waking."</div>
+      <div class="parallel-cell reality">I woke up and my legs were noodles. I ran to the bathroom like a drunk person, threw up, and couldn't keep myself upright on the toilet. My buddy offered to help and I told him I was fine. I was not fine.</div>
+    </div>
+    <div class="parallel-row">
+      <div class="parallel-cell chart">"Patient reports dysphagia. Swallow study completed."</div>
+      <div class="parallel-cell reality">I couldn't swallow. That's when I thought — okay. This is life or death. This is the line. I finally stopped arguing with myself and walked into the ER.</div>
+    </div>
+    <div class="parallel-row">
+      <div class="parallel-cell chart">"Surgery scheduled: Suboccipital craniectomy with C1 laminectomy and duraplasty. February 26th."</div>
+      <div class="parallel-cell reality">I have 14 days. I'm more at peace than I expected. I'm also more scared than I'm letting on. Both of those things are true at the same time.</div>
+    </div>
+  </div>
+
+  <p>This is what the parallel document looks like. I'm going to keep building it through surgery and all the way through recovery. Because that document — the chart next to the truth — is the thing that might actually change how providers care for patients. And it's the thing that might make a patient somewhere feel less alone inside a system that is technically doing everything right but still somehow missing them.</p>
+
+  <h2>Who This Is For</h2>
+
+  <div class="audience-section">
+    <h3>Four Audiences. One Mission.</h3>
+    <div class="audience-item">Chiari patients who have been dismissed, misdiagnosed, or told they're imagining it. I know what that feels like. You're not crazy.</div>
+    <div class="audience-item">Healthcare providers who want to understand what the chart misses. I've been on both sides. I know what you're not seeing. I'm going to show you.</div>
+    <div class="audience-item">Military veterans navigating the healthcare system. I was Doc. I know what it means to push through and not ask for help. This is for you too.</div>
+    <div class="audience-item">People of faith walking through medical suffering who need something honest instead of something polished. Job more than Romans. I'm there with you.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>The Bigger Picture</h2>
+
+  <p>I've spent my career on both sides of the bed. Combat medic. CVICU nurse. Neuro trauma bay. Now patient. That specific combination — clinical knowledge plus lived patient experience — is not something most people have. I didn't choose it. But I have it. And I think I'm supposed to do something with it.</p>
+
+  <p>Last spring I prayed for empathy. For the heart of a patient. For the ability to slow down and love the person in the bed instead of just treating the disease. Two weeks later all of this surfaced. I'm not writing the ending of that story yet. But I'm not ignoring the thread either.</p>
+
+  <div class="verse-block">
+    <p class="verse-text">"For the moment all discipline seems painful rather than pleasant, but later it yields the peaceful fruit of righteousness to those who have been trained by it."</p>
+    <p class="verse-ref">— Hebrews 12:11</p>
+  </div>
+
+  <div class="closing-cta">
+    <p>Walk with me through this. Surgery is February 26th. I'm documenting everything.</p>
+    <a href="blog.html" class="btn">Read The Updates</a>
+  </div>
+
+  <div class="author-block">
+    <div class="author-info">
+      <h4>Peck</h4>
+      <p>Combat Medic · CVICU Nurse · Chiari Patient · Stonebridge Bible Church</p>
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  <div class="footer-logo">Peck's Mission</div>
+  <p class="footer-kipling">"And so hold on when there is nothing in you except the Will which says to them: Hold on."</p>
+  <p class="footer-line">— Rudyard Kipling, If</p>
+  <p class="footer-line" style="margin-top:0.8rem;color:#555;">"The ceiling you hit your whole life wasn't your ceiling. It was the condition's ceiling."</p>
+  <ul class="nav-footer">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="chiari.html">Chiari</a></li>
+    <li><a href="blog.html">Updates</a></li>
+    <li><a href="connect.html">Connect</a></li>
+  </ul>
+</footer>
+</body>
+</html>

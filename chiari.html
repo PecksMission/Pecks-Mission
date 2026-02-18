@@ -1,240 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Living with Chiari Malformation: A personal journey through symptoms, diagnosis, and preparing for decompression surgery.">
-    <meta name="keywords" content="Chiari malformation symptoms, what is Chiari, Chiari surgery, decompression surgery, brain malformation, neurological condition, dysphagia, ataxia, CSF flow">
-    <title>Living with Chiari: My Symptom Story | Understanding Chiari Malformation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3TPDSC5YQ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-T3TPDSC5YQ');
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is Chiari — Peck's Mission</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0a0a0a; --white: #f5f0e8; --gold: #c9a84c; --gold-light: #e8c97a; --red: #8b2020; --gray: #4a4a4a; --gray-light: #9a9a9a; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Crimson Pro', Georgia, serif; font-size: 19px; line-height: 1.8; overflow-x: hidden; }
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.15em; color: var(--gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { color: var(--gray-light); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .page-header { padding: 10rem 3rem 4rem; max-width: 820px; margin: 0 auto; }
+    .page-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .page-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 1rem; }
+    .page-sub { font-size: 1.15rem; font-weight: 300; font-style: italic; color: var(--gray-light); max-width: 600px; }
+    .chiari-body { max-width: 720px; margin: 0 auto; padding: 4rem 3rem 6rem; }
+    .chiari-body p { font-size: 1.1rem; font-weight: 300; color: #ccc; margin-bottom: 1.6rem; line-height: 1.85; }
+    .chiari-body h2 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 0.05em; color: var(--white); margin: 3.5rem 0 1rem; }
+    .quote-block { background: rgba(201,168,76,0.05); border-left: 3px solid var(--gold); padding: 2rem 2.5rem; margin: 2.5rem 0; }
+    .quote-text { font-family: 'Crimson Pro', serif; font-size: 1.2rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.6; margin-bottom: 0.8rem; }
+    .quote-attr { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+    .verse-block { background: rgba(139,32,32,0.08); border-left: 3px solid var(--red); padding: 2rem 2.5rem; margin: 2.5rem 0; }
+    .verse-text { font-family: 'Crimson Pro', serif; font-size: 1.15rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.6; margin-bottom: 0.6rem; }
+    .verse-ref { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); }
+
+    /* BRAIN SVG DIAGRAM */
+    .diagram-block { background: rgba(255,255,255,0.02); border: 1px solid rgba(201,168,76,0.1); padding: 3rem 2rem; margin: 2.5rem 0; text-align: center; }
+    .diagram-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .diagram-sub { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); margin-top: 1rem; }
+
+    .callout-block { background: rgba(201,168,76,0.04); border: 1px solid rgba(201,168,76,0.12); padding: 2.5rem 3rem; margin: 3rem 0; }
+    .callout-block h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em; color: var(--gold); margin-bottom: 0.8rem; }
+    .callout-block p { font-size: 1rem; color: #bbb; margin-bottom: 0; }
+    .divider { width: 4rem; height: 1px; background: rgba(201,168,76,0.3); margin: 3rem auto; }
+    .closing-callout { background: rgba(139,32,32,0.06); border: 1px solid rgba(139,32,32,0.15); padding: 3rem; margin: 3rem 0; }
+    .closing-callout h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.05em; color: var(--white); margin-bottom: 1.2rem; }
+    .closing-callout p { font-size: 1.05rem; color: #ccc; margin-bottom: 1rem; }
+    footer { padding: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 1rem; }
+    .footer-kipling { font-family: 'Crimson Pro', serif; font-size: 1rem; font-style: italic; color: var(--gray-light); margin-bottom: 0.5rem; }
+    .footer-line { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+    .nav-footer { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-top: 1.5rem; }
+    .nav-footer a { color: var(--gray); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-footer a:hover { color: var(--gold); }
+    @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .page-header, .chiari-body { padding-left: 1.5rem; padding-right: 1.5rem; } .page-header { padding-top: 7rem; } }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Peck's Mission</div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="chiari.html" class="active">What is Chiari?</a></li>
-                <li><a href="blog.html">Updates</a></li>
-                <li><a href="contact.html">Connect</a></li>
-            </ul>
-            <button class="mobile-menu-toggle">☰</button>
-        </div>
-    </nav>
+<nav>
+  <a href="index.html" class="nav-logo">Peck's Mission</a>
+  <ul class="nav-links">
+    <li><a href="about.html">My Story</a></li>
+    <li><a href="chiari.html">What is Chiari</a></li>
+    <li><a href="blog.html">Updates</a></li>
+    <li><a href="connect.html">Connect</a></li>
+  </ul>
+</nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Living with Chiari: My Symptom Story</h1>
-            <p class="subtitle">If you're experiencing similar symptoms, what you're feeling is real—even if others can't see it</p>
-        </div>
-    </section>
+<div class="page-header">
+  <p class="page-eyebrow">Understanding Chiari</p>
+  <h1 class="page-title">The Condition Nobody Talks About</h1>
+  <p class="page-sub">I had no idea what Chiari malformation was until a neurosurgeon told me I had a severe case of it. And then everything made sense for the first time in my life.</p>
+</div>
 
-    <!-- Main Content -->
-    <section class="content-section">
-        <div class="container content-narrow">
-            
-            <div class="info-box warning">
-                <h3>📍 A Note to Those Experiencing These Symptoms</h3>
-                <p>
-                    Neurological issues are incredibly difficult to explain to people who haven't experienced them. 
-                    The floating sensation, the inability to balance, the cognitive fog—these aren't things you're 
-                    making up. They're real, they're valid, and they're incredibly challenging to live with.
-                </p>
-            </div>
+<div class="chiari-body">
 
-            <h2>What is Chiari Malformation?</h2>
-            <p>
-                I was born with part of my brain (the cerebellar tonsils) sitting 1.5 cm lower than it should, pushed down into the space where my spinal cord is. My brain is blocking the flow of cerebrospinal fluid (CSF)—think of it like a kink in a garden hose. The fluid can't flow properly, which causes pressure to build up and creates all kinds of neurological symptoms.
-            </p>
-            <p>
-                Out of 1,000 people, only 1 has Chiari. Most are asymptomatic. Of those with symptoms, most just have headaches. Surgery becomes necessary when you have ataxia (severe balance problems preventing walking) or dysphagia (difficulty swallowing).
-            </p>
+  <div class="verse-block">
+    <p class="verse-text">"My grace is sufficient for you, for my power is made perfect in weakness."</p>
+    <p class="verse-ref">— 2 Corinthians 12:9</p>
+  </div>
 
-            <h2>Early Warning Signs I Missed</h2>
-            <p>
-                Looking back, the signs were there: childhood difficulty with fine motor skills, trouble picking up small objects, speech difficulties, and an ADHD diagnosis. During my military entrance physical, I had balance problems during the examination. One time I got pulled over for speeding and failed a field sobriety test despite blowing zeros—I now understand it was the Chiari affecting my balance all along.
-            </p>
+  <p>I didn't understand that verse until I understood what my brain had been doing my whole life.</p>
 
-            <h2>April 2025: When Everything Started</h2>
-            <p>
-                After a Monday morning hike with friends, Jesse and I went to the swings. While swinging, I started feeling dizzy and nauseous. That night at work in the Cardiovascular Intensive Care Unit at Cox South Hospital, I still felt terrible—like motion sickness that wouldn't go away. Around midnight, I walked over to the hospital's urgent care. They diagnosed me with BPPV (an inner ear disorder), but I told them, "This is not vertigo; this is something else."
-            </p>
+  <h2>What Is Chiari Malformation</h2>
 
-            <h2>May-June 2025: Diagnosis</h2>
-            <p>
-                The dizziness didn't go away. By late May, I had constant tinnitus, altered hearing, and vertigo episodes lasting anywhere from a few minutes to an hour. I'd called out of work several times—I didn't feel comfortable walking with patients who'd just gotten open-heart surgery. My ENT ordered an MRI to rule out a tumor. In early June, the results came back: no tumor, but something else—a Chiari malformation. That same week, I went to an IMAX movie and had to lie in my car for 20 minutes before I could safely drive home.
-            </p>
+  <p>Your skull is like a sink. At the bottom of that sink is a drain — it's called the foramen magnum — and that's where your brain and spinal cord connect. Cerebrospinal fluid is supposed to flow freely through that drain in both directions. In Chiari malformation that drain is partially blocked because brain tissue — specifically the cerebellar tonsils — has herniated down through the opening and into the spinal canal where it doesn't belong.</p>
 
-            <h2>Summer 2025: The Symptoms Get Real</h2>
-            <p>
-                Through June and July, my symptoms escalated: a strange floating sensation, like I was disconnected from my feet, constant headaches, and frequent nausea. The best way I could describe what I was feeling was through Pink Floyd's "Comfortably Numb"—distant, detached, hands feeling like balloons.
-            </p>
+  <p>In my case the tonsils were herniated between 12 and 15 millimeters. My neurosurgeon estimated 14. He said that number matters less than what it's actually doing. And what it was doing was pressing directly on my brainstem.</p>
 
-            <div class="symptoms-grid">
-                <div class="symptom-card">
-                    <strong>The Floating Sensation</strong>
-                    <p>It's always there, subconscious, in the back of my mind. I feel detached from what's happening around me—I can see people talking but can't fully process what they're saying. Sports became impossible due to lost hand-eye coordination.</p>
-                </div>
-                <div class="symptom-card">
-                    <strong>Morning Headaches</strong>
-                    <p>I wake up with headaches every morning because pressure increases overnight. Caffeine helps, but they're always there.</p>
-                </div>
-                <div class="symptom-card">
-                    <strong>Cognitive Fog</strong>
-                    <p>I forget words frequently, lose track of what I'm saying, and blank out mid-conversation. My recall memory has changed.</p>
-                </div>
-            </div>
+  <!-- BRAIN ANATOMY DIAGRAM -->
+  <div class="diagram-block">
+    <p class="diagram-label">Brain Anatomy — What Chiari Looks Like</p>
+    <svg viewBox="0 0 500 420" width="100%" max-width="500px" style="max-width:480px;margin:0 auto;display:block;" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background -->
+      <rect width="500" height="420" fill="none"/>
 
-            <p>
-                A Cine MRI in July confirmed the Chiari was blocking my spinal fluid flow. Working with CVICU patients became increasingly difficult—there were several times I had to lie down in the doctor's office. I remember one instance when I looked at a pillow and it appeared stretched, distorted. I was genuinely fearful of tripping over the chest tubes draining blood from patients' hearts. My coworkers noticed something was wrong, but neurological issues are hard to understand.
-            </p>
+      <!-- Skull outline -->
+      <ellipse cx="240" cy="160" rx="160" ry="140" fill="none" stroke="#4a4a4a" stroke-width="2.5"/>
 
-            <div class="info-box warning">
-                <h3>The Invisible Illness Problem</h3>
-                <p>
-                    I didn't want people thinking I was making excuses. It's hard to explain that coughing triggers a headache. That sleeping causes pressure to build overnight, guaranteeing I wake with a headache. That laughing too hard brings on a headache. How do you explain feeling like you're floating, disconnected from reality? I feel like it would be easier if I had a visible injury—something people could see and understand.
-                </p>
-            </div>
+      <!-- Brain tissue -->
+      <ellipse cx="240" cy="145" rx="130" ry="110" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.25)" stroke-width="1.5"/>
 
-            <h2>August 2025: The Altitude Test</h2>
-            <p>
-                A friend and I went to Colorado. I had no symptoms hiking the Manitou Incline, which made me think I was improving. But at the top of Pikes Peak, everything changed. It felt like the world was spinning and I was walking sideways. The combination of elevation and Chiari severely exacerbated my symptoms. When I got back to Springfield, the flare-up lasted for weeks.
-            </p>
-            <p>
-                Mid-August, I went to the ER during a work shift. They ran a stroke protocol and did an MRI but offered no answers—just "keep waiting, work it out with a neurologist." It was frustrating.
-            </p>
+      <!-- Cerebellum -->
+      <ellipse cx="240" cy="245" rx="75" ry="50" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.4)" stroke-width="2"/>
+      <text x="240" y="250" text-anchor="middle" fill="#c9a84c" font-family="'DM Mono', monospace" font-size="10" letter-spacing="1">CEREBELLUM</text>
 
-            <h2>September-December 2025: Nashville and the Return</h2>
-            <p>
-                I moved to Nashville, hoping that getting off night shift would help. I started working as a low-voltage contractor installing security systems. But working overhead in ceilings made everything worse—every time I looked up, pressure increased in my head. I stumbled on stairs and coming down ladders. I had to leave the job because it wasn't physically safe.
-            </p>
-            <p>
-                Initially, I felt better. I joined CrossFit East Nashville, maintained seven hours of sleep nightly, and improved my diet. Sleep was the biggest factor—getting off night shift made a huge impact. But even with consistent sleep, I still woke with a headache every single morning.
-            </p>
-            <p>
-                In December, symptoms returned aggressively. Headaches intensified, the floating sensation strengthened, stumbling worsened. I'd hoped lifestyle changes would control the symptoms, but Chiari doesn't work that way.
-            </p>
+      <!-- Brainstem -->
+      <rect x="215" y="280" width="50" height="80" rx="8" fill="rgba(139,32,32,0.2)" stroke="rgba(139,32,32,0.6)" stroke-width="2"/>
+      <text x="240" y="325" text-anchor="middle" fill="#c17070" font-family="'DM Mono', monospace" font-size="9" letter-spacing="1">BRAINSTEM</text>
 
-            <h2>January 2026: The Worst Episode</h2>
-            <p>
-                In early January, I stayed at my friend Kevin's house and slept in a recliner. My neck bent backward during the night. I woke up extremely nauseous and disoriented. Kevin later told me I wasn't walking normally—I was lurching forward, using the walls to steady myself as I made my way to the bathroom. I vomited several times and couldn't maintain my balance. Kevin heard the commotion and came to check on me. He offered to help me walk back, but stubborn as I am, I refused. Looking back, I should have gone to the hospital, but I didn't.
-            </p>
-            <p>
-                I developed difficulty swallowing in late January—a persistent sensation like having a golf ball stuck in my throat. Dry foods like crackers became particularly challenging. A swallow evaluation showed no signs of aspiration, so I was cleared for a regular diet with modifications: adding sauces to dry foods, taking small bites, and sitting upright while eating.
-            </p>
+      <!-- Foramen magnum opening -->
+      <path d="M200 355 Q240 365 280 355" fill="none" stroke="#c9a84c" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="240" y="385" text-anchor="middle" fill="rgba(201,168,76,0.7)" font-family="'DM Mono', monospace" font-size="9" letter-spacing="1">FORAMEN MAGNUM</text>
 
-            <h2>February 2026: Current Status</h2>
-            <p>
-                After a 60-hour ER admission (two CAT scans, two MRIs, and a swallow exam), I secured a referral through the VA to a specialist. I'm currently unemployed because my work exacerbated my symptoms. I'm someone who needs structure, and not working has been challenging. I miss patient care, being in the action, serving others. I feel like my hands are tied right now.
-            </p>
+      <!-- Herniated tonsils - the problem area -->
+      <ellipse cx="220" cy="345" rx="18" ry="22" fill="rgba(139,32,32,0.35)" stroke="#8b2020" stroke-width="2"/>
+      <ellipse cx="260" cy="345" rx="18" ry="22" fill="rgba(139,32,32,0.35)" stroke="#8b2020" stroke-width="2"/>
 
-            <h2>Managing Symptoms</h2>
-            <p>
-                <strong>What helps:</strong> Caffeine (essential for managing headaches), proper sleep position (neck straight and elevated, never flexed), specific massage techniques (moving pressure down, not up), and faith—trusting that God has me through this.
-            </p>
-            <p>
-                <strong>Known triggers:</strong> Sleep position, looking upward, altitude and pressure changes, weather fluctuations, mornings (when pressure peaks overnight), awkward physical positions, and IMAX theaters.
-            </p>
-            <p>
-                <strong>What surprisingly doesn't trigger symptoms:</strong> Running and lifting weights—both involve controlled breathing and keeping the neck neutral.
-            </p>
+      <!-- Arrow pointing to tonsils -->
+      <line x1="340" y1="330" x2="285" y2="340" stroke="rgba(201,168,76,0.6)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+      <defs>
+        <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="rgba(201,168,76,0.6)"/>
+        </marker>
+      </defs>
+      <text x="345" y="318" text-anchor="start" fill="rgba(201,168,76,0.8)" font-family="'DM Mono', monospace" font-size="9" letter-spacing="1">HERNIATED</text>
+      <text x="345" y="330" text-anchor="start" fill="rgba(201,168,76,0.8)" font-family="'DM Mono', monospace" font-size="9" letter-spacing="1">TONSILS</text>
 
-            <h2>Why Surgery</h2>
-            <p>
-                As a medic, I believe the best approach is to pursue surgery now while I'm young, unattached, and without children. There's no medication that will address swallowing issues or restore hearing loss. Physical therapy maintains symptoms but doesn't resolve them. I don't want to manage pain indefinitely—I want to fix the problem. Let's address this head-on rather than pushing it down the road. Let's be aggressive about treatment.
-            </p>
+      <!-- Spinal canal -->
+      <rect x="225" y="365" width="30" height="45" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
 
-            <h2>For Others Going Through This</h2>
-            <p>
-                One of the hardest parts is appearing fine on the outside. People see a young, healthy-looking guy and assume nothing's wrong. But internally, my brain is being compressed and cerebrospinal fluid isn't flowing properly. If you're struggling with others not understanding, focus on the people who support you and believe you.
-            </p>
-            <p>
-                Finding community has been essential. When I moved to Nashville and found Stonebridge Church, I knew I was in the right place. When symptoms intensified in December, I had people praying for me and offering practical help. Don't be afraid to reach out.
-            </p>
-            <p>
-                Chiari is unpredictable. I can hike a mountain and feel fine but get overwhelmed at an IMAX theater. I can lift heavy weights with no issues but struggle after bending to pick up sticks. That's the nature of this condition—it doesn't mean you're managing it poorly.
-            </p>
+      <!-- CSF flow arrows - blocked -->
+      <line x1="195" y1="300" x2="195" y2="260" stroke="rgba(100,150,200,0.4)" stroke-width="2" marker-end="url(#csfarrow)" stroke-dasharray="4,3"/>
+      <defs>
+        <marker id="csfarrow" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto">
+          <polygon points="0 0, 6 2.5, 0 5" fill="rgba(100,150,200,0.4)"/>
+        </marker>
+      </defs>
 
-            <div class="mission">
-                <div class="mission-content">
-                    <p class="mission-quote">
-                        "Consider it pure joy, my brothers and sisters, whenever you face trials of many kinds, because you know that the testing of your faith produces perseverance. Let perseverance finish its work so that you may be mature and complete, not lacking anything." — James 1:2-4
-                    </p>
-                </div>
-            </div>
+      <!-- Title labels -->
+      <text x="50" y="140" fill="rgba(201,168,76,0.5)" font-family="'DM Mono', monospace" font-size="9" letter-spacing="1">SKULL</text>
+      <text x="240" y="60" text-anchor="middle" fill="rgba(201,168,76,0.5)" font-family="'DM Mono', monospace" font-size="9" letter-spacing="1">BRAIN</text>
+    </svg>
+    <p class="diagram-sub">Red area shows herniated tonsils pressing on brainstem · Dotted line shows foramen magnum</p>
+  </div>
 
-            <p>
-                My faith has been both tested and strengthened through this journey. When I don't have control over my symptoms or what tomorrow holds, I can trust that God has me. This season is painful, but I'm learning to depend on Him in ways I never had to before.
-            </p>
+  <h2>Why The Brainstem Matters</h2>
 
-            <p>
-                My concern isn't about life after surgery—it's about not getting surgery and living with these symptoms indefinitely. Surgery offers hope that I can return to normal life, return to serving, and be fully present again.
-            </p>
+  <p>Your brainstem controls the functions your body runs automatically in the background. Swallowing. Balance. Coordination. Breathing. Heart rate. You don't think about these things. They just happen. Until they don't.</p>
 
-            <div class="info-box success">
-                <h3>How I Explain It</h3>
-                <p>
-                    "I have a big brain. But don't worry, it's mostly smooth."
-                </p>
-                <p>
-                    In all seriousness, my brain is under pressure because the base of my skull is smaller than it should be. It's a congenital condition I was born with, and now it's time to fix it.
-                </p>
-                <p style="text-align: center; font-weight: 600; margin-top: 1.5rem;">
-                    Let's do this.
-                </p>
-            </div>
+  <p>When your brainstem is compressed those functions start to fail. Not all at once. Not obviously. Gradually. In ways that are easy to miss or explain away as something else entirely.</p>
 
-            <p>
-                If you're going through this, hang in there. You're not alone. What you're feeling is real. And there is hope.
-            </p>
+  <div class="quote-block">
+    <p class="quote-text">"The brain stem is controlling all these vital functions that happen in the background. And they're not working well."</p>
+    <p class="quote-attr">— Dr. Lee, Neurosurgeon, Vanderbilt</p>
+  </div>
 
-            <div class="cta-box">
-                <h3>Questions About Chiari or Want to Share Your Experience?</h3>
-                <p>Whether you're newly diagnosed, preparing for surgery, in recovery, or supporting someone with Chiari—I'd 
-                love to connect. Your story matters, and you're not alone in this.</p>
-                <a href="contact.html" class="btn btn-primary">Connect With Me</a>
-            </div>
-        </div>
-    </section>
+  <p>Balance. Swallowing. Breathing. Heart rate. That's what was being compressed. That's what I was compensating for my whole life without knowing it.</p>
 
-    <!-- Footer -->
-    <footer>
-        <p class="footer-verse">
-    "For the moment all discipline seems painful rather than pleasant,<br>
-    but later it yields the peaceful fruit of righteousness<br>
-    to those who have been trained by it."<br>
-    <em>Hebrews 12:11</em>
+  <h2>What It Looked Like In My Life</h2>
 
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="chiari.html">Chiari Info</a>
-            <a href="blog.html">Updates</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </footer>
+  <p>I was sent to speech therapy as a kid. Written off as a slow developer. My balance was always terrible but nobody could explain why. I failed a field sobriety test in the military stone cold sober — blew zeros — because I couldn't balance well enough to pass it. I pushed through military physical training that should have been impossible given what was happening inside my skull. I built a career in a cardiovascular ICU and a neuro trauma bay while my own brainstem was being compressed.</p>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+  <p>Three times recently I woke up and my legs didn't work. Not weak. Gone. I made it to the bathroom like a drunk run. Couldn't keep myself upright. My buddy had to help me and I didn't want to let him.</p>
 
-        mobileMenuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-    </script>
+  <p>Then one morning I couldn't swallow. That was the line.</p>
+
+  <h2>Why It Gets Missed</h2>
+
+  <p>Chiari gets misdiagnosed constantly. Here's what it got attributed to in my life — clumsiness, balance issues, a slow developer, anxiety, and things that just seemed like quirks of who I was. None of it was wrong exactly. All of it was incomplete.</p>
+
+  <p>The problem is that Chiari is invisible from the outside. You can look completely fine and be severely affected. I worked in critical care. I served in the military. Nobody knew. Including me.</p>
+
+  <p>The neurological compensation your brain performs over time — rewiring itself around the damage just to keep you functional — is called neuroplasticity. My brain did this for decades. It's remarkable from a clinical standpoint. It also means the condition masked itself well enough that I didn't get diagnosed until the compensation started failing.</p>
+
+  <div class="quote-block">
+    <p class="quote-text">"When we are no longer able to change a situation, we are challenged to change ourselves."</p>
+    <p class="quote-attr">— Viktor Frankl</p>
+  </div>
+
+  <p>That's neuroplasticity. That's also faith. Turns out they're not that different.</p>
+
+  <div class="callout-block">
+    <h3>If Any of This Sounds Familiar</h3>
+    <p>The balance issues. The unexplained symptoms. The feeling that something is slightly off but nobody can tell you why. Please talk to a neurosurgeon. Not just a neurologist. A neurosurgeon. And push for an MRI if you haven't had one. You deserve to know what you're dealing with.</p>
+  </div>
+
+  <h2>What The Surgery Actually Does</h2>
+
+  <p>The procedure is called a suboccipital craniectomy with C1 laminectomy and duraplasty. That's a mouthful. Here's what it actually means.</p>
+
+  <p>The surgeon removes two to three centimeters of bone at the base of the skull. Then the back of the C1 vertebra. Then they open the dura — the membrane that holds your spinal fluid — and sew in a patch to expand the space. The patch is made from pericranium which is tissue from your own scalp. Your body doesn't reject it and it's the least likely material to get infected.</p>
+
+  <p>The cerebellar tonsils get cauterized and shrunk. They're like the appendix — no real function, they just cause problems. Shrinking them gets them out of the way and takes the pressure off the brainstem.</p>
+
+  <div class="quote-block">
+    <p class="quote-text">"We'd shave off about two to three centimeters of this bone. And all of this would be nice free white space."</p>
+    <p class="quote-attr">— Dr. Lee, Neurosurgeon, Vanderbilt</p>
+  </div>
+
+  <!-- SURGICAL DIAGRAM -->
+  <div class="diagram-block">
+    <p class="diagram-label">The Surgery — Before & After</p>
+    <svg viewBox="0 0 500 240" width="100%" style="max-width:480px;margin:0 auto;display:block;" xmlns="http://www.w3.org/2000/svg">
+      <!-- BEFORE -->
+      <text x="125" y="25" text-anchor="middle" fill="rgba(201,168,76,0.7)" font-family="'DM Mono', monospace" font-size="10" letter-spacing="2">BEFORE</text>
+      <!-- Skull base before -->
+      <path d="M50 60 Q125 45 200 60 L200 110 Q125 100 50 110 Z" fill="rgba(100,100,100,0.2)" stroke="rgba(100,100,100,0.5)" stroke-width="2"/>
+      <!-- Compressed tonsils -->
+      <ellipse cx="100" cy="115" rx="22" ry="18" fill="rgba(139,32,32,0.4)" stroke="#8b2020" stroke-width="2"/>
+      <ellipse cx="148" cy="115" rx="22" ry="18" fill="rgba(139,32,32,0.4)" stroke="#8b2020" stroke-width="2"/>
+      <!-- Brainstem compressed -->
+      <rect x="100" y="133" width="48" height="60" rx="5" fill="rgba(139,32,32,0.2)" stroke="rgba(139,32,32,0.5)" stroke-width="1.5"/>
+      <text x="124" y="168" text-anchor="middle" fill="rgba(200,100,100,0.8)" font-family="'DM Mono', monospace" font-size="7">BRAINSTEM</text>
+      <text x="124" y="179" text-anchor="middle" fill="rgba(200,100,100,0.8)" font-family="'DM Mono', monospace" font-size="7">COMPRESSED</text>
+
+      <!-- Divider line -->
+      <line x1="250" y1="20" x2="250" y2="220" stroke="rgba(201,168,76,0.2)" stroke-width="1" stroke-dasharray="5,3"/>
+
+      <!-- AFTER -->
+      <text x="375" y="25" text-anchor="middle" fill="rgba(201,168,76,0.7)" font-family="'DM Mono', monospace" font-size="10" letter-spacing="2">AFTER</text>
+      <!-- Skull base after - removed bone shown as gap -->
+      <path d="M300 60 Q350 45 380 55" fill="none" stroke="rgba(100,100,100,0.5)" stroke-width="2"/>
+      <path d="M420 55 Q450 45 450 60 L450 110 Q425 105 420 100" fill="none" stroke="rgba(100,100,100,0.5)" stroke-width="2"/>
+      <path d="M300 60 L300 110 Q325 105 360 105" fill="rgba(100,100,100,0.1)" stroke="rgba(100,100,100,0.3)" stroke-width="1"/>
+      <!-- Free space indicator -->
+      <ellipse cx="375" cy="100" rx="40" ry="25" fill="rgba(201,168,76,0.06)" stroke="rgba(201,168,76,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <text x="375" y="97" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-family="'DM Mono', monospace" font-size="7">FREE</text>
+      <text x="375" y="108" text-anchor="middle" fill="rgba(201,168,76,0.6)" font-family="'DM Mono', monospace" font-size="7">SPACE</text>
+      <!-- Decompressed brainstem -->
+      <rect x="352" y="125" width="48" height="60" rx="5" fill="rgba(60,120,60,0.15)" stroke="rgba(80,160,80,0.4)" stroke-width="1.5"/>
+      <text x="376" y="160" text-anchor="middle" fill="rgba(100,180,100,0.8)" font-family="'DM Mono', monospace" font-size="7">BRAINSTEM</text>
+      <text x="376" y="171" text-anchor="middle" fill="rgba(100,180,100,0.8)" font-family="'DM Mono', monospace" font-size="7">FREE</text>
+    </svg>
+    <p class="diagram-sub">Bone removed at skull base · Tonsils shrunk · Brainstem decompressed · CSF flows freely</p>
+  </div>
+
+  <p>The result is more space. The tonsils float back. The brainstem decompresses. The fluid flows the way it's supposed to. My neurosurgeon told me — all of this would be nice free white space. That's what we're building toward. February 26th.</p>
+
+  <div class="divider"></div>
+
+  <div class="closing-callout">
+    <h3>What I Wish Someone Had Told Me Sooner</h3>
+    <p>You're not clumsy. You're not dramatic. You're not a slow developer. You're not anxious for no reason.</p>
+    <p>You might have Chiari.</p>
+    <p>And if you do — the diagnostic journey is hard, the condition is invisible, and finding the right surgeon matters enormously. But there is a surgery that works. There are surgeons who do it well. And most patients feel neurological improvement within the first day or two after the procedure.</p>
+    <p>You deserve to know what you're dealing with. That's why this page exists.</p>
+  </div>
+
+  <div class="verse-block">
+    <p class="verse-text">"God is our refuge and strength, an ever-present help in trouble."</p>
+    <p class="verse-ref">— Psalm 46:1</p>
+  </div>
+
+  <p style="font-size:0.85rem;color:var(--gray-light);font-style:italic;border-top:1px solid rgba(255,255,255,0.05);padding-top:1.5rem;">Medical disclaimer: This page shares my personal experience with Chiari malformation. It is not medical advice. Please consult a qualified neurosurgeon for diagnosis and treatment guidance.</p>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Peck's Mission</div>
+  <p class="footer-kipling">"And so hold on when there is nothing in you except the Will which says to them: Hold on."</p>
+  <p class="footer-line">— Rudyard Kipling, If</p>
+  <p class="footer-line" style="margin-top:0.8rem;color:#555;">"The ceiling you hit your whole life wasn't your ceiling. It was the condition's ceiling."</p>
+  <ul class="nav-footer">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="chiari.html">Chiari</a></li>
+    <li><a href="blog.html">Updates</a></li>
+    <li><a href="connect.html">Connect</a></li>
+  </ul>
+</footer>
 </body>
 </html>

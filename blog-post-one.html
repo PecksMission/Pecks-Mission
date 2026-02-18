@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What I Found Out This Week — Peck's Mission</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f0e8;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --red: #8b2020;
+      --gray: #4a4a4a;
+      --gray-light: #9a9a9a;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      color: var(--gray-light);
+      text-decoration: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .post-header {
+      padding: 10rem 3rem 5rem;
+      max-width: 820px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .post-header::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 80% 20%, rgba(139,32,32,0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    .post-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .post-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      margin-bottom: 2rem;
+    }
+    .post-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-light);
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .post-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 3rem 6rem;
+    }
+    .post-body p {
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: #d4cfc7;
+      margin-bottom: 1.8rem;
+      line-height: 1.85;
+    }
+    .post-body p.opening {
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--white);
+      font-weight: 300;
+    }
+    .post-body h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      margin: 3.5rem 0 1.2rem;
+    }
+    .quote-block {
+      background: rgba(201,168,76,0.05);
+      border-left: 3px solid var(--gold);
+      padding: 2rem 2.5rem;
+      margin: 2.5rem 0;
+    }
+    .quote-text {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+    .quote-attr {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .verse-block {
+      background: rgba(139,32,32,0.08);
+      border-left: 3px solid var(--red);
+      padding: 2rem 2.5rem;
+      margin: 2.5rem 0;
+    }
+    .verse-text {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.6;
+      margin-bottom: 0.6rem;
+    }
+    .verse-ref {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-light);
+    }
+    .pull-quote {
+      font-family: 'Crimson Pro', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1.4;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+    }
+    .divider {
+      width: 4rem;
+      height: 1px;
+      background: rgba(201,168,76,0.3);
+      margin: 3rem auto;
+    }
+    .closing-line {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      letter-spacing: 0.03em;
+      color: var(--gold);
+      line-height: 1.2;
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid rgba(201,168,76,0.15);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      margin: 3rem 0;
+    }
+    .author-block {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      margin-top: 3rem;
+    }
+    .author-info h4 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+    .author-info p {
+      font-size: 0.9rem !important;
+      color: var(--gray-light) !important;
+      margin: 0 !important;
+    }
+    footer {
+      padding: 3rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .footer-kipling {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--gray-light);
+      margin-bottom: 0.5rem;
+    }
+    .footer-line {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .nav-footer { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-top: 1.5rem; }
+    .nav-footer a { color: var(--gray); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-footer a:hover { color: var(--gold); }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .post-header { padding: 7rem 1.5rem 3rem; }
+      .post-body { padding: 3rem 1.5rem 4rem; }
+      .quote-block, .verse-block { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Peck's Mission</a>
+  <ul class="nav-links">
+    <li><a href="about.html">My Story</a></li>
+    <li><a href="chiari.html">What is Chiari</a></li>
+    <li><a href="blog.html">Updates</a></li>
+    <li><a href="connect.html">Connect</a></li>
+  </ul>
+</nav>
+
+<div class="post-header">
+  <p class="post-eyebrow">Updates &nbsp;·&nbsp; February 2026</p>
+  <h1 class="post-title">What I Found Out This Week</h1>
+  <p class="post-meta">By Peck &nbsp;·&nbsp; Combat Medic &nbsp;·&nbsp; CVICU Nurse &nbsp;·&nbsp; Chiari Patient</p>
+</div>
+
+<article class="post-body">
+
+  <p class="opening">On Tuesday, I walked into a neurosurgeon's office with a cowboy's gait, thinking it was high noon and feeling ready for a duel. I didn't know exactly why I felt like that. I just knew something was different.</p>
+
+  <p>I thought it might have been all in my head. Was this just me? Was I psyching myself into something that didn't exist? I mean, I don't see anything wrong with myself. I could run a mile. Ten miles. I could go hit the gym. Was this just my mind playing a joke on me?</p>
+
+  <p>I went into that meeting thinking I was crazy. It all just felt surreal.</p>
+
+  <p>While I was sitting there, I heard the door open. There stood a world-class neurosurgeon. He sat down, shook my hand, and said:</p>
+
+  <div class="quote-block">
+    <p class="quote-text">"I don't see this. I don't see guys who have toughed it out, and gone through as much as you have. I don't see guys who have pushed through to become a medic in the military, to serve in critical care, who run and work out — not with a 15-millimeter Chiari malformation. I don't see this with people that have what you have. This is rare."</p>
+    <p class="quote-attr">— Dr. Lee, Neurosurgeon, Vanderbilt</p>
+  </div>
+
+  <p>Right then, everything stopped.</p>
+
+  <p>So this is not in my head. This is something I've been living. Something I've been experiencing. And where I've been feeling weak — like I'm not doing what's right — that's not the case. This is neuroplasticity. This is something I've carried since childhood. He walked me through everything. Speech therapy. Dexterity. Balance. Sports. All of it — in part due to the Chiari malformation.</p>
+
+  <div class="quote-block">
+    <p class="quote-text">"Your brain has been under stress constantly."</p>
+    <p class="quote-attr">— Dr. Lee, Neurosurgeon</p>
+  </div>
+
+  <p>He said that like a clinical observation. To me it felt like someone finally explaining my entire life.</p>
+
+  <h2>Everything I Have, I've Had to Fight For</h2>
+
+  <p>At 25 years old, I'm finally finding out why.</p>
+
+  <p>It's because my brain never had enough room to grow. I have never known true normalcy. Never known what it felt like to have a brain that wasn't compressed — my whole life. Playing sports. Running miles in a bomb suit. Carrying guys through military training. Serving in a field artillery unit. Working critical care patients at bedside.</p>
+
+  <p>I wasn't weak. I wasn't a slow developer.</p>
+
+  <p>My brain just didn't have enough room.</p>
+
+  <pull class="pull-quote">Everything I have today, I've had to fight for. Sheer will and neuroplasticity. Wrestled with my own brain just to keep going.</pull>
+
+  <h2>This Didn't Start This Week</h2>
+
+  <p>I was sent to speech therapy as a kid. Written off as a slow developer. My balance was always terrible but nobody could explain why. I failed a field sobriety test in the military — stone cold sober, blew zeros — because I couldn't balance well enough to pass it.</p>
+
+  <p>I pushed through military physical training that should have been impossible given what was happening inside my skull. I built a career in a cardiovascular ICU and a neuro trauma bay while my own brainstem was being compressed the entire time.</p>
+
+  <p>Three times recently I woke up and my legs didn't work. Not weak. Gone. I made it to the bathroom like a drunk run. Couldn't keep myself upright. My buddy had to help me and I didn't want to let him. Because that's who I am. I don't ask for help. I muscle through.</p>
+
+  <p>Then one morning I couldn't swallow. And I thought — okay. This is life or death now. This is not something I can push past anymore. I walked into the ER. Then into Dr. Lee's office. He confirmed everything.</p>
+
+  <p>My whole life. My brain has been severely compressed my whole entire life.</p>
+
+  <div class="divider"></div>
+
+  <h2>The Prayer I Made Last Spring</h2>
+
+  <p>Last spring I made a specific prayer. I told the Lord — I need to feel what it's like to be a patient. I can't keep walking past my rowdier patients. I need more empathy. I need a heart that loves them the way you love them.</p>
+
+  <p>Two weeks later all of this surfaced.</p>
+
+  <p>Now, I want to be careful here. Because this morning I sat down with a man who has spent decades in serious theological ministry. A man formed under John MacArthur. I told him about the prayer and he said something I needed to hear:</p>
+
+  <p>The story is too early in the storyline to start telling the ending.</p>
+
+  <p>He's right. I don't know yet if the surgery works the way I hope. I don't know yet what the other side of February 26th looks like. I don't know yet what the Lord is doing with all of this. And I'm not going to pretend I do.</p>
+
+  <p>What I know is this. I prayed for empathy. For the heart of a patient. For the ability to slow down and love the person in the bed instead of just treating the disease.</p>
+
+  <p>And then I became the person in the bed.</p>
+
+  <p>I'm still figuring out what that means. But I'm not willing to call it a coincidence.</p>
+
+  <p>There's a Pink Floyd song I kept coming back to through all of this. Comfortably Numb. If you know it you already understand what living undiagnosed actually felt like. Going through the motions. Aware that something was off but unable to fully feel or name it. Comfortable enough in the numbness that I didn't know another way existed. That was my whole life before this week.</p>
+
+  <div class="divider"></div>
+
+  <h2>Where I'm Standing Right Now</h2>
+
+  <p>I'm not sitting here with clean answers. I'm sitting here with Job more than Romans. Not fully sure what the Lord is doing. A little scared. More at peace than I expected to be.</p>
+
+  <p>I have surgery on February 26th. Suboccipital craniectomy with C1 laminectomy and duraplasty. A world-class neurosurgeon at Vanderbilt is going to create space at the base of my skull that my brain has never had. And for the first time in my life I'm going to find out what normal actually feels like.</p>
+
+  <p>I don't know what that version of me looks like yet. I've never met him.</p>
+
+  <p>But I'm ready to.</p>
+
+  <div class="verse-block">
+    <p class="verse-text">"For the moment all discipline seems painful rather than pleasant, but later it yields the peaceful fruit of righteousness to those who have been trained by it."</p>
+    <p class="verse-ref">— Hebrews 12:11</p>
+  </div>
+
+  <div class="closing-line">
+    The ceiling I hit my whole life wasn't my ceiling.<br>
+    It was the condition's ceiling.<br>
+    February 26th I find out what's on the other side of it.
+  </div>
+
+  <div class="author-block">
+    <div class="author-info">
+      <h4>Peck</h4>
+      <p>Combat Medic · CVICU Nurse · Chiari Patient · Stonebridge Bible Church</p>
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  <div class="footer-logo">Peck's Mission</div>
+  <p class="footer-kipling">"And so hold on when there is nothing in you except the Will which says to them: Hold on."</p>
+  <p class="footer-line">— Rudyard Kipling, If</p>
+  <p class="footer-line" style="margin-top:0.8rem;color:#555;">"The ceiling you hit your whole life wasn't your ceiling. It was the condition's ceiling."</p>
+  <ul class="nav-footer">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="chiari.html">Chiari</a></li>
+    <li><a href="blog.html">Updates</a></li>
+    <li><a href="connect.html">Connect</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

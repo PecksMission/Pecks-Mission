@@ -1,346 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Real-time updates from my journey preparing for brain surgery. Follow along as I document the patient experience from someone who's been a caregiver.">
-    <meta name="keywords" content="brain surgery blog, Chiari surgery journey, patient experience, pre-surgery updates, surgery preparation, living with Chiari">
-    <title>Surgery Updates & Journey - Real-Time Patient Experience</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3TPDSC5YQ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-T3TPDSC5YQ');
-    </script>
-    
-    <style>
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.5);
-            animation: fadeIn 0.3s;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 0;
-            border-radius: 8px;
-            width: 90%;
-            max-width: 600px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            animation: slideDown 0.3s;
-        }
-        
-        @keyframes slideDown {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        
-        .modal-header {
-            padding: 1.5rem 2rem;
-            background: linear-gradient(135deg, var(--navy) 0%, #2c4a7c 100%);
-            color: white;
-            border-radius: 8px 8px 0 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .modal-header h2 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-        
-        .close {
-            color: white;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0;
-            line-height: 1;
-            transition: opacity 0.2s;
-        }
-        
-        .close:hover,
-        .close:focus {
-            opacity: 0.7;
-        }
-        
-        .modal-body {
-            padding: 2rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--navy);
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--gold);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .submit-btn {
-            background: var(--gold);
-            color: white;
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
-        }
-        
-        .submit-btn:hover {
-            background: #c5a572;
-            transform: translateY(-2px);
-        }
-        
-        .submit-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-        
-        .success-message {
-            display: none;
-            padding: 1rem;
-            background: #d4edda;
-            color: #155724;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-        }
-        
-        .error-message {
-            display: none;
-            padding: 1rem;
-            background: #f8d7da;
-            color: #721c24;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Updates — Peck's Mission</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #0a0a0a; --white: #f5f0e8; --gold: #c9a84c; --gold-light: #e8c97a; --red: #8b2020; --gray: #4a4a4a; --gray-light: #9a9a9a; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Crimson Pro', Georgia, serif; font-size: 19px; line-height: 1.8; overflow-x: hidden; }
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 1.2rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.15em; color: var(--gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { color: var(--gray-light); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .page-header { padding: 10rem 3rem 5rem; max-width: 820px; margin: 0 auto; }
+    .page-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .page-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 6rem); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 1rem; }
+    .page-sub { font-size: 1.1rem; font-weight: 300; font-style: italic; color: var(--gray-light); max-width: 560px; }
+
+    /* COUNTDOWN */
+    .countdown-strip {
+      background: rgba(201,168,76,0.04);
+      border-top: 1px solid rgba(201,168,76,0.12);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      padding: 1.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-bottom: 4rem;
+    }
+    .cd-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 0.2rem; }
+    .cd-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--white); line-height: 1; text-align: center; }
+    .cd-title { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); }
+
+    .posts-grid { max-width: 820px; margin: 0 auto; padding: 0 3rem 6rem; }
+    .post-card { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 3rem 0; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; text-decoration: none; color: inherit; transition: opacity 0.2s; }
+    .post-card:hover { opacity: 0.8; }
+    .post-card:first-child { padding-top: 0; }
+    .post-tag { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .post-card-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 0.8rem; }
+    .post-excerpt { font-size: 1rem; font-weight: 300; color: var(--gray-light); line-height: 1.7; max-width: 560px; }
+    .post-arrow { font-family: 'DM Mono', monospace; font-size: 1.5rem; color: var(--gold); align-self: center; }
+    footer { padding: 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 1rem; }
+    .footer-kipling { font-family: 'Crimson Pro', serif; font-size: 1rem; font-style: italic; color: var(--gray-light); margin-bottom: 0.5rem; }
+    .footer-line { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+    .nav-footer { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-top: 1.5rem; }
+    .nav-footer a { color: var(--gray); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-footer a:hover { color: var(--gold); }
+    @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .nav-links { display: none; } .page-header, .posts-grid { padding-left: 1.5rem; padding-right: 1.5rem; } .page-header { padding-top: 7rem; } .post-card { grid-template-columns: 1fr; } .post-arrow { display: none; } .countdown-strip { gap: 1.5rem; padding: 1.5rem; } }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Peck's Mission</div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="chiari.html">What is Chiari?</a></li>
-                <li><a href="blog.html" class="active">Updates</a></li>
-                <li><a href="contact.html">Connect</a></li>
-            </ul>
-            <button class="mobile-menu-toggle">☰</button>
-        </div>
-    </nav>
+<nav>
+  <a href="index.html" class="nav-logo">Peck's Mission</a>
+  <ul class="nav-links">
+    <li><a href="about.html">My Story</a></li>
+    <li><a href="chiari.html">What is Chiari</a></li>
+    <li><a href="blog.html">Updates</a></li>
+    <li><a href="connect.html">Connect</a></li>
+  </ul>
+</nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>My Journey Updates</h1>
-            <p class="subtitle">Real-time documentation of preparing for surgery, from the patient's perspective</p>
-        </div>
-    </section>
+<div class="page-header">
+  <p class="page-eyebrow">Updates</p>
+  <h1 class="page-title">Walking Through This In Real Time.</h1>
+  <p class="page-sub">From diagnosis to surgery to recovery. Documented honestly. The chart and the truth side by side.</p>
+</div>
 
-    <!-- Blog Posts Section -->
-    <section class="content-section">
-        <div class="container">
-            
-            <!-- Placeholder for blog posts - easy to add new posts here -->
-            <!-- 
-            To add a new blog post, copy and paste this template:
-            
-            <article class="blog-post">
-                <div class="post-date">Month Day, Year</div>
-                <h2>Post Title</h2>
-                <p>
-                    Post content goes here...
-                </p>
-            </article>
-            
-            -->
+<div class="countdown-strip">
+  <p class="cd-title">Surgery: February 26th &nbsp;·&nbsp; Suboccipital Craniectomy with C1 Laminectomy &amp; Duraplasty</p>
+  <div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;">
+    <div><div class="cd-label">Days</div><div class="cd-num" id="cd-days">--</div></div>
+    <div><div class="cd-label">Hours</div><div class="cd-num" id="cd-hours">--</div></div>
+    <div><div class="cd-label">Minutes</div><div class="cd-num" id="cd-mins">--</div></div>
+    <div><div class="cd-label">Seconds</div><div class="cd-num" id="cd-secs">--</div></div>
+  </div>
+</div>
 
-            <!-- Coming Soon Box -->
-            <div class="coming-soon-box">
-                <h3>More Updates Coming</h3>
-                <p>
-                    I'll be sharing regular updates as I go through pre-op preparation, surgery, and recovery—the real, unfiltered experience, both the difficult moments and the progress.
-                </p>
-                <p><strong>Upcoming topics:</strong></p>
-                <div class="topic-list">
-                    Pre-surgery: what I'm feeling and how I'm preparing<br>
-                    Post-op updates: recovery as it happens<br>
-                    What actually helped (and what didn't) during recovery<br>
-                    Advice for patients and those supporting them<br>
-                    Long-term recovery: beyond the hospital
-                </div>
-                <p>
-                    Want to be notified when I post? <a href="#" class="subscribe-link"><strong>Subscribe for updates</strong></a>.
-                </p>
-            </div>
+<div class="posts-grid">
 
-        </div>
-    </section>
-
-    <!-- Prayer Requests Section -->
-    <section class="newsletter" style="background: linear-gradient(135deg, var(--navy) 0%, #2c4a7c 100%); color: white;">
-        <div class="container">
-            <h2 style="color: white;">Prayer & Support</h2>
-            <p class="newsletter-description" style="color: rgba(255,255,255,0.9);">
-                I welcome your prayers during this journey. I also share specific prayer 
-                requests and ways you can offer support.
-            </p>
-            <a href="contact.html" class="btn" style="background: white; color: var(--navy); border: none;">Current Prayer Requests</a>
-        </div>
-    </section>
-
-    <!-- Community Stories -->
-    <section class="content-section" style="background: #f8f9fa;">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Community: Your Stories Matter Too</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
-                As a former medic, I treated patients without truly understanding their experience. Now, as I prepare for and go through brain surgery myself, I'm documenting the journey in real-time. My goal is to help healthcare providers, caregivers, and supporters understand what patients actually go through—so they can connect more deeply with the people they're caring for.
-            </p>
-            <div style="text-align: center;">
-                <button class="btn btn-primary" id="shareStoryBtn">Share Your Story</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter CTA -->
-    <section class="newsletter">
-        <div class="container">
-            <h2>Never Miss an Update</h2>
-            <p class="newsletter-description">Get surgery updates, patient insights, and community stories delivered to your inbox.</p>
-            <button class="btn btn-primary email-btn subscribe-link">Subscribe to Updates</button>
-        </div>
-    </section>
-
-    <!-- Share Your Story Modal -->
-    <div id="storyModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Share Your Story</h2>
-                <button class="close" data-modal="storyModal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="success-message" id="storySuccess">Thank you for sharing your story! Your message has been received.</div>
-                <div class="error-message" id="storyError">There was an error submitting your story. Please try again.</div>
-                <form id="storyForm">
-                    <div class="form-group">
-                        <label for="storyName">Name *</label>
-                        <input type="text" id="storyName" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="storyEmail">Email *</label>
-                        <input type="email" id="storyEmail" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="storyMessage">Your Story *</label>
-                        <textarea id="storyMessage" name="story" required placeholder="Share your experience, journey, or how you'd like to support others..."></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Story</button>
-                </form>
-            </div>
-        </div>
+  <a href="blog-post-one.html" class="post-card">
+    <div>
+      <p class="post-tag">February 2026 &nbsp;·&nbsp; Diagnosis</p>
+      <h2 class="post-card-title">What I Found Out This Week</h2>
+      <p class="post-excerpt">On Tuesday, I walked into a neurosurgeon's office with a cowboy's gait, thinking it was high noon and feeling ready for a duel. I didn't know exactly why I felt like that. I just knew something was different.</p>
     </div>
+    <span class="post-arrow">→</span>
+  </a>
 
-    <!-- Subscribe Modal -->
-    <div id="subscribeModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Subscribe for Updates</h2>
-                <button class="close" data-modal="subscribeModal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="success-message" id="subscribeSuccess">You're subscribed! You'll receive updates as they're posted.</div>
-                <div class="error-message" id="subscribeError">There was an error subscribing. Please try again.</div>
-                <form id="subscribeForm">
-                    <div class="form-group">
-                        <label for="subscribeName">Name *</label>
-                        <input type="text" id="subscribeName" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subscribeEmail">Email *</label>
-                        <input type="email" id="subscribeEmail" name="email" required>
-                    </div>
-                    <button type="submit" class="submit-btn">Subscribe</button>
-                </form>
-            </div>
-        </div>
+  <a href="why-i-built-this.html" class="post-card">
+    <div>
+      <p class="post-tag">February 2026 &nbsp;·&nbsp; Mission</p>
+      <h2 class="post-card-title">Why I Built This</h2>
+      <p class="post-excerpt">I was a good medic. I got awards for exceptional patient care. But I had never been a patient. And I didn't know how wide that gap was until I ended up on the other side of it.</p>
     </div>
+    <span class="post-arrow">→</span>
+  </a>
 
-    <!-- Footer -->
-    <footer>
-        <p class="footer-verse">
-    "For the moment all discipline seems painful rather than pleasant,<br>
-    but later it yields the peaceful fruit of righteousness<br>
-    to those who have been trained by it."<br>
-    <em>Hebrews 12:11</em>
-</p>
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="chiari.html">Chiari Info</a>
-            <a href="blog.html">Updates</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </footer>
+</div>
 
-    <script src="blog-scripts.js"></script>
+<footer>
+  <div class="footer-logo">Peck's Mission</div>
+  <p class="footer-kipling">"And so hold on when there is nothing in you except the Will which says to them: Hold on."</p>
+  <p class="footer-line">— Rudyard Kipling, If</p>
+  <p class="footer-line" style="margin-top:0.8rem;color:#555;">"The ceiling you hit your whole life wasn't your ceiling. It was the condition's ceiling."</p>
+  <ul class="nav-footer">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="chiari.html">Chiari</a></li>
+    <li><a href="blog.html">Updates</a></li>
+    <li><a href="connect.html">Connect</a></li>
+  </ul>
+</footer>
+
+<script>
+  function updateCountdown() {
+    const target = new Date('2026-02-26T07:00:00');
+    const now = new Date();
+    const diff = target - now;
+    if (diff <= 0) { document.getElementById('cd-days').textContent='0'; document.getElementById('cd-hours').textContent='0'; document.getElementById('cd-mins').textContent='0'; document.getElementById('cd-secs').textContent='0'; return; }
+    document.getElementById('cd-days').textContent = String(Math.floor(diff/86400000)).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+    document.getElementById('cd-mins').textContent = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+    document.getElementById('cd-secs').textContent = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
 </body>
 </html>
