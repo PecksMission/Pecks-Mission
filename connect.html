@@ -40,6 +40,11 @@
     textarea { min-height: 160px; resize: vertical; }
     .btn-submit { background: var(--gold); color: var(--black); padding: 1rem 0; width: 100%; font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; border: none; cursor: pointer; margin-top: 0.5rem; transition: background 0.2s; }
     .btn-submit:hover { background: var(--gold-light); }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-success { display: none; text-align: center; padding: 3rem 2rem; }
+    .form-success-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .form-success-msg { font-family: 'Crimson Pro', serif; font-size: 1.3rem; font-style: italic; color: var(--gold-light); line-height: 1.6; margin-bottom: 0.5rem; }
+    .form-success-sub { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); }
     .quote-section { max-width: 720px; margin: 0 auto; padding: 0 3rem; }
     .quote-block { background: rgba(201,168,76,0.05); border-left: 3px solid var(--gold); padding: 2rem 2.5rem; margin: 2.5rem 0; }
     .quote-text { font-family: 'Crimson Pro', serif; font-size: 1.2rem; font-style: italic; font-weight: 300; color: var(--white); line-height: 1.6; margin-bottom: 0.8rem; }
@@ -97,17 +102,28 @@
 
 <div class="form-section">
   <span class="form-label">Whatever brought you here — reach out.</span>
-  <div class="form-group">
-    <input type="text" placeholder="Your name" />
+
+  <!-- Success message (hidden until form submits) -->
+  <div class="form-success" id="form-success">
+    <div class="form-success-icon">✦</div>
+    <p class="form-success-msg">Message received. You're not alone in this.</p>
+    <p class="form-success-sub">I'll be in touch.</p>
   </div>
-  <div class="form-group">
-    <input type="email" placeholder="Your email" />
+
+  <!-- The form -->
+  <div id="contact-form">
+    <div class="form-group">
+      <input type="text" id="field-name" placeholder="Your name" />
+    </div>
+    <div class="form-group">
+      <input type="email" id="field-email" placeholder="Your email" />
+    </div>
+    <div class="form-group">
+      <textarea id="field-message" placeholder="Your story, your question, a prayer request — or just: I get it."></textarea>
+    </div>
+    <button class="btn-submit" id="submit-btn" onclick="submitForm()">Send It</button>
+    <p style="font-size:0.85rem;color:var(--gray-light);font-style:italic;margin-top:1rem;text-align:center;">You're not interrupting anything. This is exactly what this is for.</p>
   </div>
-  <div class="form-group">
-    <textarea placeholder="Your story, your question, a prayer request — or just: I get it."></textarea>
-  </div>
-  <button class="btn-submit">Send It</button>
-  <p style="font-size:0.85rem;color:var(--gray-light);font-style:italic;margin-top:1rem;text-align:center;">You're not interrupting anything. This is exactly what this is for.</p>
 </div>
 
 <div class="quote-section">
@@ -141,5 +157,41 @@
     <li><a href="connect.html">Connect</a></li>
   </ul>
 </footer>
+
+<script>
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyaDNsViYx1XxdNgWhF_JViMJQ42qcGNS38ReZ6Lb0q8T16szKpikQD49hXs_B3Y7zo/exec';
+
+  function submitForm() {
+    const btn = document.getElementById('submit-btn');
+    const name = document.getElementById('field-name').value.trim();
+    const email = document.getElementById('field-email').value.trim();
+    const message = document.getElementById('field-message').value.trim();
+
+    if (!name || !email || !message) {
+      alert('Please fill out all fields before sending.');
+      return;
+    }
+
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message })
+    })
+    .then(() => {
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    })
+    .catch(() => {
+      btn.textContent = 'Send It';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again.');
+    });
+  }
+</script>
+
 </body>
 </html>
