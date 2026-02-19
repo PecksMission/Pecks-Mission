@@ -54,12 +54,15 @@ nav {
   color: var(--gray-light);
   text-decoration: none;
   font-family: 'DM Mono', monospace;
-  font-size: 0.82rem; /* was 0.75rem */
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--gold); }
+
+/* Hamburger — hidden on desktop */
+.hamburger { display: none; }
 
 /* ============================================
    FOOTER
@@ -85,7 +88,7 @@ footer {
 }
 .footer-line {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gray);
@@ -106,7 +109,7 @@ footer {
   color: var(--gray);
   text-decoration: none;
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   transition: color 0.2s;
@@ -121,7 +124,7 @@ footer {
   color: var(--black);
   padding: 0.9rem 2rem;
   font-family: 'DM Mono', monospace;
-  font-size: 0.82rem; /* was 0.75rem */
+  font-size: 0.82rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
@@ -136,7 +139,7 @@ footer {
   color: var(--gold);
   padding: 0.9rem 2rem;
   font-family: 'DM Mono', monospace;
-  font-size: 0.82rem; /* was 0.75rem */
+  font-size: 0.82rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
@@ -168,7 +171,7 @@ footer {
 }
 .quote-attr {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gold);
@@ -181,7 +184,7 @@ footer {
 }
 .verse-text {
   font-family: 'Crimson Pro', serif;
-  font-size: 1.2rem; /* was 1.15rem */
+  font-size: 1.2rem;
   font-style: italic;
   font-weight: 300;
   color: var(--white);
@@ -190,7 +193,7 @@ footer {
 }
 .verse-ref {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gray-light);
@@ -216,7 +219,7 @@ footer {
 }
 .countdown-label {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gray-light);
@@ -239,7 +242,7 @@ footer {
 }
 .cd-label {
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem; /* was 0.55rem */
+  font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gray-light);
@@ -255,7 +258,7 @@ footer {
 }
 .page-eyebrow {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
@@ -269,7 +272,7 @@ footer {
   margin-bottom: 2rem;
 }
 .page-sub {
-  font-size: 1.2rem; /* was 1.1rem */
+  font-size: 1.2rem;
   font-weight: 300;
   font-style: italic;
   color: var(--gray-light);
@@ -286,7 +289,7 @@ footer {
 }
 .post-eyebrow {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
@@ -301,7 +304,7 @@ footer {
 }
 .post-meta {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gray-light);
@@ -314,7 +317,7 @@ footer {
   padding: 4rem 3rem 6rem;
 }
 .post-body p {
-  font-size: 1.2rem; /* was 1.15rem */
+  font-size: 1.2rem;
   font-weight: 300;
   color: #d4cfc7;
   margin-bottom: 1.8rem;
@@ -373,7 +376,7 @@ footer {
   margin-bottom: 0.3rem;
 }
 .author-info p {
-  font-size: 1rem; /* was 0.9rem */
+  font-size: 1rem;
   color: var(--gray-light);
   margin: 0;
 }
@@ -420,7 +423,7 @@ footer {
 .hero-text { max-width: 560px; }
 .hero-eyebrow {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold);
@@ -435,7 +438,7 @@ footer {
 }
 .hero-title span { color: var(--gold); }
 .hero-sub {
-  font-size: 1.2rem; /* was 1.15rem */
+  font-size: 1.2rem;
   font-weight: 300;
   color: #bbb;
   line-height: 1.75;
@@ -459,7 +462,7 @@ footer {
 }
 .hero-quote span {
   font-family: 'DM Mono', monospace;
-  font-size: 0.7rem; /* was 0.6rem */
+  font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gold);
@@ -497,7 +500,7 @@ footer {
   background: rgba(10,10,10,0.9);
   padding: 0.5rem;
   font-family: 'DM Mono', monospace;
-  font-size: 0.65rem; /* was 0.55rem */
+  font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gold);
@@ -514,7 +517,7 @@ footer {
 }
 .section-eyebrow {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
@@ -527,7 +530,7 @@ footer {
   margin-bottom: 1.5rem;
 }
 .section-body {
-  font-size: 1.15rem; /* was 1.1rem */
+  font-size: 1.15rem;
   font-weight: 300;
   color: #bbb;
   line-height: 1.85;
@@ -557,7 +560,7 @@ footer {
   margin-bottom: 0.8rem;
 }
 .mission-card p {
-  font-size: 1rem; /* was 0.95rem */
+  font-size: 1rem;
   font-weight: 300;
   color: var(--gray-light);
   line-height: 1.7;
@@ -584,7 +587,7 @@ footer {
 .post-preview-card:hover { background: rgba(255,255,255,0.02); }
 .post-tag {
   font-family: 'DM Mono', monospace;
-  font-size: 0.7rem; /* was 0.6rem */
+  font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
@@ -598,7 +601,7 @@ footer {
   color: var(--white);
 }
 .post-preview-excerpt {
-  font-size: 1rem; /* was 0.95rem */
+  font-size: 1rem;
   font-weight: 300;
   color: var(--gray-light);
   line-height: 1.7;
@@ -639,7 +642,7 @@ footer {
   margin-bottom: 0.8rem;
 }
 .post-excerpt {
-  font-size: 1.05rem; /* was 1rem */
+  font-size: 1.05rem;
   font-weight: 300;
   color: var(--gray-light);
   line-height: 1.7;
@@ -668,7 +671,7 @@ footer {
 }
 .kipling-attr {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
@@ -677,7 +680,7 @@ footer {
 }
 .kipling-link {
   font-family: 'DM Mono', monospace;
-  font-size: 0.78rem; /* was 0.7rem */
+  font-size: 0.78rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gray-light);
@@ -697,7 +700,7 @@ footer {
 }
 .kipling-label {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
@@ -705,7 +708,7 @@ footer {
 }
 .kipling-poem {
   font-family: 'Crimson Pro', serif;
-  font-size: 1.1rem; /* was 1.05rem */
+  font-size: 1.1rem;
   font-weight: 300;
   color: #bbb;
   line-height: 2;
@@ -754,7 +757,7 @@ footer {
 .photo-slot-placeholder { text-align: center; padding: 2rem; }
 .photo-slot-placeholder p {
   font-family: 'DM Mono', monospace;
-  font-size: 0.7rem; /* was 0.6rem */
+  font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gray);
@@ -766,7 +769,7 @@ footer {
   right: 0;
   text-align: center;
   font-family: 'DM Mono', monospace;
-  font-size: 0.7rem; /* was 0.6rem */
+  font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
@@ -779,7 +782,7 @@ footer {
   padding: 2rem 3rem 6rem;
 }
 .about-body p {
-  font-size: 1.15rem; /* was 1.1rem */
+  font-size: 1.15rem;
   font-weight: 300;
   color: #ccc;
   margin-bottom: 1.6rem;
@@ -809,7 +812,7 @@ footer {
 }
 .tattoo-sub {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gray-light);
@@ -841,14 +844,14 @@ footer {
 .audience-card:hover { border-color: rgba(201,168,76,0.25); }
 .audience-tag {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 0.8rem;
 }
 .audience-card p {
-  font-size: 1.1rem; /* was 1.05rem */
+  font-size: 1.1rem;
   font-weight: 300;
   color: #ccc;
   line-height: 1.8;
@@ -860,7 +863,7 @@ footer {
 }
 .form-label {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
@@ -891,7 +894,7 @@ textarea { min-height: 160px; resize: vertical; }
   padding: 1rem 0;
   width: 100%;
   font-family: 'DM Mono', monospace;
-  font-size: 0.88rem; /* was 0.8rem */
+  font-size: 0.88rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   border: none;
@@ -910,7 +913,7 @@ textarea { min-height: 160px; resize: vertical; }
   padding: 4rem 3rem 6rem;
 }
 .chiari-body p {
-  font-size: 1.15rem; /* was 1.1rem */
+  font-size: 1.15rem;
   font-weight: 300;
   color: #ccc;
   margin-bottom: 1.6rem;
@@ -932,7 +935,7 @@ textarea { min-height: 160px; resize: vertical; }
 }
 .diagram-label {
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
@@ -940,7 +943,7 @@ textarea { min-height: 160px; resize: vertical; }
 }
 .diagram-sub {
   font-family: 'DM Mono', monospace;
-  font-size: 0.7rem; /* was 0.6rem */
+  font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gray-light);
@@ -959,7 +962,7 @@ textarea { min-height: 160px; resize: vertical; }
   color: var(--gold);
   margin-bottom: 0.8rem;
 }
-.callout-block p { font-size: 1.05rem; /* was 1rem */ color: #bbb; margin-bottom: 0; }
+.callout-block p { font-size: 1.05rem; color: #bbb; margin-bottom: 0; }
 .closing-callout {
   background: rgba(139,32,32,0.06);
   border: 1px solid rgba(139,32,32,0.15);
@@ -973,7 +976,7 @@ textarea { min-height: 160px; resize: vertical; }
   color: var(--white);
   margin-bottom: 1.2rem;
 }
-.closing-callout p { font-size: 1.1rem; /* was 1.05rem */ color: #ccc; margin-bottom: 1rem; }
+.closing-callout p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; }
 
 /* ============================================
    PARALLEL DOCUMENT (why-i-built-this)
@@ -993,7 +996,7 @@ textarea { min-height: 160px; resize: vertical; }
 .parallel-col-header {
   padding: 1rem 1.5rem;
   font-family: 'DM Mono', monospace;
-  font-size: 0.75rem; /* was 0.65rem */
+  font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
@@ -1005,7 +1008,7 @@ textarea { min-height: 160px; resize: vertical; }
   border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 .parallel-row:last-child { border-bottom: none; }
-.parallel-cell { padding: 1.5rem; font-size: 1rem; /* was 0.95rem */ font-weight: 300; line-height: 1.7; }
+.parallel-cell { padding: 1.5rem; font-size: 1rem; font-weight: 300; line-height: 1.7; }
 .parallel-cell.chart { color: var(--gray-light); border-right: 1px solid rgba(255,255,255,0.04); font-style: italic; }
 .parallel-cell.reality { color: #ccc; }
 
@@ -1014,7 +1017,47 @@ textarea { min-height: 160px; resize: vertical; }
    ============================================ */
 @media (max-width: 900px) {
   nav { padding: 1rem 1.5rem; }
-  .nav-links { display: none; }
+
+  /* Hamburger button */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--gold);
+    transition: all 0.3s ease;
+  }
+
+  /* Mobile nav dropdown */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 57px;
+    left: 0;
+    width: 100%;
+    background: rgba(10,10,10,0.98);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    padding: 1.5rem;
+    gap: 0;
+    z-index: 99;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .nav-links li:last-child { border-bottom: none; }
+  .nav-links a {
+    display: block;
+    padding: 1rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
   .hero { padding: 7rem 1.5rem 4rem; }
   .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
   .hero-photos { height: 280px; }
