@@ -83,6 +83,8 @@ footer {
   color: var(--gray-light);
   margin-bottom: 0.5rem;
 }
+.footer-line {
+  font-family: 'DM Mono', monospace;
   font-size: 0.75rem; /* was 0.65rem */
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -487,6 +489,14 @@ footer {
 .photo-card-1 { width: 240px; height: 320px; top: 0; left: 40px; z-index: 3; }
 .photo-card-2 { width: 200px; height: 280px; top: 60px; left: 200px; z-index: 2; filter: brightness(0.7); }
 .photo-card-3 { width: 180px; height: 240px; top: 120px; left: 340px; z-index: 1; filter: brightness(0.5); }
+.photo-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10,10,10,0.9);
+  padding: 0.5rem;
+  font-family: 'DM Mono', monospace;
   font-size: 0.65rem; /* was 0.55rem */
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -742,6 +752,8 @@ footer {
   object-position: top center;
 }
 .photo-slot-placeholder { text-align: center; padding: 2rem; }
+.photo-slot-placeholder p {
+  font-family: 'DM Mono', monospace;
   font-size: 0.7rem; /* was 0.6rem */
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -880,6 +892,14 @@ textarea { min-height: 160px; resize: vertical; }
   width: 100%;
   font-family: 'DM Mono', monospace;
   font-size: 0.88rem; /* was 0.8rem */
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+.btn-submit:hover { background: var(--gold-light); }
 
 /* ============================================
    CHIARI PAGE
@@ -939,7 +959,7 @@ textarea { min-height: 160px; resize: vertical; }
   color: var(--gold);
   margin-bottom: 0.8rem;
 }
-.callout-block p { font-size: 1.05rem; color: #bbb; margin-bottom: 0; } /* was 1rem */
+.callout-block p { font-size: 1.05rem; /* was 1rem */ color: #bbb; margin-bottom: 0; }
 .closing-callout {
   background: rgba(139,32,32,0.06);
   border: 1px solid rgba(139,32,32,0.15);
@@ -953,7 +973,7 @@ textarea { min-height: 160px; resize: vertical; }
   color: var(--white);
   margin-bottom: 1.2rem;
 }
-.closing-callout p { font-size: 1.1rem; color: #ccc; margin-bottom: 1rem; } /* was 1.05rem */
+.closing-callout p { font-size: 1.1rem; /* was 1.05rem */ color: #ccc; margin-bottom: 1rem; }
 
 /* ============================================
    PARALLEL DOCUMENT (why-i-built-this)
@@ -985,7 +1005,7 @@ textarea { min-height: 160px; resize: vertical; }
   border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 .parallel-row:last-child { border-bottom: none; }
-.parallel-cell { padding: 1.5rem; font-size: 1rem; font-weight: 300; line-height: 1.7; } /* was 0.95rem */
+.parallel-cell { padding: 1.5rem; font-size: 1rem; /* was 0.95rem */ font-weight: 300; line-height: 1.7; }
 .parallel-cell.chart { color: var(--gray-light); border-right: 1px solid rgba(255,255,255,0.04); font-style: italic; }
 .parallel-cell.reality { color: #ccc; }
 
