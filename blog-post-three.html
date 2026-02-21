@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WT1126YN2Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WT1126YN2Q');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peck's Mission</title>
+  <meta property="og:title" content="Peck's Mission | When You Can No Longer Make the Decision" />
+  <meta name="description" content="Before I go into surgery, I had to wrestle with the hardest document I've ever filled out — a living will. This is what I decided, and why." />
+  <meta property="og:description" content="Before I go into surgery, I had to wrestle with the hardest document I've ever filled out — a living will. This is what I decided, and why." />
+  <meta property="og:image" content="https://www.pecksmission.com/og-image.png" />
+  <meta property="og:url" content="https://www.pecksmission.com/blog-post-three" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a;
+      --white: #f5f0e8;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --red: #8b2020;
+      --gray: #4a4a4a;
+      --gray-light: #9a9a9a;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 22px;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      color: var(--gray-light);
+      text-decoration: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .post-header {
+      padding: 10rem 3rem 5rem;
+      max-width: 820px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .post-header::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 80% 20%, rgba(139,32,32,0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    .post-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .post-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      margin-bottom: 2rem;
+    }
+    .post-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-light);
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .post-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 3rem 6rem;
+    }
+    .post-body p {
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: #d4cfc7;
+      margin-bottom: 1.8rem;
+      line-height: 1.85;
+    }
+    .post-body p.opening {
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--white);
+      font-weight: 300;
+    }
+    .post-body h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      margin: 3.5rem 0 1.2rem;
+    }
+    .quote-block {
+      background: rgba(201,168,76,0.05);
+      border-left: 3px solid var(--gold);
+      padding: 2rem 2.5rem;
+      margin: 2.5rem 0;
+    }
+    .quote-text {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+    .quote-attr {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .verse-block {
+      background: rgba(139,32,32,0.08);
+      border-left: 3px solid var(--red);
+      padding: 2rem 2.5rem;
+      margin: 2.5rem 0;
+    }
+    .verse-text {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.6;
+      margin-bottom: 0.6rem;
+    }
+    .verse-ref {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-light);
+    }
+    .pull-quote {
+      font-family: 'Crimson Pro', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1.4;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+      display: block;
+    }
+    .divider {
+      width: 4rem;
+      height: 1px;
+      background: rgba(201,168,76,0.3);
+      margin: 3rem auto;
+    }
+    .closing-line {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      letter-spacing: 0.03em;
+      color: var(--gold);
+      line-height: 1.2;
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid rgba(201,168,76,0.15);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      margin: 3rem 0;
+    }
+    .author-block {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      margin-top: 3rem;
+    }
+    .author-info h4 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+    .author-info p {
+      font-size: 0.9rem !important;
+      color: var(--gray-light) !important;
+      margin: 0 !important;
+    }
+    footer {
+      padding: 3rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .footer-kipling {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--gray-light);
+      margin-bottom: 0.5rem;
+    }
+    .footer-line {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .nav-footer { display: flex; justify-content: center; gap: 2rem; list-style: none; margin-top: 1.5rem; }
+    .nav-footer a { color: var(--gray); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-footer a:hover { color: var(--gold); }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .post-header { padding: 7rem 1.5rem 3rem; }
+      .post-body { padding: 3rem 1.5rem 4rem; }
+      .quote-block, .verse-block { padding: 1.5rem; }
+    }
+
+    /* FOLLOW ALONG POPUP */
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .popup-overlay.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .popup-box {
+      background: #111;
+      border: 1px solid rgba(201,168,76,0.25);
+      max-width: 500px;
+      width: 100%;
+      padding: 3rem 2.5rem 2.5rem;
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.4s ease;
+    }
+    .popup-overlay.visible .popup-box { transform: translateY(0); }
+    .popup-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      background: none;
+      border: none;
+      color: var(--gray-light);
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0.2rem 0.4rem;
+      transition: color 0.2s;
+    }
+    .popup-close:hover { color: var(--gold); }
+    .popup-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+    .popup-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; line-height: 1; letter-spacing: 0.03em; color: var(--white); margin-bottom: 0.8rem; }
+    .popup-sub { font-family: 'Crimson Pro', serif; font-size: 1.05rem; font-style: italic; font-weight: 300; color: var(--gray-light); line-height: 1.6; margin-bottom: 1.8rem; }
+    .popup-form-group { margin-bottom: 0.8rem; }
+    .popup-input { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: var(--white); padding: 0.85rem 1rem; font-family: 'Crimson Pro', serif; font-size: 1rem; outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
+    .popup-input:focus { border-color: rgba(201,168,76,0.5); }
+    .popup-input::placeholder { color: var(--gray); font-style: italic; }
+    .popup-btn { background: var(--gold); color: var(--black); padding: 0.95rem 0; width: 100%; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; border: none; cursor: pointer; margin-top: 0.4rem; transition: background 0.2s; }
+    .popup-btn:hover { background: var(--gold-light); }
+    .popup-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .popup-success { display: none; text-align: center; padding: 1rem 0; }
+    .popup-success-msg { font-family: 'Crimson Pro', serif; font-size: 1.3rem; font-style: italic; color: var(--gold-light); margin-bottom: 0.4rem; }
+    .popup-success-sub { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); }
+    .popup-skip { display: block; text-align: center; margin-top: 1.2rem; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); cursor: pointer; background: none; border: none; transition: color 0.2s; }
+    .popup-skip:hover { color: var(--gray-light); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Peck's Mission</a>
+  <ul class="nav-links">
+    <li><a href="about.html">My Story</a></li>
+    <li><a href="chiari.html">What is Chiari</a></li>
+    <li><a href="blog.html">Updates</a></li>
+    <li><a href="follow-along.html">Follow Along</a></li>
+  </ul>
+</nav>
+
+<div class="post-header">
+  <p class="post-eyebrow">Updates &nbsp;·&nbsp; February 2026</p>
+  <h1 class="post-title">When You Can No Longer Make the Decision</h1>
+  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+    <p class="post-meta">By Peck &nbsp;·&nbsp; Combat Medic &nbsp;·&nbsp; CVICU Nurse &nbsp;·&nbsp; Chiari Patient</p>
+    <a href="follow-along.html#reach-out" style="background: var(--gold); color: var(--black); padding: 1rem 2.5rem; font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.2s;"
+      onmouseover="this.style.background='#e8c97a'" onmouseout="this.style.background='#c9a84c'">
+      Follow Along
+    </a>
+  </div>
+</div>
+
+<article class="post-body">
+
+  <p class="opening">Alright. This one's going to carry some weight.</p>
+
+  <p>Before I say this — everything I'm saying, the Lord has put in my heart. This is a challenging one for me.</p>
+
+  <p>When you're working in a critical care environment, patients come and go. Usually around a three-day stay. My stay in the ICU will begin on Thursday, after a six-hour surgery. And personally, it's not easy knowing I'm going into an ICU. I know it's because of the size of the surgery, not because there's a high mortality rate or a lot of complications. My surgery is pretty straightforward. But when complications do happen, they usually go really wrong, really fast.</p>
+
+  <p>I want to be clear — this is not a goodbye. My prognosis is good and my surgeon is world-class. But I work in a CVICU. I've stood at the bedside when families weren't prepared. I've watched people make impossible decisions in real time because nobody talked about it beforehand. I don't skip steps.</p>
+
+  <p>There's something I told myself while working in critical care — something I would never let my family deal with.</p>
+
+  <div class="divider"></div>
+
+  <h2>The Patient I Never Forgot</h2>
+
+  <p>In July of 2024, I had a patient on a shadow day before I started in the CVICU. He wasn't doing well. He was being kept alive by machines. This man was a pastor. Had a small church in Missouri. Had a loving family. He knew the Lord.</p>
+
+  <p>I remembered him. Fast forward a few months — I start working there in October, and this patient is still there. And he's miserable. He doesn't want to be alive. The only reason he's alive is his family is keeping him alive. He's telling the nurses and doctors he wants to die. But he won't tell his family.</p>
+
+  <p>I promised myself I would never let my parents, my sister, or any of my family have to make a decision like that.</p>
+
+  <p>It's a difficult decision to make. I understand the predicament his family was in — praying that the Lord would come through and heal. As a Christian, I believe in healing. I believe it's part of the Lord's will to protect his children. But I also understand that his grace is sufficient. His grace is enough.</p>
+
+  <span class="pull-quote">The longer I live, the more I learn: God's will for us is to glorify and honor him. That's it. That's all we've got.</span>
+
+  <p>Much of my life, I've wanted to do things my way. I'm stubborn. Once I decide on something, that's the way it's going to be. But something I've had to learn lately is that God's will is different from mine. The prayer I keep praying is: <em>Lord, I want your will. I want my desires to match yours. I want to quit fighting for what I think is right and let you take control.</em></p>
+
+  <p>It's not an easy prayer to pray. There are things we want. Desires we have. But the Lord knows what's best for us.</p>
+
+  <p>Going into this surgery — there are possibilities. Possibilities this surgery doesn't work out. Possibilities I have complications. Possibilities I come out paralyzed. I'm not trying to alarm anybody. But that is the truth. So how do I balance that? How do I hold the belief that the Lord has a healing hand while also accepting that his grace is sufficient, that his plan is better than mine?</p>
+
+  <p>And how do I put those two ideas on a medical form with boxes to check? How do I make this easier for my parents, my sister, my uncles?</p>
+
+  <div class="divider"></div>
+
+  <h2>Two Truths That Won't Let Go of Each Other</h2>
+
+  <p>This is what I've decided for my living will. It's a challenging document to fill out. The image I keep coming back to is someone <em>wrestling</em> with it. You're saying: when I can't make a decision, <em>this</em> is what I want. And for someone who always wants to make the decisions — this is not an easy place to be.</p>
+
+  <p>I've determined there are two biblical truths that exist in tension, and I can't let go of either one.</p>
+
+  <p><strong>The first is bold, persistent faith — that God can do the impossible.</strong></p>
+
+  <p>Hannah prayed for years until God gave her Samuel. The persistent widow in Jesus' parable kept asking until she got justice. Jesus told his followers to always pray and not lose heart. Elijah prayed seven times before rain came. The centurion's faith in asking Jesus to heal from a distance amazed Jesus himself. Scripture teaches that God loves bold faith that refuses to give up prematurely. Medical statistics are not God's limits.</p>
+
+  <p>I've seen things in my medical career that don't logically make sense. We're dealing with the Great Physician.</p>
+
+  <p>I saw it with my dad's brain surgery 23 years ago. My dad went in with the odds against him. He asked my Uncle David to raise me because he thought he was going to die. My family circled around him and prayed. And my dad came through the other side. There are times the Great Physician works. I'm not doubting his power. Not at all.</p>
+
+  <p><strong>But there is also a second truth — faithful acceptance that God's purposes may differ from ours.</strong></p>
+
+  <p>Paul asked three times for God to remove his thorn in the flesh. God said no.</p>
+
+  <div class="verse-block">
+    <p class="verse-text">"My grace is sufficient for you, for my power is made perfect in weakness."</p>
+    <p class="verse-ref">— 2 Corinthians 12:9</p>
+  </div>
+
+  <p>Job never got an explanation for his suffering — just God saying, essentially, I'm God, you're not, and that needs to be enough. Jesus himself in Gethsemane prayed <em>your will be done</em>, even as he asked for the cup to pass. Sometimes God's purpose includes suffering we don't understand. Sometimes letting go is the most faithful thing we can do.</p>
+
+  <p>The Bible doesn't resolve this tension. It holds it. And my healthcare agent must do the same.</p>
+
+  <div class="divider"></div>
+
+  <h2>Four Things I'm Standing On</h2>
+
+  <p>As I go into this surgery, there are four theological principles I'm holding onto.</p>
+
+  <p><strong>Life is sacred.</strong> We are made in the image of God. He formed us. What he made has worth.</p>
+
+  <p><strong>Death is not defeat.</strong> To live is Christ, to die is gain. I either continue doing the Lord's will here, or I enter eternal life with Christ — which I anticipate joyfully. That is a win either way.</p>
+
+  <div class="verse-block">
+    <p class="verse-text">"Fixing our eyes on Jesus, the pioneer and perfecter of faith, who for the joy set before him endured the cross, scorning its shame, and sat down at the right hand of the throne of God."</p>
+    <p class="verse-ref">— Hebrews 12:2</p>
+  </div>
+
+  <p>Hebrews 12 is my favorite. Jesus on the cross — suffering that was one of the worst in history — and it says <em>for the joy set before him, he endured.</em> I picture Jesus just fixing his eyes on heaven. And because of what waits on the other side, there's no reason to keep our eyes on anything less. This is not the end. It's the beginning.</p>
+
+  <p><strong>God is sovereign.</strong> Nothing happens outside his control. Why has this condition only shown up now — when I have the best support group I've ever had, a great church, great people around me, wise counsel? I truly believe God's timing is not an accident. He has worked in ways I never expected, and I know he's working now.</p>
+
+  <p><strong>Prayer matters.</strong> God is sovereign, and yet Scripture teaches our prayers can change things. We must hold both truths. I've been saying I know God will heal me — and if he doesn't, that's okay. That's true. But I do want to be healed. I do want to continue living. I have a life I want to get back to. I want to keep being a missionary here on this earth.</p>
+
+  <div class="divider"></div>
+
+  <h2>What My Living Will Actually Says</h2>
+
+  <p>My living will addresses four scenarios.</p>
+
+  <p><strong>Terminal illness — when death is clearly imminent and unavoidable.</strong> Do not pursue aggressive interventions that only prolong the dying process. Focus on comfort care, pain management, and dignity. Allow natural death. Surround me with loved ones, worship music, Scripture, and prayer.</p>
+
+  <p><strong>Serious illness or injury with potential for recovery.</strong> When medical professionals say recovery is possible, pursue treatment aggressively. Give adequate time for God to work. Do not rush to withdraw support based on an initial diagnosis. Reassess regularly. Consider second opinions if prognosis is uncertain or if medical professionals disagree.</p>
+
+  <p><strong>Uncertain prognosis — borderline cases.</strong> When doctors disagree and outcomes are unclear, err on the side of life. When in doubt, pursue treatment. Establish a specific timeline. Gather counsel from multiple sources — the medical team, family, the faith community, pastoral care. My agent should feel free to take time for prayer and discernment before major decisions.</p>
+
+  <p><strong>Persistent vegetative state or severe brain damage.</strong> This is the one that gets me. This is the hardest scenario.</p>
+
+  <p>My wishes: continue basic care — food, water, hygiene, turning to prevent bedsores, treatment for pain and discomfort. Do not pursue aggressive interventions for new conditions that arise. Give time for potential recovery. Reassess regularly with the medical team, family, and pastoral counsel. If there has been no meaningful improvement after the specified timeframe and the medical consensus is that recovery is not possible — my agent may allow natural death, while continuing basic comfort care.</p>
+
+  <div class="divider"></div>
+
+  <h2>How My Agent Should Make Decisions</h2>
+
+  <p><strong>Pray.</strong> Ask God for discernment before making major decisions. Seek clarity and counsel — talk with medical professionals about realistic prognosis and quality of life. Involve family and the faith community. Seek pastoral counsel.</p>
+
+  <p><strong>Take time.</strong> Don't rush unless immediate action is required to save my life. It's okay to take days or even weeks to seek clarity. But not months.</p>
+
+  <p><strong>Ask the right questions.</strong> Not <em>what should I want</em> — but <em>what does faithfulness to God look like in this specific situation?</em> Sometimes that means fighting for life. Sometimes it means letting go.</p>
+
+  <p><strong>Trust the process.</strong> I release my agent from the burden of getting it perfectly right. If they seek God earnestly, I trust their decision will honor both God and me.</p>
+
+  <h2>What I Absolutely Do Not Want</h2>
+
+  <p>I do not want euthanasia or physician-assisted suicide under any circumstances. I do not want the withdrawal of basic care — food, water, hygiene — based solely on perceived quality of life or burden to others. I do not want premature decisions made in haste without prayer and consultation. This is not to be driven by cost, inconvenience, or others' discomfort with my condition.</p>
+
+  <div class="divider"></div>
+
+  <p>This is the longest one I've written. And at the same time — I release it.</p>
+
+  <p>This tension hasn't been easy for me to work through, and it's probably not easy to hear. But this is as real as it gets. Making decisions for when you can no longer make them yourself. This is life or death.</p>
+
+  <div class="verse-block">
+    <p class="verse-text">"The Lord gave, and the Lord has taken away; blessed be the name of the Lord."</p>
+    <p class="verse-ref">— Job 1:21</p>
+  </div>
+
+  <div class="closing-line">
+    God is sovereign.<br>
+    Prayer matters.<br>
+    Death is not defeat.
+  </div>
+
+</article>
+
+<footer>
+  <div class="footer-logo">Peck's Mission</div>
+  <p class="footer-kipling">"And so hold on when there is nothing in you except the Will which says to them: Hold on."</p>
+  <p class="footer-line">— Rudyard Kipling, If</p>
+  <p class="footer-line" style="margin-top:0.8rem;color:#555;">"The ceiling you hit your whole life wasn't your ceiling. It was the condition's ceiling."</p>
+  <ul class="nav-footer">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="chiari.html">Chiari</a></li>
+    <li><a href="blog.html">Updates</a></li>
+    <li><a href="follow-along.html">Follow Along</a></li>
+  </ul>
+</footer>
+
+<!-- FOLLOW ALONG POPUP -->
+<div class="popup-overlay" id="popup-overlay" role="dialog" aria-modal="true" aria-label="Follow Along">
+  <div class="popup-box">
+    <button class="popup-close" id="popup-close" aria-label="Close">&times;</button>
+    <p class="popup-eyebrow">Surgery is February 26th</p>
+    <h2 class="popup-title">Follow Along</h2>
+    <p class="popup-sub">I'll be on the other side of it soon — and I'll have a lot to say. Get updates straight to your inbox.</p>
+
+    <div id="popup-form">
+      <div class="popup-form-group">
+        <input class="popup-input" type="text" id="popup-name" placeholder="Your name" />
+      </div>
+      <div class="popup-form-group">
+        <input class="popup-input" type="email" id="popup-email" placeholder="Your email" />
+      </div>
+      <button class="popup-btn" id="popup-submit-btn" onclick="submitPopup()">I'm In</button>
+      <button class="popup-skip" id="popup-skip">Maybe later</button>
+    </div>
+
+    <div class="popup-success" id="popup-success">
+      <p class="popup-success-msg">You're in. Thank you.</p>
+      <p class="popup-success-sub">I'll see you on the other side.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyaDNsViYx1XxdNgWhF_JViMJQ42qcGNS38ReZ6Lb0q8T16szKpikQD49hXs_B3Y7zo/exec';
+
+  function showPopup() {
+    const overlay = document.getElementById('popup-overlay');
+    overlay.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePopup() {
+    const overlay = document.getElementById('popup-overlay');
+    overlay.classList.remove('visible');
+    document.body.style.overflow = '';
+    sessionStorage.setItem('popup-dismissed', '1');
+  }
+
+  if (!sessionStorage.getItem('popup-dismissed')) {
+    setTimeout(showPopup, 60000);
+  }
+
+  document.getElementById('popup-close').addEventListener('click', closePopup);
+  document.getElementById('popup-skip').addEventListener('click', closePopup);
+  document.getElementById('popup-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closePopup();
+  });
+
+  function submitPopup() {
+    const btn = document.getElementById('popup-submit-btn');
+    const name = document.getElementById('popup-name').value.trim();
+    const email = document.getElementById('popup-email').value.trim();
+
+    if (!name || !email) {
+      alert('Please enter your name and email.');
+      return;
+    }
+
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message: 'Signed up via popup on blog-post-three' })
+    })
+    .then(() => {
+      document.getElementById('popup-form').style.display = 'none';
+      document.getElementById('popup-success').style.display = 'block';
+      sessionStorage.setItem('popup-dismissed', '1');
+      setTimeout(closePopup, 3000);
+    })
+    .catch(() => {
+      btn.textContent = 'I\'m In';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again.');
+    });
+  }
+</script>
+
+</body>
+</html>
