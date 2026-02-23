@@ -536,82 +536,94 @@
 
 <!-- COMMENTS -->
 <style>
+  /* ── Section wrapper ── */
   .comments-wrap{max-width:720px;margin:0 auto;padding:0 3rem 5rem;}
-  .comments-rule{width:4rem;height:1px;background:rgba(201,168,76,0.25);margin:0 0 2.5rem;}
-  .comments-eyebrow{font-family:'DM Mono',monospace;font-size:0.78rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.8rem;}
-  .comment-form{display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2.5rem;}
-  .comment-textarea{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.18);border-radius:2px;color:var(--white);font-family:'Crimson Pro',serif;font-size:1rem;line-height:1.6;padding:0.85rem 1rem;resize:vertical;min-height:80px;transition:border-color 0.2s;outline:none;}
-  .comment-textarea:focus{border-color:rgba(201,168,76,0.5);}
-  .comment-textarea::placeholder{color:var(--gray-light);}
+  /* ── Top divider — wider, more breathing room ── */
+  .comments-rule{width:100%;height:1px;background:rgba(201,168,76,0.12);margin:0 0 3.5rem;}
+  /* ── Eyebrow label ── */
+  .comments-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;}
+  .comments-eyebrow{font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);opacity:0.7;margin:0;}
+  /* ── Post salute — inline with Leave a thought ── */
+  .post-salute-wrap{display:flex;align-items:center;margin:0;}
+  .post-salute-btn{background:none;border:1px solid rgba(255,255,255,0.1);border-radius:3px;cursor:pointer;display:flex;align-items:center;gap:0.65rem;padding:0.7rem 1.6rem;opacity:0.28;transition:opacity 0.25s,border-color 0.25s;}
+  .post-salute-btn:hover{opacity:0.6;border-color:rgba(255,255,255,0.25);}
+  .post-salute-btn.saluted{opacity:1;border-color:rgba(255,255,255,0.45);}
+  .post-salute-btn .salute-emoji{font-size:1.25rem;filter:grayscale(1) brightness(10);display:inline-block;transition:transform 0.15s;}
+  .post-salute-btn.saluted .salute-emoji{transform:scale(1.08);}
+  .post-salute-label{font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.85);}
+  .post-salute-count{font-family:'DM Mono',monospace;font-size:0.7rem;color:rgba(255,255,255,0.5);}
+  /* ── Write form ── */
+  .comment-form{display:flex;flex-direction:column;gap:0.8rem;margin-bottom:3.5rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.05);}
+  .comment-textarea{background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.15);border-radius:2px;color:var(--white);font-family:'Crimson Pro',serif;font-size:1rem;line-height:1.65;padding:0.9rem 1rem;resize:vertical;min-height:88px;transition:border-color 0.2s;outline:none;}
+  .comment-textarea:focus{border-color:rgba(201,168,76,0.45);}
+  .comment-textarea::placeholder{color:rgba(255,255,255,0.2);}
   .comment-name-row{display:flex;align-items:center;gap:0.75rem;}
-  .comment-name-toggle{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray-light);padding:0;transition:color 0.2s;display:flex;align-items:center;gap:0.4rem;}
+  .comment-name-toggle{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3);padding:0;transition:color 0.2s;display:flex;align-items:center;gap:0.4rem;}
   .comment-name-toggle:hover{color:var(--gold);}
   .comment-name-toggle .caret{display:inline-block;transition:transform 0.2s;font-style:normal;}
   .comment-name-toggle.open .caret{transform:rotate(90deg);}
   .comment-name-input{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.18);border-radius:2px;color:var(--white);font-family:'Crimson Pro',serif;font-size:0.95rem;padding:0.5rem 0.85rem;outline:none;transition:border-color 0.2s,max-width 0.25s,opacity 0.2s;max-width:0;opacity:0;overflow:hidden;pointer-events:none;flex:1;}
   .comment-name-input.visible{max-width:260px;opacity:1;pointer-events:auto;}
   .comment-name-input:focus{border-color:rgba(201,168,76,0.5);}
-  .comment-name-input::placeholder{color:var(--gray-light);}
-  .comment-submit{align-self:flex-start;background:transparent;border:1px solid rgba(201,168,76,0.45);color:var(--gold);font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.55rem 1.3rem;cursor:pointer;border-radius:2px;transition:background 0.2s,color 0.2s;}
+  .comment-name-input::placeholder{color:rgba(255,255,255,0.2);}
+  .comment-submit{align-self:flex-start;background:transparent;border:1px solid rgba(201,168,76,0.4);color:var(--gold);font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;padding:0.55rem 1.4rem;cursor:pointer;border-radius:2px;transition:background 0.2s,color 0.2s;}
   .comment-submit:hover{background:var(--gold);color:var(--black);}
-  .comment-list{display:flex;flex-direction:column;gap:1.4rem;}
-  .comment-item{border-left:2px solid rgba(201,168,76,0.15);padding-left:1.1rem;}
-  .comment-item-header{display:flex;align-items:baseline;gap:0.75rem;margin-bottom:0.3rem;}
-  .comment-item-name{font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);}
-  .comment-item-date{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--gray-light);}
-  .comment-item-text{font-family:'Crimson Pro',serif;font-size:1rem;font-weight:300;color:#c8c2b5;line-height:1.7;margin:0 0 0.6rem;}
-  .comment-empty{font-family:'Crimson Pro',serif;font-size:0.95rem;font-style:italic;color:var(--gray-light);}
-  /* Action bar: salute + reply + expand */
-  .comment-actions{display:flex;align-items:center;gap:1.1rem;margin-top:0.1rem;}
-  /* Salute button */
-  .salute-btn{background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:0.35rem;padding:0;line-height:1;opacity:0.25;transition:opacity 0.2s;}
-  .salute-btn:hover{opacity:0.6;}
+  /* ── Comment list ── */
+  .comment-list{display:flex;flex-direction:column;gap:2rem;}
+  .comment-item{padding-left:1rem;border-left:1px solid rgba(201,168,76,0.12);}
+  .comment-item-header{display:flex;align-items:baseline;gap:0.65rem;margin-bottom:0.25rem;}
+  .comment-item-name{font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);}
+  .comment-item-date{font-family:'DM Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.25);}
+  .comment-item-text{font-family:'Crimson Pro',serif;font-size:0.98rem;font-weight:300;color:#b8b2a6;line-height:1.7;margin:0 0 0.65rem;}
+  .comment-empty{font-family:'Crimson Pro',serif;font-size:0.95rem;font-style:italic;color:rgba(255,255,255,0.25);}
+  /* ── Action bar ── */
+  .comment-actions{display:flex;align-items:center;gap:1.25rem;}
+  /* Comment salute */
+  .salute-btn{background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:0.3rem;padding:0;line-height:1;opacity:0.22;transition:opacity 0.2s;}
+  .salute-btn:hover{opacity:0.55;}
   .salute-btn.saluted{opacity:1;}
-  .salute-btn .salute-emoji{font-size:1rem;filter:grayscale(1) brightness(10);transition:transform 0.15s;display:inline-block;}
-  .salute-btn.saluted .salute-emoji{transform:scale(1.15);}
-  .salute-count{font-family:'DM Mono',monospace;font-size:0.7rem;color:rgba(255,255,255,0.8);transition:color 0.2s;}
-  /* Reply button */
-  .comment-reply-btn{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);padding:0;transition:color 0.2s;}
-  .comment-reply-btn:hover{color:var(--gold);}
-  /* Expand replies button */
-  .expand-replies-btn{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);padding:0;transition:color 0.2s;display:flex;align-items:center;gap:0.3rem;}
-  .expand-replies-btn:hover{color:var(--gold);}
-  .expand-replies-btn .expand-caret{display:inline-block;transition:transform 0.2s;font-style:normal;font-size:0.6rem;}
+  .salute-btn .salute-emoji{font-size:0.95rem;filter:grayscale(1) brightness(10);display:inline-block;transition:transform 0.15s;}
+  .salute-btn.saluted .salute-emoji{transform:scale(1.12);}
+  .salute-count{font-family:'DM Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.7);}
+  /* Reply + expand */
+  .comment-reply-btn,.expand-replies-btn{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.25);padding:0;transition:color 0.2s;display:flex;align-items:center;gap:0.25rem;}
+  .comment-reply-btn:hover,.expand-replies-btn:hover{color:rgba(255,255,255,0.6);}
+  .expand-replies-btn .expand-caret{font-size:0.55rem;transition:transform 0.2s;}
   .expand-replies-btn.open .expand-caret{transform:rotate(90deg);}
-  /* Reply form */
-  .reply-form{display:none;flex-direction:column;gap:0.5rem;margin-top:0.75rem;}
+  /* ── Inline reply form ── */
+  .reply-form{display:none;flex-direction:column;gap:0.5rem;margin-top:0.8rem;}
   .reply-form.open{display:flex;}
-  .reply-form .comment-textarea{min-height:60px;font-size:0.95rem;}
+  .reply-form .comment-textarea{min-height:56px;font-size:0.93rem;}
   .reply-name-row{display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;}
-  .reply-name-input{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.18);border-radius:2px;color:var(--white);font-family:'Crimson Pro',serif;font-size:0.9rem;padding:0.4rem 0.75rem;outline:none;flex:1;min-width:120px;transition:border-color 0.2s;}
-  .reply-name-input:focus{border-color:rgba(201,168,76,0.5);}
-  .reply-name-input::placeholder{color:var(--gray-light);}
-  .reply-submit{background:transparent;border:1px solid rgba(201,168,76,0.35);color:var(--gold);font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.4rem 1rem;cursor:pointer;border-radius:2px;transition:background 0.2s,color 0.2s;}
+  .reply-name-input{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.15);border-radius:2px;color:var(--white);font-family:'Crimson Pro',serif;font-size:0.9rem;padding:0.4rem 0.75rem;outline:none;flex:1;min-width:120px;transition:border-color 0.2s;}
+  .reply-name-input:focus{border-color:rgba(201,168,76,0.45);}
+  .reply-name-input::placeholder{color:rgba(255,255,255,0.2);}
+  .reply-submit{background:transparent;border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.38rem 0.9rem;cursor:pointer;border-radius:2px;transition:background 0.2s,color 0.2s;}
   .reply-submit:hover{background:var(--gold);color:var(--black);}
-  .reply-cancel{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);padding:0;transition:color 0.2s;}
-  .reply-cancel:hover{color:var(--white);}
-  /* Thread children — hidden by default */
-  .comment-children{margin-top:0.9rem;display:none;flex-direction:column;gap:0.9rem;padding-left:1.1rem;border-left:1px solid rgba(201,168,76,0.1);}
+  .reply-cancel{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.22);padding:0;transition:color 0.2s;}
+  .reply-cancel:hover{color:rgba(255,255,255,0.55);}
+  /* ── Nested children ── */
+  .comment-children{margin-top:1.1rem;display:none;flex-direction:column;gap:1.2rem;padding-left:1rem;border-left:1px solid rgba(255,255,255,0.05);}
   .comment-children.open{display:flex;}
-  /* Post-level salute */
-  .post-salute-wrap{display:flex;justify-content:center;margin:0 0 2.5rem;}
-  .post-salute-btn{background:none;border:1px solid rgba(255,255,255,0.12);border-radius:4px;cursor:pointer;display:flex;align-items:center;gap:0.6rem;padding:0.65rem 1.5rem;opacity:0.3;transition:opacity 0.2s,border-color 0.2s;}
-  .post-salute-btn:hover{opacity:0.65;border-color:rgba(255,255,255,0.3);}
-  .post-salute-btn.saluted{opacity:1;border-color:rgba(255,255,255,0.5);}
-  .post-salute-btn .salute-emoji{font-size:1.3rem;filter:grayscale(1) brightness(10);display:inline-block;transition:transform 0.15s;}
-  .post-salute-btn.saluted .salute-emoji{transform:scale(1.1);}
-  .post-salute-label{font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.9);}
-  .post-salute-count{font-family:'DM Mono',monospace;font-size:0.72rem;color:rgba(255,255,255,0.7);}
   @media(max-width:640px){
-    .comments-wrap{padding:0 1.5rem 4rem;}
+    .comments-wrap{padding:0 1.4rem 4rem;}
     .comment-name-input.visible{max-width:180px;}
-    .comment-children{padding-left:0.6rem;}
+    .comment-children{padding-left:0.65rem;}
   }
 </style>
 
 <section class="comments-wrap" id="comments" data-post="post-two">
   <div class="comments-rule"></div>
-  <p class="comments-eyebrow">Leave a thought</p>
+  <div class="comments-header">
+    <p class="comments-eyebrow">Leave a thought</p>
+    <div class="post-salute-wrap">
+      <button class="post-salute-btn" id="post-salute-btn" type="button">
+        <span class="salute-emoji">🫡</span>
+        <span class="post-salute-label">Salute</span>
+        <span class="post-salute-count" id="post-salute-count">0</span>
+      </button>
+    </div>
+  </div>
   <div class="comment-form">
     <textarea class="comment-textarea" id="cm-text" placeholder="Say something…" rows="3"></textarea>
     <div class="comment-name-row">
@@ -621,13 +633,6 @@
       <input class="comment-name-input" id="cm-name" type="text" placeholder="Your name (optional)" autocomplete="off" />
     </div>
     <button class="comment-submit" id="cm-submit" type="button">Post</button>
-  </div>
-  <div class="post-salute-wrap">
-    <button class="post-salute-btn" id="post-salute-btn" type="button">
-      <span class="salute-emoji">🫡</span>
-      <span class="post-salute-label">Salute</span>
-      <span class="post-salute-count" id="post-salute-count">0</span>
-    </button>
   </div>
   <div class="comment-list" id="cm-list"></div>
 </section>
