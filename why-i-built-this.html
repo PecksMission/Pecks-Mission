@@ -379,14 +379,14 @@
       // Inline reply form
       const replyForm = document.createElement('div');
       replyForm.className = 'reply-form';
-      replyForm.innerHTML = \`
+      replyForm.innerHTML = `
         <textarea class="comment-textarea" placeholder="Write a reply…" rows="2"></textarea>
         <div class="reply-name-row">
           <input class="reply-name-input" type="text" placeholder="Your name (optional)" autocomplete="off" />
           <button class="reply-submit" type="button">Post reply</button>
           <button class="reply-cancel" type="button">Cancel</button>
         </div>
-      \`;
+      `;
       item.appendChild(replyForm);
 
       // Replies container
