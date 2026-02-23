@@ -286,11 +286,11 @@
 
 <script>
   function updateCountdown() {
-    const target = new Date('2026-02-26T13:00:00-06:00');
+    const target = new Date('2026-02-26T19:00:00Z'); // 1:00 PM CST = 19:00 UTC
     const now = new Date();
     const diff = target - now;
     if (diff <= 0) {
-      const surgeryDay = new Date('2026-02-26T23:59:59-06:00');
+      const surgeryDay = new Date('2026-02-27T06:00:00Z'); // midnight CST = 06:00 UTC
       const isSurgeryDay = now <= surgeryDay;
       if (isSurgeryDay) {
         document.querySelector('.countdown-section').innerHTML = `
