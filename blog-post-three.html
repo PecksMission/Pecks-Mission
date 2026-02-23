@@ -539,8 +539,26 @@
   .comment-item-header{display:flex;align-items:baseline;gap:0.75rem;margin-bottom:0.3rem;}
   .comment-item-name{font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);}
   .comment-item-date{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--gray-light);}
-  .comment-item-text{font-family:'Crimson Pro',serif;font-size:1rem;font-weight:300;color:#c8c2b5;line-height:1.7;}
+  .comment-item-text{font-family:'Crimson Pro',serif;font-size:1rem;font-weight:300;color:#c8c2b5;line-height:1.7;margin:0 0 0.5rem;}
   .comment-empty{font-family:'Crimson Pro',serif;font-size:0.95rem;font-style:italic;color:var(--gray-light);}
+  /* Reply button */
+  .comment-reply-btn{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);padding:0;transition:color 0.2s;}
+  .comment-reply-btn:hover{color:var(--gold);}
+  /* Inline reply form */
+  .reply-form{display:none;flex-direction:column;gap:0.5rem;margin-top:0.75rem;}
+  .reply-form.open{display:flex;}
+  .reply-form .comment-textarea{min-height:60px;font-size:0.95rem;}
+  .reply-name-row{display:flex;align-items:center;gap:0.6rem;}
+  .reply-name-input{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.18);border-radius:2px;color:var(--white);font-family:'Crimson Pro',serif;font-size:0.9rem;padding:0.4rem 0.75rem;outline:none;flex:1;transition:border-color 0.2s;}
+  .reply-name-input:focus{border-color:rgba(201,168,76,0.5);}
+  .reply-name-input::placeholder{color:var(--gray-light);}
+  .reply-submit{background:transparent;border:1px solid rgba(201,168,76,0.35);color:var(--gold);font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.4rem 1rem;cursor:pointer;border-radius:2px;transition:background 0.2s,color 0.2s;}
+  .reply-submit:hover{background:var(--gold);color:var(--black);}
+  .reply-cancel{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);padding:0;transition:color 0.2s;}
+  .reply-cancel:hover{color:var(--white);}
+  /* Replies list */
+  .replies-list{margin-top:0.9rem;display:flex;flex-direction:column;gap:0.9rem;padding-left:1rem;border-left:1px solid rgba(201,168,76,0.1);}
+  .reply-item .comment-item-name{color:rgba(201,168,76,0.75);}
   @media(max-width:640px){.comments-wrap{padding:0 1.5rem 4rem;}.comment-name-input.visible{max-width:180px;}}
 </style>
 
@@ -580,6 +598,7 @@
   const postKey = section.getAttribute('data-post');
   const colRef = collection(db, 'comments', postKey, 'entries');
 
+  // ── Top-level name toggle ──────────────────────────────────────
   const toggle = document.getElementById('cm-name-toggle');
   const nameInput = document.getElementById('cm-name');
   toggle.addEventListener('click', function() {
@@ -593,47 +612,145 @@
     return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
   }
 
-  function render(comments) {
+  // ── Build a single comment element (top-level or reply) ────────
+  function buildCommentEl(c, docId, isReply) {
+    const item = document.createElement('div');
+    item.className = isReply ? 'comment-item reply-item' : 'comment-item';
+    item.dataset.id = docId;
+
+    const header = document.createElement('div');
+    header.className = 'comment-item-header';
+
+    const nameEl = document.createElement('span');
+    nameEl.className = 'comment-item-name';
+    nameEl.textContent = c.name || 'Anonymous';
+
+    const dateEl = document.createElement('span');
+    dateEl.className = 'comment-item-date';
+    dateEl.textContent = fmt(c.ts);
+
+    header.appendChild(nameEl);
+    header.appendChild(dateEl);
+
+    const textEl = document.createElement('p');
+    textEl.className = 'comment-item-text';
+    textEl.textContent = c.text;
+
+    item.appendChild(header);
+    item.appendChild(textEl);
+
+    if (!isReply) {
+      // Reply button
+      const replyBtn = document.createElement('button');
+      replyBtn.className = 'comment-reply-btn';
+      replyBtn.textContent = '↩ Reply';
+      item.appendChild(replyBtn);
+
+      // Inline reply form
+      const replyForm = document.createElement('div');
+      replyForm.className = 'reply-form';
+      replyForm.innerHTML = \`
+        <textarea class="comment-textarea" placeholder="Write a reply…" rows="2"></textarea>
+        <div class="reply-name-row">
+          <input class="reply-name-input" type="text" placeholder="Your name (optional)" autocomplete="off" />
+          <button class="reply-submit" type="button">Post reply</button>
+          <button class="reply-cancel" type="button">Cancel</button>
+        </div>
+      \`;
+      item.appendChild(replyForm);
+
+      // Replies container
+      const repliesList = document.createElement('div');
+      repliesList.className = 'replies-list';
+      repliesList.style.display = 'none';
+      item.appendChild(repliesList);
+
+      // Toggle reply form
+      replyBtn.addEventListener('click', () => {
+        replyForm.classList.toggle('open');
+        if (replyForm.classList.contains('open')) replyForm.querySelector('textarea').focus();
+      });
+
+      replyForm.querySelector('.reply-cancel').addEventListener('click', () => {
+        replyForm.classList.remove('open');
+        replyForm.querySelector('textarea').value = '';
+        replyForm.querySelector('.reply-name-input').value = '';
+      });
+
+      // Submit reply
+      replyForm.querySelector('.reply-submit').addEventListener('click', async function() {
+        const text = replyForm.querySelector('textarea').value.trim();
+        if (!text) return;
+        const name = replyForm.querySelector('.reply-name-input').value.trim();
+        this.textContent = 'Posting…';
+        this.disabled = true;
+        try {
+          const repliesRef = collection(db, 'comments', postKey, 'entries', docId, 'replies');
+          await addDoc(repliesRef, { name, text, ts: serverTimestamp() });
+          replyForm.querySelector('textarea').value = '';
+          replyForm.querySelector('.reply-name-input').value = '';
+          replyForm.classList.remove('open');
+          await loadReplies(docId, repliesList);
+        } catch(e) {
+          console.error('Failed to post reply:', e);
+        }
+        this.textContent = 'Post reply';
+        this.disabled = false;
+      });
+
+      // Load existing replies
+      loadReplies(docId, repliesList);
+    }
+
+    return item;
+  }
+
+  // ── Load replies for a comment ─────────────────────────────────
+  async function loadReplies(docId, repliesList) {
+    try {
+      const repliesRef = collection(db, 'comments', postKey, 'entries', docId, 'replies');
+      const q = query(repliesRef, orderBy('ts', 'asc'));
+      const snap = await getDocs(q);
+      repliesList.innerHTML = '';
+      if (snap.docs.length > 0) {
+        repliesList.style.display = 'flex';
+        snap.docs.forEach(d => {
+          repliesList.appendChild(buildCommentEl(d.data(), d.id, true));
+        });
+      } else {
+        repliesList.style.display = 'none';
+      }
+    } catch(e) {
+      console.error('Failed to load replies:', e);
+    }
+  }
+
+  // ── Render all top-level comments ──────────────────────────────
+  function render(docs) {
     const list = document.getElementById('cm-list');
     list.innerHTML = '';
-    if (!comments || !comments.length) {
+    if (!docs || !docs.length) {
       list.innerHTML = '<p class="comment-empty">No comments yet. Be the first.</p>';
       return;
     }
-    comments.forEach(function(c) {
-      const item = document.createElement('div');
-      item.className = 'comment-item';
-      const header = document.createElement('div');
-      header.className = 'comment-item-header';
-      const nameEl = document.createElement('span');
-      nameEl.className = 'comment-item-name';
-      nameEl.textContent = c.name || 'Anonymous';
-      const dateEl = document.createElement('span');
-      dateEl.className = 'comment-item-date';
-      dateEl.textContent = fmt(c.ts);
-      header.appendChild(nameEl);
-      header.appendChild(dateEl);
-      const textEl = document.createElement('p');
-      textEl.className = 'comment-item-text';
-      textEl.textContent = c.text;
-      item.appendChild(header);
-      item.appendChild(textEl);
-      list.appendChild(item);
+    docs.forEach(d => {
+      list.appendChild(buildCommentEl(d.data(), d.id, false));
     });
   }
 
+  // ── Load top-level comments ─────────────────────────────────────
   async function load() {
     try {
       const q = query(colRef, orderBy('ts', 'asc'));
       const snap = await getDocs(q);
-      const comments = snap.docs.map(d => d.data());
-      render(comments);
+      render(snap.docs);
     } catch(e) {
       console.error('Failed to load comments:', e);
       render([]);
     }
   }
 
+  // ── Post top-level comment ──────────────────────────────────────
   document.getElementById('cm-submit').addEventListener('click', async function() {
     const text = document.getElementById('cm-text').value.trim();
     if (!text) return;
@@ -642,7 +759,7 @@
     btn.textContent = 'Posting…';
     btn.disabled = true;
     try {
-      await addDoc(colRef, { name: name, text: text, ts: serverTimestamp() });
+      await addDoc(colRef, { name, text, ts: serverTimestamp() });
       document.getElementById('cm-text').value = '';
       nameInput.value = '';
       await load();
