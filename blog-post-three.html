@@ -514,6 +514,136 @@
 
 </article>
 
+<!-- COMMENTS -->
+<style>
+  .comments-wrap{max-width:720px;margin:0 auto;padding:0 3rem 5rem;}
+  .comments-rule{width:4rem;height:1px;background:rgba(201,168,76,0.25);margin:0 0 2.5rem;}
+  .comments-eyebrow{font-family:'DM Mono',monospace;font-size:0.78rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.8rem;}
+  .comment-form{display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2.5rem;}
+  .comment-textarea{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.18);border-radius:2px;color:var(--white);font-family:'Crimson Pro',serif;font-size:1rem;line-height:1.6;padding:0.85rem 1rem;resize:vertical;min-height:80px;transition:border-color 0.2s;outline:none;}
+  .comment-textarea:focus{border-color:rgba(201,168,76,0.5);}
+  .comment-textarea::placeholder{color:var(--gray-light);}
+  .comment-name-row{display:flex;align-items:center;gap:0.75rem;}
+  .comment-name-toggle{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray-light);padding:0;transition:color 0.2s;display:flex;align-items:center;gap:0.4rem;}
+  .comment-name-toggle:hover{color:var(--gold);}
+  .comment-name-toggle .caret{display:inline-block;transition:transform 0.2s;font-style:normal;}
+  .comment-name-toggle.open .caret{transform:rotate(90deg);}
+  .comment-name-input{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.18);border-radius:2px;color:var(--white);font-family:'Crimson Pro',serif;font-size:0.95rem;padding:0.5rem 0.85rem;outline:none;transition:border-color 0.2s,max-width 0.25s,opacity 0.2s;max-width:0;opacity:0;overflow:hidden;pointer-events:none;flex:1;}
+  .comment-name-input.visible{max-width:260px;opacity:1;pointer-events:auto;}
+  .comment-name-input:focus{border-color:rgba(201,168,76,0.5);}
+  .comment-name-input::placeholder{color:var(--gray-light);}
+  .comment-submit{align-self:flex-start;background:transparent;border:1px solid rgba(201,168,76,0.45);color:var(--gold);font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.55rem 1.3rem;cursor:pointer;border-radius:2px;transition:background 0.2s,color 0.2s;}
+  .comment-submit:hover{background:var(--gold);color:var(--black);}
+  .comment-list{display:flex;flex-direction:column;gap:1.4rem;}
+  .comment-item{border-left:2px solid rgba(201,168,76,0.15);padding-left:1.1rem;}
+  .comment-item-header{display:flex;align-items:baseline;gap:0.75rem;margin-bottom:0.3rem;}
+  .comment-item-name{font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);}
+  .comment-item-date{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--gray-light);}
+  .comment-item-text{font-family:'Crimson Pro',serif;font-size:1rem;font-weight:300;color:#c8c2b5;line-height:1.7;}
+  .comment-empty{font-family:'Crimson Pro',serif;font-size:0.95rem;font-style:italic;color:var(--gray-light);}
+  @media(max-width:640px){.comments-wrap{padding:0 1.5rem 4rem;}.comment-name-input.visible{max-width:180px;}}
+</style>
+
+<section class="comments-wrap" id="comments" data-post="post-three">
+  <div class="comments-rule"></div>
+  <p class="comments-eyebrow">Leave a thought</p>
+  <div class="comment-form">
+    <textarea class="comment-textarea" id="cm-text" placeholder="Say something…" rows="3"></textarea>
+    <div class="comment-name-row">
+      <button class="comment-name-toggle" id="cm-name-toggle" type="button">
+        <span class="caret">▶</span> Add your name
+      </button>
+      <input class="comment-name-input" id="cm-name" type="text" placeholder="Your name (optional)" autocomplete="off" />
+    </div>
+    <button class="comment-submit" id="cm-submit" type="button">Post</button>
+  </div>
+  <div class="comment-list" id="cm-list"></div>
+</section>
+
+<script>
+(function(){
+  var section = document.getElementById('comments');
+  var postKey = 'comments:' + section.getAttribute('data-post');
+
+  var toggle = document.getElementById('cm-name-toggle');
+  var nameInput = document.getElementById('cm-name');
+  toggle.addEventListener('click', function(){
+    toggle.classList.toggle('open');
+    nameInput.classList.toggle('visible');
+    if(nameInput.classList.contains('visible')) nameInput.focus();
+  });
+
+  function fmt(ts){
+    var d = new Date(ts);
+    return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  }
+
+  function render(comments){
+    var list = document.getElementById('cm-list');
+    list.innerHTML = '';
+    if(!comments || !comments.length){
+      list.innerHTML = '<p class="comment-empty">No comments yet. Be the first.</p>';
+      return;
+    }
+    comments.forEach(function(c){
+      var item = document.createElement('div');
+      item.className = 'comment-item';
+      var header = document.createElement('div');
+      header.className = 'comment-item-header';
+      var nameEl = document.createElement('span');
+      nameEl.className = 'comment-item-name';
+      nameEl.textContent = c.name || 'Anonymous';
+      var dateEl = document.createElement('span');
+      dateEl.className = 'comment-item-date';
+      dateEl.textContent = fmt(c.ts);
+      header.appendChild(nameEl);
+      header.appendChild(dateEl);
+      var textEl = document.createElement('p');
+      textEl.className = 'comment-item-text';
+      textEl.textContent = c.text;
+      item.appendChild(header);
+      item.appendChild(textEl);
+      list.appendChild(item);
+    });
+  }
+
+  async function load(){
+    try{
+      var res = await window.storage.get(postKey, true);
+      render(res ? JSON.parse(res.value) : []);
+    } catch(e){ render([]); }
+  }
+
+  document.getElementById('cm-submit').addEventListener('click', async function(){
+    var text = document.getElementById('cm-text').value.trim();
+    if(!text) return;
+    var name = nameInput.value.trim();
+    var btn = document.getElementById('cm-submit');
+    btn.textContent = 'Posting…';
+    btn.disabled = true;
+    try{
+      var existing = [];
+      try{
+        var res = await window.storage.get(postKey, true);
+        if(res) existing = JSON.parse(res.value);
+      } catch(e){}
+      existing.push({name: name, text: text, ts: Date.now()});
+      await window.storage.set(postKey, JSON.stringify(existing), true);
+      document.getElementById('cm-text').value = '';
+      nameInput.value = '';
+      render(existing);
+    } catch(e){
+      console.error(e);
+    }
+    btn.textContent = 'Post';
+    btn.disabled = false;
+  });
+
+  load();
+})();
+</script>
+
+
 <footer>
   <div class="footer-logo">Peck's Mission</div>
   <p class="footer-kipling">"And so hold on when there is nothing in you except the Will which says to them: Hold on."</p>
