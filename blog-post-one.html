@@ -677,10 +677,10 @@
     const overlay = document.getElementById('popup-overlay');
     overlay.classList.remove('visible');
     
-    sessionStorage.setItem('popup-dismissed', '1');
+    localStorage.setItem('popup-dismissed', '1');
   }
 
-  if (!sessionStorage.getItem('popup-dismissed')) {
+  if (!localStorage.getItem('popup-dismissed')) {
     setTimeout(showPopup, 60000);
   }
 
@@ -712,7 +712,7 @@
     .then(() => {
       document.getElementById('popup-form').style.display = 'none';
       document.getElementById('popup-success').style.display = 'block';
-      sessionStorage.setItem('popup-dismissed', '1');
+      localStorage.setItem('popup-dismissed', '1');
       setTimeout(closePopup, 3000);
     })
     .catch(() => {
