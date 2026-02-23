@@ -274,12 +274,12 @@
   /* Action bar: salute + reply + expand */
   .comment-actions{display:flex;align-items:center;gap:1.1rem;margin-top:0.1rem;}
   /* Salute button */
-  .salute-btn{background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:0.35rem;padding:0;line-height:1;}
-  .salute-btn .salute-emoji{font-size:1rem;filter:grayscale(1) brightness(2) opacity(0.3);transition:filter 0.2s,transform 0.15s;display:inline-block;}
-  .salute-btn:hover .salute-emoji{filter:grayscale(1) brightness(6) opacity(0.7);transform:scale(1.15);}
-  .salute-btn.saluted .salute-emoji{filter:grayscale(1) brightness(10) opacity(1);transform:scale(1.2);}
-  .salute-count{font-family:'DM Mono',monospace;font-size:0.7rem;color:rgba(255,255,255,0.2);transition:color 0.2s;}
-  .salute-btn.saluted .salute-count{color:rgba(255,255,255,0.75);}
+  .salute-btn{background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:0.35rem;padding:0;line-height:1;opacity:0.25;transition:opacity 0.2s;}
+  .salute-btn:hover{opacity:0.6;}
+  .salute-btn.saluted{opacity:1;}
+  .salute-btn .salute-emoji{font-size:1rem;filter:grayscale(1) brightness(10);transition:transform 0.15s;display:inline-block;}
+  .salute-btn.saluted .salute-emoji{transform:scale(1.15);}
+  .salute-count{font-family:'DM Mono',monospace;font-size:0.7rem;color:rgba(255,255,255,0.8);transition:color 0.2s;}
   /* Reply button */
   .comment-reply-btn{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-light);padding:0;transition:color 0.2s;}
   .comment-reply-btn:hover{color:var(--gold);}
@@ -304,19 +304,14 @@
   .comment-children{margin-top:0.9rem;display:none;flex-direction:column;gap:0.9rem;padding-left:1.1rem;border-left:1px solid rgba(201,168,76,0.1);}
   .comment-children.open{display:flex;}
   /* Post-level salute */
-  .post-salute-wrap{display:flex;justify-content:center;margin:2rem 0 0.5rem;}
-  .post-salute-btn{background:none;border:1px solid rgba(255,255,255,0.08);border-radius:4px;cursor:pointer;display:flex;align-items:center;gap:0.5rem;padding:0.55rem 1.2rem;transition:border-color 0.2s;}
-  .post-salute-btn:hover{border-color:rgba(255,255,255,0.25);}
-  .post-salute-btn.saluted{border-color:rgba(255,255,255,0.45);}
-  .post-salute-btn .salute-emoji{font-size:1.2rem;filter:grayscale(1) brightness(2) opacity(0.25);transition:filter 0.2s,transform 0.15s;display:inline-block;}
-  .post-salute-btn:hover .salute-emoji{filter:grayscale(1) brightness(6) opacity(0.65);transform:scale(1.1);}
-  .post-salute-btn.saluted .salute-emoji{filter:grayscale(1) brightness(10) opacity(1);}
-  .post-salute-label{font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.2);transition:color 0.2s;}
-  .post-salute-btn:hover .post-salute-label{color:rgba(255,255,255,0.5);}
-  .post-salute-btn.saluted .post-salute-label{color:rgba(255,255,255,0.8);}
-  .post-salute-count{font-family:'DM Mono',monospace;font-size:0.72rem;color:rgba(255,255,255,0.2);transition:color 0.2s;}
-  .post-salute-btn:hover .post-salute-count{color:rgba(255,255,255,0.5);}
-  .post-salute-btn.saluted .post-salute-count{color:rgba(255,255,255,0.8);}
+  .post-salute-wrap{display:flex;justify-content:center;margin:0 0 2.5rem;}
+  .post-salute-btn{background:none;border:1px solid rgba(255,255,255,0.12);border-radius:4px;cursor:pointer;display:flex;align-items:center;gap:0.6rem;padding:0.65rem 1.5rem;opacity:0.3;transition:opacity 0.2s,border-color 0.2s;}
+  .post-salute-btn:hover{opacity:0.65;border-color:rgba(255,255,255,0.3);}
+  .post-salute-btn.saluted{opacity:1;border-color:rgba(255,255,255,0.5);}
+  .post-salute-btn .salute-emoji{font-size:1.3rem;filter:grayscale(1) brightness(10);display:inline-block;transition:transform 0.15s;}
+  .post-salute-btn.saluted .salute-emoji{transform:scale(1.1);}
+  .post-salute-label{font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.9);}
+  .post-salute-count{font-family:'DM Mono',monospace;font-size:0.72rem;color:rgba(255,255,255,0.7);}
   @media(max-width:640px){
     .comments-wrap{padding:0 1.5rem 4rem;}
     .comment-name-input.visible{max-width:180px;}
@@ -337,7 +332,6 @@
     </div>
     <button class="comment-submit" id="cm-submit" type="button">Post</button>
   </div>
-  <div class="comment-list" id="cm-list"></div>
   <div class="post-salute-wrap">
     <button class="post-salute-btn" id="post-salute-btn" type="button">
       <span class="salute-emoji">🫡</span>
@@ -345,6 +339,7 @@
       <span class="post-salute-count" id="post-salute-count">0</span>
     </button>
   </div>
+  <div class="comment-list" id="cm-list"></div>
 </section>
 
 <script type="module">
