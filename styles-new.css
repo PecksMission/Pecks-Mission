@@ -8,11 +8,11 @@
 :root {
   --black: #ffffff;
   --white: #1a1a1a;
-  --gold: #a87c28;
-  --gold-light: #c9a84c;
+  --gold: #c8960c;
+  --gold-light: #e0aa1a;
   --red: #8b2020;
-  --gray: #888888;
-  --gray-light: #555555;
+  --gray: #aaaaaa;
+  --gray-light: #444444;
 }
 
 html { scroll-behavior: smooth; }
