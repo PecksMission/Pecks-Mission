@@ -7,12 +7,12 @@
 
 :root {
   --black: #ffffff;
-  --white: #1a1a1a;
+  --white: #1c1c1c;
   --gold: #c8960c;
   --gold-light: #e0aa1a;
   --red: #8b2020;
-  --gray: #aaaaaa;
-  --gray-light: #444444;
+  --gray: #555555;
+  --gray-light: #2d2d2d;
 }
 
 html { scroll-behavior: smooth; }
@@ -95,7 +95,7 @@ footer {
 }
 .footer-ceiling {
   margin-top: 0.8rem;
-  color: #aaaaaa;
+  color: #3a3a3a;
 }
 .nav-footer {
   display: flex;
@@ -319,7 +319,7 @@ footer {
 .post-body p {
   font-size: 1.2rem;
   font-weight: 300;
-  color: #444444;
+  color: #2d2d2d;
   margin-bottom: 1.8rem;
   line-height: 1.85;
 }
@@ -440,7 +440,7 @@ footer {
 .hero-sub {
   font-size: 1.2rem;
   font-weight: 300;
-  color: #777777;
+  color: #2d2d2d;
   line-height: 1.75;
   margin-bottom: 2.5rem;
   font-style: italic;
@@ -532,7 +532,7 @@ footer {
 .section-body {
   font-size: 1.15rem;
   font-weight: 300;
-  color: #777777;
+  color: #2d2d2d;
   line-height: 1.85;
   max-width: 620px;
   margin-bottom: 2rem;
@@ -710,7 +710,7 @@ footer {
   font-family: 'Crimson Pro', serif;
   font-size: 1.1rem;
   font-weight: 300;
-  color: #777777;
+  color: #2d2d2d;
   line-height: 2;
   white-space: pre-line;
 }
@@ -784,7 +784,7 @@ footer {
 .about-body p {
   font-size: 1.15rem;
   font-weight: 300;
-  color: #444444;
+  color: #2d2d2d;
   margin-bottom: 1.6rem;
   line-height: 1.85;
 }
@@ -853,7 +853,7 @@ footer {
 .audience-card p {
   font-size: 1.1rem;
   font-weight: 300;
-  color: #444444;
+  color: #2d2d2d;
   line-height: 1.8;
 }
 .form-section {
@@ -915,7 +915,7 @@ textarea { min-height: 160px; resize: vertical; }
 .chiari-body p {
   font-size: 1.15rem;
   font-weight: 300;
-  color: #444444;
+  color: #2d2d2d;
   margin-bottom: 1.6rem;
   line-height: 1.85;
 }
@@ -962,7 +962,7 @@ textarea { min-height: 160px; resize: vertical; }
   color: var(--gold);
   margin-bottom: 0.8rem;
 }
-.callout-block p { font-size: 1.05rem; color: #777777; margin-bottom: 0; }
+.callout-block p { font-size: 1.05rem; color: #2d2d2d; margin-bottom: 0; }
 .closing-callout {
   background: rgba(139,32,32,0.06);
   border: 1px solid rgba(139,32,32,0.15);
@@ -976,7 +976,7 @@ textarea { min-height: 160px; resize: vertical; }
   color: var(--white);
   margin-bottom: 1.2rem;
 }
-.closing-callout p { font-size: 1.1rem; color: #444444; margin-bottom: 1rem; }
+.closing-callout p { font-size: 1.1rem; color: #2d2d2d; margin-bottom: 1rem; }
 
 /* ============================================
    PARALLEL DOCUMENT (why-i-built-this)
@@ -1010,7 +1010,7 @@ textarea { min-height: 160px; resize: vertical; }
 .parallel-row:last-child { border-bottom: none; }
 .parallel-cell { padding: 1.5rem; font-size: 1rem; font-weight: 300; line-height: 1.7; }
 .parallel-cell.chart { color: var(--gray-light); border-right: 1px solid rgba(0,0,0,0.06); font-style: italic; }
-.parallel-cell.reality { color: #444444; }
+.parallel-cell.reality { color: #2d2d2d; }
 
 /* ============================================
    RESPONSIVE
