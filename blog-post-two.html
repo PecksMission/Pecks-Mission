@@ -17,8 +17,11 @@
   <meta property="og:description" content="At 25, I finally got the answer to every question I couldn't name — and it explained my entire life. A world-class neurosurgeon at Vanderbilt looked at me and told me I have a 15-millimeter Chiari malformation, and that he doesn't see guys like me still standing." />
   <meta property="og:image" content="https://www.pecksmission.com/og-image.png" />
   <meta property="og:url" content="https://www.pecksmission.com/blog-post-two" />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Peck's Mission | What I Found Out This Week" />
+  <meta name="twitter:description" content="At 25, I finally got the answer to every question I couldn't name — and it explained my entire life." />
+  <meta name="twitter:image" content="https://www.pecksmission.com/og-image.png" />
   <link rel="canonical" href="https://www.pecksmission.com/blog-post-two.html" />
   <title>What I Found Out This Week — Peck's Mission</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -386,7 +389,7 @@
   <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
     <div>
       <p class="post-meta">By Peck &nbsp;·&nbsp; Combat Medic &nbsp;·&nbsp; CVICU &nbsp;·&nbsp; Chiari Patient</p>
-      <p style="font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-top: 0.5rem;">11 min read</p>
+      <p style="font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-top: 0.5rem;">5 min read</p>
     </div>
     <a href="follow-along.html#reach-out" style="background: var(--gold); color: var(--black); padding: 1rem 2.5rem; font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.2s;"
       onmouseover="this.style.background='#e8c97a'" onmouseout="this.style.background='#c9a84c'">
@@ -659,11 +662,11 @@
       countEl.textContent = count;
     } catch(e) { console.error(e); }
     // Restore local saluted state
-    if (sessionStorage.getItem(saluteStorage)) btn.classList.add('saluted');
+    if (localStorage.getItem(saluteStorage)) btn.classList.add('saluted');
     btn.addEventListener('click', async function() {
       if (btn.classList.contains('saluted')) return; // one salute per session
       btn.classList.add('saluted');
-      sessionStorage.setItem(saluteStorage, '1');
+      localStorage.setItem(saluteStorage, '1');
       try {
         const snap = await getDoc(postSaluteRef);
         if (snap.exists()) {
@@ -733,11 +736,11 @@
     saluteBtn.appendChild(saluteEmoji);
     saluteBtn.appendChild(saluteCount);
     const commentSaluteKey = 'saluted:' + postKey + ':' + docId;
-    if (sessionStorage.getItem(commentSaluteKey)) saluteBtn.classList.add('saluted');
+    if (localStorage.getItem(commentSaluteKey)) saluteBtn.classList.add('saluted');
     saluteBtn.addEventListener('click', async function() {
       if (saluteBtn.classList.contains('saluted')) return;
       saluteBtn.classList.add('saluted');
-      sessionStorage.setItem(commentSaluteKey, '1');
+      localStorage.setItem(commentSaluteKey, '1');
       const current = parseInt(saluteCount.textContent) || 0;
       saluteCount.textContent = current + 1;
       try {
