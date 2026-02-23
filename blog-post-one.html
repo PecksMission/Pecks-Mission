@@ -32,7 +32,7 @@
       --white: #1c1c1c;
       --gold: #c8960c;
       --gold-light: #e0aa1a;
-      --red: #8b2020;
+      --red: #1a4a7a;
       --gray: #555555;
       --gray-light: #2d2d2d;
     }
@@ -87,7 +87,7 @@
       content: '';
       position: fixed;
       inset: 0;
-      background: radial-gradient(ellipse 70% 50% at 80% 20%, rgba(139,32,32,0.08) 0%, transparent 70%);
+      background: radial-gradient(ellipse 70% 50% at 80% 20%, rgba(26,74,122,0.08) 0%, transparent 70%);
       pointer-events: none;
       z-index: -1;
     }
@@ -164,7 +164,7 @@
       color: var(--gold);
     }
     .verse-block {
-      background: rgba(139,32,32,0.08);
+      background: rgba(26,74,122,0.08);
       border-left: 3px solid var(--red);
       padding: 2rem 2.5rem;
       margin: 2.5rem 0;
@@ -292,7 +292,7 @@
       pointer-events: all;
     }
     .popup-box {
-      background: #111;
+      background: #f5f5f5;
       border: 1px solid rgba(201,168,76,0.25);
       max-width: 500px;
       width: 100%;
@@ -374,7 +374,7 @@
   <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
     <p class="post-meta">By Peck &nbsp;·&nbsp; Combat Medic &nbsp;·&nbsp; CVICU &nbsp;·&nbsp; Chiari Patient</p>
     <a href="follow-along.html#reach-out" style="background: var(--gold); color: var(--black); padding: 1rem 2.5rem; font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.2s;"
-      onmouseover="this.style.background='#e8c97a'" onmouseout="this.style.background='#c9a84c'">
+      onmouseover="this.style.background='#e0aa1a'" onmouseout="this.style.background='#c8960c'">
       Follow Along
     </a>
   </div>
@@ -591,8 +591,8 @@
   }
 </script>
 <style>
-#tldr-btn{position:fixed;bottom:2rem;right:2rem;z-index:9000;background:#c9a84c;color:#ffffff;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.65rem 1.2rem;border-radius:2px;box-shadow:0 4px 24px rgba(0,0,0,0.15);transition:background 0.2s,transform 0.15s;line-height:1;}
-#tldr-btn:hover{background:#e8c97a;transform:translateY(-2px);}
+#tldr-btn{position:fixed;bottom:2rem;right:2rem;z-index:9000;background:#c8960c;color:#ffffff;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.65rem 1.2rem;border-radius:2px;box-shadow:0 4px 24px rgba(0,0,0,0.15);transition:background 0.2s,transform 0.15s;line-height:1;}
+#tldr-btn:hover{background:#e0aa1a;transform:translateY(-2px);}
 #tldr-overlay{display:none;position:fixed;inset:0;z-index:9500;background:rgba(0,0,0,0.35);backdrop-filter:blur(4px);align-items:flex-end;justify-content:flex-end;padding:2rem;}
 #tldr-overlay.open{display:flex;}
 #tldr-box{background:#f5f5f5;border:1px solid rgba(168,124,40,0.30);border-radius:4px;max-width:440px;width:100%;box-shadow:0 16px 64px rgba(0,0,0,0.15);overflow:hidden;animation:tldrIn 0.22s cubic-bezier(0.34,1.56,0.64,1);}

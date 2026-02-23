@@ -10,7 +10,7 @@
   --white: #1c1c1c;
   --gold: #c8960c;
   --gold-light: #e0aa1a;
-  --red: #8b2020;
+  --red: #1a4a7a;
   --gray: #555555;
   --gray-light: #2d2d2d;
 }
@@ -177,7 +177,7 @@ footer {
   color: var(--gold);
 }
 .verse-block {
-  background: rgba(139,32,32,0.08);
+  background: rgba(26,74,122,0.08);
   border-left: 3px solid var(--red);
   padding: 2rem 2.5rem;
   margin: 2.5rem 0;
@@ -407,7 +407,7 @@ footer {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(139,32,32,0.07) 0%, transparent 70%),
+  background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(26,74,122,0.07) 0%, transparent 70%),
               radial-gradient(ellipse 50% 40% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
   pointer-events: none;
 }
@@ -964,8 +964,8 @@ textarea { min-height: 160px; resize: vertical; }
 }
 .callout-block p { font-size: 1.05rem; color: #2d2d2d; margin-bottom: 0; }
 .closing-callout {
-  background: rgba(139,32,32,0.06);
-  border: 1px solid rgba(139,32,32,0.15);
+  background: rgba(26,74,122,0.06);
+  border: 1px solid rgba(26,74,122,0.15);
   padding: 3rem;
   margin: 3rem 0;
 }
