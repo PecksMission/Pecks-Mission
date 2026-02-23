@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WT1126YN2Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WT1126YN2Q');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WT1126YN2Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WT1126YN2Q');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wrestling With Your Living Will — Peck's Mission</title>
-  <meta property="og:title" content="Peck's Mission | Wrestling With Your Living Will" />
-  <meta name="description" content="Before I go into surgery, I had to wrestle with the hardest document I've ever filled out — a living will. This is what I decided, and why." />
-  <meta property="og:description" content="Before I go into surgery, I had to wrestle with the hardest document I've ever filled out — a living will. This is what I decided, and why." />
+  <title>I Needed You — Peck's Mission</title>
+  <meta property="og:title" content="Peck's Mission | I Needed You" />
+  <meta name="description" content="I took a leap of faith. I was the most vulnerable I've ever been online. And then my community showed up and showed out. Surgery is in five days. Here's what I'm thinking about." />
+  <meta property="og:description" content="I took a leap of faith. I was the most vulnerable I've ever been online. And then my community showed up and showed out. Surgery is in five days. Here's what I'm thinking about." />
   <meta property="og:image" content="https://www.pecksmission.com/og-image.png" />
   <meta property="og:url" content="https://www.pecksmission.com/blog-post-three" />
   <meta property="og:type" content="website" />
@@ -300,7 +299,9 @@
       transform: translateY(20px);
       transition: transform 0.4s ease;
     }
-    .popup-overlay.visible .popup-box { transform: translateY(0); }
+    .popup-overlay.visible .popup-box {
+      transform: translateY(0);
+    }
     .popup-close {
       position: absolute;
       top: 1rem;
@@ -315,20 +316,95 @@
       transition: color 0.2s;
     }
     .popup-close:hover { color: var(--gold); }
-    .popup-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
-    .popup-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; line-height: 1; letter-spacing: 0.03em; color: var(--white); margin-bottom: 0.8rem; }
-    .popup-sub { font-family: 'Crimson Pro', serif; font-size: 1.05rem; font-style: italic; font-weight: 300; color: var(--gray-light); line-height: 1.6; margin-bottom: 1.8rem; }
+    .popup-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .popup-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      line-height: 1;
+      letter-spacing: 0.03em;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+    .popup-sub {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gray-light);
+      line-height: 1.6;
+      margin-bottom: 1.8rem;
+    }
     .popup-form-group { margin-bottom: 0.8rem; }
-    .popup-input { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: var(--white); padding: 0.85rem 1rem; font-family: 'Crimson Pro', serif; font-size: 1rem; outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
+    .popup-input {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--white);
+      padding: 0.85rem 1rem;
+      font-family: 'Crimson Pro', serif;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
     .popup-input:focus { border-color: rgba(201,168,76,0.5); }
     .popup-input::placeholder { color: var(--gray); font-style: italic; }
-    .popup-btn { background: var(--gold); color: var(--black); padding: 0.95rem 0; width: 100%; font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; border: none; cursor: pointer; margin-top: 0.4rem; transition: background 0.2s; }
+    .popup-btn {
+      background: var(--gold);
+      color: var(--black);
+      padding: 0.95rem 0;
+      width: 100%;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      margin-top: 0.4rem;
+      transition: background 0.2s;
+    }
     .popup-btn:hover { background: var(--gold-light); }
     .popup-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-    .popup-success { display: none; text-align: center; padding: 1rem 0; }
-    .popup-success-msg { font-family: 'Crimson Pro', serif; font-size: 1.3rem; font-style: italic; color: var(--gold-light); margin-bottom: 0.4rem; }
-    .popup-success-sub { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-light); }
-    .popup-skip { display: block; text-align: center; margin-top: 1.2rem; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); cursor: pointer; background: none; border: none; transition: color 0.2s; }
+    .popup-success {
+      display: none;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .popup-success-msg {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--gold-light);
+      margin-bottom: 0.4rem;
+    }
+    .popup-success-sub {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-light);
+    }
+    .popup-skip {
+      display: block;
+      text-align: center;
+      margin-top: 1.2rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray);
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: color 0.2s;
+    }
     .popup-skip:hover { color: var(--gray-light); }
   
     .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
@@ -369,9 +445,9 @@
 
 <div class="post-header">
   <p class="post-eyebrow">Updates &nbsp;·&nbsp; February 2026</p>
-  <h1 class="post-title">Wrestling With Your Living Will</h1>
+  <h1 class="post-title">I Needed You</h1>
   <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-    <p class="post-meta">By Peck &nbsp;·&nbsp; Combat Medic &nbsp;·&nbsp; CVICU &nbsp;·&nbsp; Chiari Patient</p>
+    <p class="post-meta">By Peck &nbsp;·&nbsp; Combat Medic &nbsp;·&nbsp; CVICU &nbsp;·&nbsp; Chiari Patient &nbsp;·&nbsp; 11 min read</p>
     <a href="follow-along.html#reach-out" style="background: var(--gold); color: var(--black); padding: 1rem 2.5rem; font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.2s;"
       onmouseover="this.style.background='#e8c97a'" onmouseout="this.style.background='#c9a84c'">
       Follow Along
@@ -381,135 +457,79 @@
 
 <article class="post-body">
 
-  <p class="opening">Alright. This one's going to carry some weight.</p>
+  <p class="opening">I took a leap of faith. I was the most vulnerable I've ever been online. I showed every ounce of myself — and the whole time, I couldn't stop thinking about who was watching.</p>
 
-  <p>Before I say this — everything I'm saying, the Lord has put in my heart. This is a challenging one for me.</p>
+  <p>People from church. My parents' friends. Friends from the military. Friends I've known since I was a kid. Would they think I'm weak? Would they think I'm slow? It's hard to lay all your cards on the table. It's hard to admit you don't have it together. These are not easy things to do.</p>
 
-  <p>When you're working in a critical care environment, patients come and go. Usually around a three-day stay. My stay in the ICU will begin on Thursday, after a six-hour surgery. And personally, it's not easy knowing I'm going into an ICU. I know it's because of the size of the surgery, not because there's a high mortality rate or a lot of complications. My surgery is pretty straightforward. But when complications do happen, they usually go really wrong, really fast.</p>
+  <p>But today — my community showed up and showed out.</p>
 
-  <p>I want to be clear — this is not a goodbye. My prognosis is good and my surgeon is world-class. But I worked in critical care. I've stood at the bedside when families weren't prepared. I've watched people make impossible decisions in real time because nobody talked about it beforehand. I don't skip steps.</p>
-
-  <p>There's something I told myself while working in critical care — something I would never let my family deal with.</p>
+  <p>Childhood friends. Military brothers and sisters. My sister's friends. My parents' friends — people they've known since they were kids. They all came. And they all said the same thing: We're praying. We got you.</p>
 
   <div class="divider"></div>
 
-  <h2>The Patient I Never Forgot</h2>
+  <h2>Being the Patient</h2>
 
-  <p>In July of 2024, I had a patient on a shadow day before I started in the CVICU. He wasn't doing well. He was being kept alive by machines. This man was a pastor. Had a small church in Missouri. Had a loving family. He knew the Lord.</p>
+  <p>I'll be real with you. Getting help is not something I want to do. I don't want to be seen as weak. I'll run into a burning building. I'll save a cat from a tree. But being the patient? That's not a role I want. I want to be the one treating. I want to be the one serving.</p>
 
-  <p>I remembered him. Fast forward a few months — I start working there in October, and this patient is still there. And he's miserable. He doesn't want to be alive. The only reason he's alive is his family is keeping him alive. He's telling the nurses and doctors he wants to die. But he won't tell his family.</p>
-
-  <p>I promised myself I would never let my parents, my sister, or any of my family have to make a decision like that.</p>
-
-  <p>It's a difficult decision to make. I understand the predicament his family was in — praying that the Lord would come through and heal. As a Christian, I believe in healing. I believe it's part of the Lord's will to protect his children. But I also understand that his grace is sufficient. His grace is enough.</p>
-
-  <span class="pull-quote">The longer I live, the more I learn: God's will for us is to glorify and honor him. That's it. That's all we've got.</span>
-
-  <p>Much of my life, I've wanted to do things my way. I'm stubborn. Once I decide on something, that's the way it's going to be. But something I've had to learn lately is that God's will is different from mine. The prayer I keep praying is: <em>Lord, I want your will. I want my desires to match yours. I want to quit fighting for what I think is right and let you take control.</em></p>
-
-  <p>It's not an easy prayer to pray. There are things we want. Desires we have. But the Lord knows what's best for us.</p>
-
-  <p>Going into this surgery — there are possibilities. Possibilities this surgery doesn't work out. Possibilities I have complications. Possibilities I come out paralyzed. I'm not trying to alarm anybody. But that is the truth. So how do I balance that? How do I hold the belief that the Lord has a healing hand while also accepting that his grace is sufficient, that his plan is better than mine?</p>
-
-  <p>And how do I put those two ideas on a medical form with boxes to check? How do I make this easier for my parents, my sister, my uncles?</p>
-
-  <div class="divider"></div>
-
-  <h2>Two Truths That Won't Let Go of Each Other</h2>
-
-  <p>This is what I've decided for my living will. It's a challenging document to fill out. The image I keep coming back to is someone <em>wrestling</em> with it. You're saying: when I can't make a decision, <em>this</em> is what I want. And for someone who always wants to make the decisions — this is not an easy place to be.</p>
-
-  <p>I've determined there are two biblical truths that exist in tension, and I can't let go of either one.</p>
-
-  <p><strong>The first is bold, persistent faith — that God can do the impossible.</strong></p>
-
-  <p>Hannah prayed for years until God gave her Samuel. The persistent widow in Jesus' parable kept asking until she got justice. Jesus told his followers to always pray and not lose heart. Elijah prayed seven times before rain came. The centurion's faith in asking Jesus to heal from a distance amazed Jesus himself. Scripture teaches that God loves bold faith that refuses to give up prematurely. Medical statistics are not God's limits.</p>
-
-  <p>I've seen things in my medical career that don't logically make sense. We're dealing with the Great Physician.</p>
-
-  <p>I saw it with my dad's brain surgery 23 years ago. My dad went in with the odds against him. He asked my Uncle David to raise me because he thought he was going to die. My family circled around him and prayed. And my dad came through the other side. There are times the Great Physician works. I'm not doubting his power. Not at all.</p>
-
-  <p><strong>But there is also a second truth — faithful acceptance that God's purposes may differ from ours.</strong></p>
-
-  <p>Paul asked three times for God to remove his thorn in the flesh. God said no.</p>
+  <p>But here I am.</p>
 
   <div class="verse-block">
     <p class="verse-text">"My grace is sufficient for you, for my power is made perfect in weakness."</p>
     <p class="verse-ref">— 2 Corinthians 12:9</p>
   </div>
 
-  <p>Job never got an explanation for his suffering — just God saying, essentially, I'm God, you're not, and that needs to be enough. Jesus himself in Gethsemane prayed <em>your will be done</em>, even as he asked for the cup to pass. Sometimes God's purpose includes suffering we don't understand. Sometimes letting go is the most faithful thing we can do.</p>
+  <p>I used to say that verse. I've quoted it to patients. I've written it in cards. But I never thought I'd be the one who needed it said back to me. And here's what I'm realizing — maybe you can't give what you haven't received. Maybe that's been the point all along.</p>
 
-  <p>The Bible doesn't resolve this tension. It holds it. And my healthcare agent must do the same.</p>
-
-  <div class="divider"></div>
-
-  <h2>Four Things I'm Standing On</h2>
-
-  <p>As I go into this surgery, there are four theological principles I'm holding onto.</p>
-
-  <p><strong>Life is sacred.</strong> We are made in the image of God. He formed us. What he made has worth.</p>
-
-  <p><strong>Death is not defeat.</strong> To live is Christ, to die is gain. I either continue doing the Lord's will here, or I enter eternal life with Christ — which I anticipate joyfully. That is a win either way.</p>
-
-  <div class="verse-block">
-    <p class="verse-text">"Fixing our eyes on Jesus, the pioneer and perfecter of faith, who for the joy set before him endured the cross, scorning its shame, and sat down at the right hand of the throne of God."</p>
-    <p class="verse-ref">— Hebrews 12:2</p>
-  </div>
-
-  <p>Hebrews 12 is my favorite. Jesus on the cross — suffering that was one of the worst in history — and it says <em>for the joy set before him, he endured.</em> I picture Jesus just fixing his eyes on heaven. And because of what waits on the other side, there's no reason to keep our eyes on anything less. This is not the end. It's the beginning.</p>
-
-  <p><strong>God is sovereign.</strong> Nothing happens outside his control. Why has this condition only shown up now — when I have the best support group I've ever had, a great church, great people around me, wise counsel? I truly believe God's timing is not an accident. He has worked in ways I never expected, and I know he's working now.</p>
-
-  <p><strong>Prayer matters.</strong> God is sovereign, and yet Scripture teaches our prayers can change things. We must hold both truths. I've been saying I know God will heal me — and if he doesn't, that's okay. That's true. But I do want to be healed. I do want to continue living. I have a life I want to get back to. I want to keep being a missionary here on this earth.</p>
+  <p>This — right here, these words — this is my outlet. This is how I love people right now.</p>
 
   <div class="divider"></div>
 
-  <h2>What My Living Will Actually Says</h2>
+  <h2>Nobody Caught It</h2>
 
-  <p>My living will addresses four scenarios.</p>
+  <p>I was diagnosed with ADHD at a young age. My whole life, I had problems I couldn't put a finger on. My parents did everything right. Doctor's visit after doctor's visit. We went through every step trying to figure out what was wrong.</p>
 
-  <p><strong>Terminal illness — when death is clearly imminent and unavoidable.</strong> Do not pursue aggressive interventions that only prolong the dying process. Focus on comfort care, pain management, and dignity. Allow natural death. Surround me with loved ones, worship music, Scripture, and prayer.</p>
+  <p>But nobody caught it.</p>
 
-  <p><strong>Serious illness or injury with potential for recovery.</strong> When medical professionals say recovery is possible, pursue treatment aggressively. Give adequate time for God to work. Do not rush to withdraw support based on an initial diagnosis. Reassess regularly. Consider second opinions if prognosis is uncertain or if medical professionals disagree.</p>
+  <p>That makes me ask — should an MRI be standard? How many people are out there misdiagnosed with ADHD, or vertigo, or something else entirely, when what they actually need is someone to walk in with the scan results and say: we found something?</p>
 
-  <p><strong>Uncertain prognosis — borderline cases.</strong> When doctors disagree and outcomes are unclear, err on the side of life. When in doubt, pursue treatment. Establish a specific timeline. Gather counsel from multiple sources — the medical team, family, the faith community, pastoral care. My agent should feel free to take time for prayer and discernment before major decisions.</p>
+  <p>I was diagnosed with vertigo. That's not what I have. I have a Chiari malformation. And I'm having brain surgery in five days.</p>
 
-  <p><strong>Persistent vegetative state or severe brain damage.</strong> This is the one that gets me. This is the hardest scenario.</p>
+  <span class="pull-quote">People deserve the second doctor. People deserve the truth.</span>
 
-  <p>My wishes: continue basic care — food, water, hygiene, turning to prevent bedsores, treatment for pain and discomfort. Do not pursue aggressive interventions for new conditions that arise. Give time for potential recovery. Reassess regularly with the medical team, family, and pastoral counsel. If there has been no meaningful improvement after the specified timeframe and the medical consensus is that recovery is not possible — my agent may allow natural death, while continuing basic comfort care.</p>
+  <p>I needed someone to stand at my bedside and tell me I wasn't making it up. I needed someone to treat me like a person — not like an appliance attached to a hospital bed in a hallway. I spent 40 hours on that bed in a hallway. And I want to be clear — it's not the nurses' fault. Our medical system is severely depleted. The resources our staff have right now are nowhere near what they need.</p>
 
-  <div class="divider"></div>
-
-  <h2>How My Agent Should Make Decisions</h2>
-
-  <p><strong>Pray.</strong> Ask God for discernment before making major decisions. Seek clarity and counsel — talk with medical professionals about realistic prognosis and quality of life. Involve family and the faith community. Seek pastoral counsel.</p>
-
-  <p><strong>Take time.</strong> Don't rush unless immediate action is required to save my life. It's okay to take days or even weeks to seek clarity. But not months.</p>
-
-  <p><strong>Ask the right questions.</strong> Not <em>what should I want</em> — but <em>what does faithfulness to God look like in this specific situation?</em> Sometimes that means fighting for life. Sometimes it means letting go.</p>
-
-  <p><strong>Trust the process.</strong> I release my agent from the burden of getting it perfectly right. If they seek God earnestly, I trust their decision will honor both God and me.</p>
-
-  <h2>What I Absolutely Do Not Want</h2>
-
-  <p>I do not want euthanasia or physician-assisted suicide under any circumstances. I do not want the withdrawal of basic care — food, water, hygiene — based solely on perceived quality of life or burden to others. I do not want premature decisions made in haste without prayer and consultation. This is not to be driven by cost, inconvenience, or others' discomfort with my condition.</p>
+  <p>I had a neurosurgeon tell me it wasn't that bad. I had another one walk in and give me the gravity of my situation straight. I needed that second doctor. So does someone else right now.</p>
 
   <div class="divider"></div>
 
-  <p>This is the longest one I've written. And at the same time — I release it.</p>
+  <h2>The Prayer Is Being Answered</h2>
 
-  <p>This tension hasn't been easy for me to work through, and it's probably not easy to hear. But this is as real as it gets. Making decisions for when you can no longer make them yourself. This is life or death.</p>
+  <p>Last spring, while I was still working in the medical field, I made a simple prayer — that God would give me the ability to be more empathetic toward my patients. I think He's answering that prayer right now.</p>
 
-  <div class="verse-block">
-    <p class="verse-text">"The Lord gave, and the Lord has taken away; blessed be the name of the Lord."</p>
-    <p class="verse-ref">— Job 1:21</p>
-  </div>
+  <p>Paul said he would boast in his weaknesses so that the power of Christ could rest on him. I don't want to waste this weakness either. These next two months that I'm down, that I can't do much — maybe this is the time. Maybe I can encourage others. Show people they're not alone. Talk to veterans. Meet people who need someone to be vulnerable and say: hey, it's okay that you don't have it all together.</p>
+
+  <p>Maybe this is the gift.</p>
+
+  <p>We can sit here and talk about the 22 veterans who take their lives every day. We can talk about depression. We can talk about patients who feel something is wrong and get dismissed anyway. Or we can do something about it.</p>
+
+  <p>There is no part of me that wants to waste this.</p>
+
+  <div class="divider"></div>
+
+  <h2>What I'm Actually Asking For</h2>
+
+  <p>People keep asking what they can do. What do I need? The medic in me keeps redirecting — what can I do for others?</p>
+
+  <p>I don't want meals. I don't want anything during surgery. What I want is simple: share this. Send it to one person who needs it. The one whose hands are tingling. The one who's been told it's not that bad by someone who doesn't have to live in their body. The one who feels like something is wrong and can't get anyone to listen.</p>
+
+  <p>That person exists. You know them. Send it.</p>
+
+  <p>And if you want to follow along — get on the email list or check back here. Surgery is February 26th. I'll be on the other side of it soon. And I'll have a lot to say.</p>
 
   <div class="closing-line">
-    God is sovereign.<br>
-    Prayer matters.<br>
-    Death is not defeat.
+    I needed you — and you showed up.<br>
+    Now let's show up for someone else.<br>
+    Let's get to work.
   </div>
 
 </article>
@@ -592,7 +612,7 @@
   }
 </style>
 
-<section class="comments-wrap" id="comments" data-post="post-three">
+<section class="comments-wrap" id="comments" data-post="blog-post-three">
   <div class="comments-rule"></div>
   <div class="comments-header">
     <p class="comments-eyebrow">Leave a thought</p>
@@ -931,9 +951,11 @@
     const overlay = document.getElementById('popup-overlay');
     overlay.classList.remove('visible');
     document.body.style.overflow = '';
+    // Don't show again this session
     sessionStorage.setItem('popup-dismissed', '1');
   }
 
+  // Show after 60 seconds, unless already dismissed
   if (!sessionStorage.getItem('popup-dismissed')) {
     setTimeout(showPopup, 60000);
   }
@@ -1010,11 +1032,11 @@
 #tldr-list li:before{content:"→";color:#c9a84c;flex-shrink:0;margin-top:0.05em;}
 @media(max-width:480px){#tldr-btn{bottom:1.2rem;right:1.2rem;}#tldr-overlay{padding:0;align-items:flex-end;}#tldr-box{max-width:100%;border-radius:4px 4px 0 0;}}
 </style>
-<div id="tldr-data" data-title="Wrestling With Your Living Will" style="display:none"></div>
+<div id="tldr-data" data-title="I Needed You" style="display:none"></div>
 <script>
 (function(){
-  var points = ["Before I go into surgery, I had to fill out the hardest document I've ever touched — a living will.", "I hold two things in tension: bold, persistent faith that God can heal. And faithful acceptance that His will may not match mine.", "My four pillars going in: life is sacred. Death is not defeat. God is sovereign. Prayer matters.", "Terminal: comfort care and dignity. Recovery possible: treat aggressively, give God room to work. Uncertain: err on the side of life.", "Vegetative state: keep basic care going. Reassess with the medical team, family, and pastoral counsel. Don't rush. But don't drag it out forever.", "I release my agent from getting it perfectly right. Seek God. Take time. Ask the right questions. That's enough."];
-  var title = "Wrestling With Your Living Will";
+  var points = ["I went fully public. Most vulnerable I've ever been online. I didn't know if anyone would show up.", "They showed up. Church friends, military brothers, people my parents have known since they were kids. All of them.", "I don't want to be the patient. I'm the medic. I treat people. Being on the receiving end is not a role I want — but here I am.", "I was misdiagnosed with ADHD and vertigo for years. Should an MRI be standard? How many people out there are me right now?", "I don't want meals. I don't want anything during surgery. I want you to share this with the one person whose hands are tingling and who can't get anyone to listen."];
+  var title = "I Needed You";
 
   var btn = document.createElement('button');
   btn.id = 'tldr-btn';
