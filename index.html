@@ -253,10 +253,10 @@
       <p class="post-preview-excerpt">I sent my living will off into the abyss a few days ago. And I realized — that document isn't about how I want to end things. It's about how I want to live.</p>
       <span class="post-arrow">→</span>
     </a>
-    <a href="blog-post-four.html" class="post-preview-card">
-      <p class="post-tag">February 21, 2026 · Faith</p>
-      <h3 class="post-preview-title">Wrestling With Your Living Will</h3>
-      <p class="post-preview-excerpt">Before I go into surgery, I had to wrestle with the hardest document I've ever filled out — a living will. This is what I decided, and why.</p>
+    <a href="surgery-day.html" class="post-preview-card">
+      <p class="post-tag">February 26, 2026 · Surgery</p>
+      <h3 class="post-preview-title">Surgery Day</h3>
+      <p class="post-preview-excerpt">Live updates from Vanderbilt. Joe went in for his suboccipital craniectomy, C1 laminectomy, and duraplasty. His family was with him. The full day, documented in real time.</p>
       <span class="post-arrow">→</span>
     </a>
   </div>
@@ -290,8 +290,8 @@
     const now = new Date();
     const diff = target - now;
     if (diff <= 0) {
-      const surgeryDay = new Date('2026-02-27T06:00:00Z'); // midnight CST = 06:00 UTC
-      const isSurgeryDay = now <= surgeryDay;
+      const postSurgery = new Date('2026-02-26T16:00:00Z'); // 10:00 AM CST = 16:00 UTC
+      const isSurgeryDay = now <= postSurgery;
       if (isSurgeryDay) {
         document.querySelector('.countdown-section').innerHTML = `
           <div class="countdown-inner" style="justify-content:center;text-align:center;">

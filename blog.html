@@ -127,6 +127,15 @@
 
 <div class="posts-grid">
 
+  <a href="surgery-day.html" class="post-card">
+    <div>
+      <p class="post-tag">February 26, 2026 &nbsp;·&nbsp; Surgery &nbsp;·&nbsp; Live Updates</p>
+      <h2 class="post-card-title">Surgery Day</h2>
+      <p class="post-excerpt">Live updates from Vanderbilt. Joe is in surgery for his suboccipital craniectomy, C1 laminectomy, and duraplasty. His family is with him. We're documenting the day in real time.</p>
+    </div>
+    <span class="post-arrow">→</span>
+  </a>
+
   <a href="blog-post-five.html" class="post-card">
     <div>
       <p class="post-tag">February 24, 2026 &nbsp;·&nbsp; Faith &nbsp;·&nbsp; 10 min read</p>
@@ -190,10 +199,22 @@
 
 <script>
   function updateCountdown() {
-    const target = new Date('2026-02-26T13:00:00');
+    const target = new Date('2026-02-26T19:00:00Z'); // 1:00 PM CST = 19:00 UTC
     const now = new Date();
     const diff = target - now;
-    if (diff <= 0) { document.getElementById('cd-days').textContent='0'; document.getElementById('cd-hours').textContent='0'; document.getElementById('cd-mins').textContent='0'; document.getElementById('cd-secs').textContent='0'; return; }
+    if (diff <= 0) {
+      const postSurgery = new Date('2026-02-26T16:00:00Z'); // 10:00 AM CST = 16:00 UTC
+      const isSurgeryDay = now <= postSurgery;
+      const strip = document.querySelector('.countdown-strip');
+      if (strip) {
+        if (isSurgeryDay) {
+          strip.innerHTML = `<div style="text-align:center;width:100%;"><p class="cd-label" style="font-size:0.75rem;letter-spacing:0.2em;">February 26, 2026</p><p style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);margin:0.3rem 0 1rem;">Surgery Is Today</p><p style="font-family:'Crimson Pro',serif;font-size:1.05rem;font-weight:300;color:var(--gray-light);margin:0 0 1.2rem;">Find out how it went below.</p></div>`;
+        } else {
+          strip.innerHTML = `<div style="text-align:center;width:100%;"><p class="cd-label" style="font-size:0.75rem;letter-spacing:0.2em;">February 26, 2026</p><p style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--white);margin:0.3rem 0 1rem;">Surgery Complete — In Recovery</p><p style="font-family:'Crimson Pro',serif;font-size:1.05rem;font-weight:300;color:var(--gray-light);margin:0 0 0.5rem;">Find out how it went below.</p></div>`;
+        }
+      }
+      return;
+    }
     document.getElementById('cd-days').textContent = String(Math.floor(diff/86400000)).padStart(2,'0');
     document.getElementById('cd-hours').textContent = String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
     document.getElementById('cd-mins').textContent = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
