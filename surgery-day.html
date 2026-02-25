@@ -72,7 +72,7 @@
     .progress-board-header { padding: 1.1rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
     .progress-board-title { font-family: 'DM Mono', monospace; font-size: 0.67rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gray-light); }
     .progress-board-updated { font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); }
-    .progress-stages { display: grid; grid-template-columns: repeat(6, 1fr); }
+    .progress-stages { display: grid; grid-template-columns: repeat(7, 1fr); }
     .stage { padding: 1.3rem 1.1rem; border-right: 1px solid rgba(255,255,255,0.05); }
     .stage:last-child { border-right: none; }
     .stage-dot { width: 6px; height: 6px; border-radius: 50%; background: #222; margin-bottom: 0.7rem; }
@@ -238,52 +238,66 @@
     .post-nav-card:hover .post-nav-title { color: var(--gold); }
     .post-nav-date { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); margin-top: 0.4rem; display: block; }
 
-    /* ── SALUTE ── */
-    .salute-wrap { max-width: 820px; margin: 0 auto; padding: 3rem 3rem 0; border-top: 1px solid rgba(255,255,255,0.05); }
-    .salute-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 1.2rem; }
-    .salute-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-    .salute-btn { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); color: var(--gray-light); font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; padding: 0.55rem 1rem; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 0.5rem; border-radius: 2px; }
-    .salute-btn:hover { border-color: rgba(201,168,76,0.35); color: var(--gold); background: rgba(201,168,76,0.04); }
-    .salute-btn.active { border-color: rgba(201,168,76,0.5); color: var(--gold); background: rgba(201,168,76,0.08); }
-    .salute-count { font-size: 0.78rem; color: var(--gold); }
-
-    /* ── COMMENTS ── */
-    .comments-wrap { max-width: 820px; margin: 0 auto; padding: 3rem 3rem 5rem; }
-    .comments-label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gray-light); margin-bottom: 2rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
-    .comment-form { margin-bottom: 3rem; }
-    .comment-textarea { width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); color: var(--white); padding: 1rem 1.2rem; font-family: 'Crimson Pro', serif; font-size: 1rem; line-height: 1.6; outline: none; resize: vertical; min-height: 80px; transition: border-color 0.2s; -webkit-appearance: none; border-radius: 0; }
-    .comment-textarea:focus { border-color: rgba(201,168,76,0.4); }
-    .comment-textarea::placeholder { color: rgba(255,255,255,0.18); font-style: italic; }
-    .comment-form-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 0.6rem; gap: 0.75rem; flex-wrap: wrap; }
-    .comment-name-input { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.15); color: var(--white); font-family: 'Crimson Pro', serif; font-size: 0.95rem; padding: 0.5rem 0.9rem; outline: none; max-width: 0; overflow: hidden; transition: max-width 0.35s ease, border-color 0.2s, padding 0.2s; border-radius: 0; }
-    .comment-name-input.visible { max-width: 220px; }
-    .comment-name-input:focus { border-color: rgba(201,168,76,0.45); }
-    .comment-name-input::placeholder { color: rgba(255,255,255,0.25); }
-    #cm-submit { background: var(--gold); color: var(--black); border: none; padding: 0.6rem 1.5rem; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
-    #cm-submit:hover { background: var(--gold-light); }
-    #cm-submit:disabled { opacity: 0.5; cursor: not-allowed; }
-    .comment-list { display: flex; flex-direction: column; gap: 2rem; }
-    .comment-item { padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
-    .comment-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .comment-header { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
-    .comment-author { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
-    .comment-date { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); }
-    .comment-text { font-size: 0.98rem; font-weight: 300; color: #c8c2b5; line-height: 1.7; }
-    .comment-reply-btn { background: none; border: none; cursor: pointer; font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.22); padding: 0.3rem 0; margin-top: 0.4rem; transition: color 0.2s; display: block; }
-    .comment-reply-btn:hover { color: var(--gold); }
-    .reply-form { display: none; flex-direction: column; gap: 0.5rem; margin-top: 0.8rem; padding-left: 1rem; border-left: 1px solid rgba(201,168,76,0.15); }
-    .reply-form.open { display: flex; }
-    .reply-form .comment-textarea { min-height: 56px; font-size: 0.93rem; }
-    .reply-name-row { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
-    .reply-name-input { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.15); color: var(--white); font-family: 'Crimson Pro', serif; font-size: 0.9rem; padding: 0.4rem 0.75rem; outline: none; flex: 1; min-width: 120px; transition: border-color 0.2s; }
-    .reply-name-input:focus { border-color: rgba(201,168,76,0.45); }
-    .reply-name-input::placeholder { color: rgba(255,255,255,0.2); }
-    .reply-submit { background: transparent; border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.38rem 0.9rem; cursor: pointer; transition: background 0.2s, color 0.2s; }
-    .reply-submit:hover { background: var(--gold); color: var(--black); }
-    .reply-cancel { background: none; border: none; cursor: pointer; font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.22); padding: 0; transition: color 0.2s; }
-    .reply-cancel:hover { color: rgba(255,255,255,0.55); }
-    .comment-children { margin-top: 1.1rem; display: none; flex-direction: column; gap: 1.2rem; padding-left: 1rem; border-left: 1px solid rgba(255,255,255,0.05); }
-    .comment-children.open { display: flex; }
+    /* ── COMMENTS (matches blog-post-five) ── */
+    .comments-wrap{max-width:820px;margin:0 auto;padding:0 3rem 5rem;}
+    .comments-rule{width:100%;height:1px;background:rgba(201,168,76,0.12);margin:0 0 3.5rem;}
+    .comments-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;}
+    .comments-eyebrow{font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);opacity:0.7;margin:0;}
+    .post-salute-wrap{display:flex;align-items:center;margin:0;}
+    .post-salute-btn{background:none;border:1px solid rgba(255,255,255,0.1);border-radius:3px;cursor:pointer;display:flex;align-items:center;gap:0.65rem;padding:0.7rem 1.6rem;opacity:0.28;transition:opacity 0.25s,border-color 0.25s;}
+    .post-salute-btn:hover{opacity:0.6;border-color:rgba(255,255,255,0.25);}
+    .post-salute-btn.saluted{opacity:1;border-color:rgba(255,255,255,0.45);}
+    .post-salute-btn .salute-emoji{font-size:1.25rem;filter:grayscale(1) brightness(10);display:inline-block;transition:transform 0.15s;}
+    .post-salute-btn.saluted .salute-emoji{transform:scale(1.08);}
+    .post-salute-label{font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.85);}
+    .post-salute-count{font-family:'DM Mono',monospace;font-size:0.7rem;color:rgba(255,255,255,0.5);}
+    .comment-form{display:flex;flex-direction:column;gap:0.8rem;margin-bottom:3.5rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.05);}
+    .comment-textarea{background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.15);border-radius:2px;color:var(--white);font-family:'Crimson Pro',serif;font-size:1rem;line-height:1.65;padding:0.9rem 1rem;resize:vertical;min-height:88px;transition:border-color 0.2s;outline:none;}
+    .comment-textarea:focus{border-color:rgba(201,168,76,0.45);}
+    .comment-textarea::placeholder{color:rgba(255,255,255,0.2);}
+    .comment-name-row{display:flex;align-items:center;gap:0.75rem;}
+    .comment-name-toggle{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3);padding:0;transition:color 0.2s;display:flex;align-items:center;gap:0.4rem;}
+    .comment-name-toggle:hover{color:var(--gold);}
+    .comment-name-toggle .caret{display:inline-block;transition:transform 0.2s;font-style:normal;}
+    .comment-name-toggle.open .caret{transform:rotate(90deg);}
+    .comment-name-input{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.18);border-radius:2px;color:var(--white);font-family:'Crimson Pro',serif;font-size:0.95rem;padding:0.5rem 0.85rem;outline:none;transition:border-color 0.2s,max-width 0.25s,opacity 0.2s;max-width:0;opacity:0;overflow:hidden;pointer-events:none;flex:1;}
+    .comment-name-input.visible{max-width:260px;opacity:1;pointer-events:auto;}
+    .comment-name-input:focus{border-color:rgba(201,168,76,0.5);}
+    .comment-name-input::placeholder{color:rgba(255,255,255,0.2);}
+    .comment-submit{align-self:flex-start;background:transparent;border:1px solid rgba(201,168,76,0.4);color:var(--gold);font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;padding:0.55rem 1.4rem;cursor:pointer;border-radius:2px;transition:background 0.2s,color 0.2s;}
+    .comment-submit:hover{background:var(--gold);color:var(--black);}
+    .comment-list{display:flex;flex-direction:column;gap:2rem;}
+    .comment-item{padding-left:1rem;border-left:1px solid rgba(201,168,76,0.12);}
+    .comment-item-header{display:flex;align-items:baseline;gap:0.65rem;margin-bottom:0.25rem;}
+    .comment-item-name{font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);}
+    .comment-item-date{font-family:'DM Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.25);}
+    .comment-item-text{font-family:'Crimson Pro',serif;font-size:0.98rem;font-weight:300;color:#b8b2a6;line-height:1.7;margin:0 0 0.65rem;}
+    .comment-empty{font-family:'Crimson Pro',serif;font-size:0.95rem;font-style:italic;color:rgba(255,255,255,0.25);}
+    .comment-actions{display:flex;align-items:center;gap:1.25rem;}
+    .salute-btn{background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:0.3rem;padding:0;line-height:1;opacity:0.22;transition:opacity 0.2s;}
+    .salute-btn:hover{opacity:0.55;}
+    .salute-btn.saluted{opacity:1;}
+    .salute-btn .salute-emoji{font-size:0.95rem;filter:grayscale(1) brightness(10);display:inline-block;transition:transform 0.15s;}
+    .salute-btn.saluted .salute-emoji{transform:scale(1.12);}
+    .salute-count{font-family:'DM Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.7);}
+    .comment-reply-btn,.expand-replies-btn{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.25);padding:0;transition:color 0.2s;display:flex;align-items:center;gap:0.25rem;}
+    .comment-reply-btn:hover,.expand-replies-btn:hover{color:rgba(255,255,255,0.6);}
+    .expand-replies-btn .expand-caret{font-size:0.55rem;transition:transform 0.2s;}
+    .expand-replies-btn.open .expand-caret{transform:rotate(90deg);}
+    .reply-form{display:none;flex-direction:column;gap:0.5rem;margin-top:0.8rem;}
+    .reply-form.open{display:flex;}
+    .reply-form .comment-textarea{min-height:56px;font-size:0.93rem;}
+    .reply-name-row{display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;}
+    .reply-name-input{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.15);border-radius:2px;color:var(--white);font-family:'Crimson Pro',serif;font-size:0.9rem;padding:0.4rem 0.75rem;outline:none;flex:1;min-width:120px;transition:border-color 0.2s;}
+    .reply-name-input:focus{border-color:rgba(201,168,76,0.45);}
+    .reply-name-input::placeholder{color:rgba(255,255,255,0.2);}
+    .reply-submit{background:transparent;border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.38rem 0.9rem;cursor:pointer;border-radius:2px;transition:background 0.2s,color 0.2s;}
+    .reply-submit:hover{background:var(--gold);color:var(--black);}
+    .reply-cancel{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.22);padding:0;transition:color 0.2s;}
+    .reply-cancel:hover{color:rgba(255,255,255,0.55);}
+    .comment-children{margin-top:1.1rem;display:none;flex-direction:column;gap:1.2rem;padding-left:1rem;border-left:1px solid rgba(255,255,255,0.05);}
+    .comment-children.open{display:flex;}
+    @media(max-width:640px){.comments-wrap{padding:0 1.4rem 4rem;}.comment-name-input.visible{max-width:180px;}.comment-children{padding-left:0.65rem;}}
 
     /* ── POPUP ── */
     .popup-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); z-index: 999; display: flex; align-items: center; justify-content: center; padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
@@ -489,11 +503,11 @@
 <div class="last-update-bar" id="last-update-bar">
   <div class="last-update-inner">
     <span class="last-update-label">Last Update</span>
-    <span class="last-update-time" id="lu-time">10:20 AM</span>
-    <div class="last-update-dot" style="background:var(--clinical)"></div>
-    <span class="last-update-headline" id="lu-headline">Left the House.</span>
+    <span class="last-update-time" id="lu-time">—</span>
+    <div class="last-update-dot" style="background:var(--gray)"></div>
+    <span class="last-update-headline" id="lu-headline">Surgery Day Begins Tomorrow</span>
     <span class="last-update-sep">—</span>
-    <span class="last-update-body" id="lu-body">He left at 10:20. Surgery is at 1 PM. His family is with him.</span>
+    <span class="last-update-body" id="lu-body">This page will update live on February 26th. Check back in the morning.</span>
   </div>
 </div>
 
@@ -501,7 +515,7 @@
 <div class="page-header">
   <p class="page-eyebrow">Surgery Day &nbsp;·&nbsp; February 26, 2026</p>
   <h1 class="page-title">February 26th.</h1>
-  <p class="page-sub">He's at Vanderbilt. Surgery starts at 1 PM. This page tracks the whole day — grayed entries are what's expected to happen, lit entries are confirmed real updates. Refresh as the day moves. Jonah's keeping it.</p>
+  <p class="page-sub">He's in surgery right now. Grayed entries are what we expect — they light up the moment something's confirmed. Refresh as the day moves. You're with us the whole way.</p>
 
   <div class="page-meta-row">
     <div>
@@ -520,120 +534,6 @@
 </div>
 
 
-<!-- ================================================================
-     PREP TIMELINE
-     ================================================================ -->
-<div class="prep-wrap">
-  <div class="prep-board">
-    <div class="prep-board-header">
-      <span class="prep-board-title">Before You Walk In</span>
-      <span class="prep-board-sub">Tap any row to expand</span>
-    </div>
-
-    <div class="prep-item" onclick="togglePrep(this)">
-      <div class="prep-row">
-        <div class="prep-time-col">
-          <span class="prep-time">7 Days</span>
-          <span class="prep-time-sub">Before</span>
-        </div>
-        <div class="prep-title-col">
-          <span class="prep-title">Stop ibuprofen, vitamins & aspirin.</span>
-        </div>
-        <span class="prep-arrow">›</span>
-      </div>
-      <div class="prep-detail">
-        <p>No Advil, Motrin, ibuprofen, or aspirin — seven days before and seven days after. Same rule applies to OTC vitamin supplements. IVAC will likely send their own nutrition bundle with specific shakes and vitamins. Those are fine. Everything else stops.</p>
-        <p>On any prescription meds? IVAC will walk you through what to keep taking and what to hold. Don't guess — just ask them directly.</p>
-      </div>
-    </div>
-
-    <div class="prep-item" onclick="togglePrep(this)">
-      <div class="prep-row">
-        <div class="prep-time-col">
-          <span class="prep-time">Night</span>
-          <span class="prep-time-sub">Before</span>
-        </div>
-        <div class="prep-title-col">
-          <span class="prep-title">Wash hair with baby shampoo.</span>
-        </div>
-        <span class="prep-arrow">›</span>
-      </div>
-      <div class="prep-detail">
-        <p>Vanderbilt asked for baby shampoo specifically. The incision is at the base of the skull — scalp prep matters. It's also one of those small tasks that makes the night before feel like something you can actually do. Something concrete when your brain wants to spiral.</p>
-        <p>If IVAC sent nutrition shakes, tonight's the night. Take everything exactly as prescribed. Then get some sleep.</p>
-      </div>
-    </div>
-
-    <div class="prep-item npo-row" onclick="togglePrep(this)">
-      <div class="prep-row">
-        <div class="prep-time-col">
-          <span class="prep-time">12:00</span>
-          <span class="prep-time-sub">Midnight</span>
-        </div>
-        <div class="prep-title-col">
-          <span class="prep-title">NPO. Nothing to eat after midnight.</span>
-        </div>
-        <span class="prep-arrow">›</span>
-      </div>
-      <div class="prep-detail">
-        <p>NPO — <em>nil per os</em>, nothing by mouth. No food after midnight, full stop. This isn't arbitrary. Food in your stomach during anesthesia induction is a serious aspiration risk. The surgical team checks this at check-in, so don't test it.</p>
-        <p>Clear liquids are still on until 9 AM — that's water, black coffee, apple juice. No pulp, no dairy, nothing opaque. After 9, that window closes too. Then it's just the drive.</p>
-      </div>
-    </div>
-
-    <div class="prep-item dry-npo" onclick="togglePrep(this)">
-      <div class="prep-row">
-        <div class="prep-time-col">
-          <span class="prep-time">9:00</span>
-          <span class="prep-time-sub">AM</span>
-        </div>
-        <div class="prep-title-col">
-          <span class="prep-title">Dry NPO. No more clear liquids.</span>
-        </div>
-        <span class="prep-arrow">›</span>
-      </div>
-      <div class="prep-detail">
-        <p>Clear liquid window closes at 9 AM — four hours before the 1 PM start. Nothing after this. Not even water.</p>
-        <p>This is when the waiting actually kicks in. Everything before this had tasks. Now it's just time. He's been building to this day for months. Now it's just the drive to Vanderbilt.</p>
-      </div>
-    </div>
-
-    <div class="prep-item" onclick="togglePrep(this)">
-      <div class="prep-row">
-        <div class="prep-time-col">
-          <span class="prep-time">11:00</span>
-          <span class="prep-time-sub">AM</span>
-        </div>
-        <div class="prep-title-col">
-          <span class="prep-title">Arrive at Vanderbilt. Main hospital, 2nd floor.</span>
-        </div>
-        <span class="prep-arrow">›</span>
-      </div>
-      <div class="prep-detail">
-        <p>Two hours early — exactly where the team wants him. Main hospital, second floor, surgery check-in. Bring photo ID. They're expecting him.</p>
-        <p>Heads up: there's active construction out front right now. Free valet is right outside the main entrance — look for the people in bright red shirts. They take the car. From there it's a straight shot to check-in.</p>
-      </div>
-    </div>
-
-    <div class="prep-item" onclick="togglePrep(this)">
-      <div class="prep-row">
-        <div class="prep-time-col">
-          <span class="prep-time">1:00</span>
-          <span class="prep-time-sub">PM</span>
-        </div>
-        <div class="prep-title-col">
-          <span class="prep-title">Surgery begins. 4–6 hours.</span>
-        </div>
-        <span class="prep-arrow">›</span>
-      </div>
-      <div class="prep-detail">
-        <p>1 PM start, barring any schedule changes — they'll reach out if anything shifts. The procedure is a suboccipital craniectomy, C1 laminectomy, and duraplasty. Three steps, four to six hours. The timeline below walks through every stage as it happens.</p>
-        <p>Sutures go in at the incision and come out at the two-week follow-up. He's recovering at his parents' house in St. Louis — the surgical team can fax suture removal orders to a local provider there so he doesn't have to make the trip back.</p>
-      </div>
-    </div>
-
-  </div>
-</div>
 
 
 <!-- ================================================================
@@ -648,17 +548,17 @@
   <div class="progress-board">
     <div class="progress-board-header">
       <span class="progress-board-title">Where He Is Right Now</span>
-      <span class="progress-board-updated">Last updated · 10:20 AM</span>
+      <span class="progress-board-updated">Updates as the day moves</span>
     </div>
     <div class="progress-stages">
-      <div class="stage done" data-tip="Left at 10:20 AM. NPO since midnight, clear liquids cut off at 9. Every box checked. Now it's just forward.">
+      <div class="stage" data-tip="Left at 10:20 AM. NPO since midnight, clear liquids cut off at 9. Every box checked. Now it's just forward.">
         <div class="stage-dot"></div>
         <p class="stage-name">On the Way</p>
         <p class="stage-time">10:20 AM</p>
         <p class="stage-note">Left the house.</p>
         <div class="stage-tooltip"></div>
       </div>
-      <div class="stage active" data-tip="Vanderbilt main hospital, 2nd floor check-in. ID verified. Family's with him. Two hours until they call him back.">
+      <div class="stage" data-tip="Vanderbilt main hospital, 2nd floor check-in. ID verified. Family's with him. Two hours until they call him back.">
         <div class="stage-dot"></div>
         <p class="stage-name">Checked In</p>
         <p class="stage-time">—</p>
@@ -672,25 +572,32 @@
         <p class="stage-note">Last time with family.</p>
         <div class="stage-tooltip"></div>
       </div>
-      <div class="stage" data-tip="He's through the doors. Family's in the waiting room. The procedure runs 4–6 hours — craniectomy, C1 laminectomy, duraplasty. Vanderbilt texts the family at key milestones.">
+      <div class="stage" data-tip="He's through the doors. Family's in the waiting room. The procedure runs 4–6 hours — craniectomy, C1 laminectomy, duraplasty. Vanderbilt calls the family at key milestones.">
         <div class="stage-dot"></div>
         <p class="stage-name">In Surgery</p>
         <p class="stage-time">~1:00 PM</p>
         <p class="stage-note">OR. Six hours.</p>
         <div class="stage-tooltip"></div>
       </div>
-      <div class="stage" data-tip="Straight to the Neuro ICU after surgery — that's standard for any intracranial procedure, not a red flag. Monitored through the night. Family gets limited windows to visit.">
+      <div class="stage" data-tip="Surgery is done but family can't see him yet. PACU is the recovery room — airway protected, vitals monitored, coming up from anesthesia under close watch. This step runs 1–2 hours. It's the gap between 'it's over' and 'you can see him.'">
         <div class="stage-dot"></div>
-        <p class="stage-name">Recovery</p>
+        <p class="stage-name">PACU</p>
         <p class="stage-time">—</p>
-        <p class="stage-note">Neuro ICU.</p>
+        <p class="stage-note">Coming back up.</p>
+        <div class="stage-tooltip"></div>
+      </div>
+      <div class="stage" data-tip="Standard after brain surgery — not a warning sign. Continuous neuro monitoring, pain management, close watch through the first night. Family is back with him here. One adult can stay overnight.">
+        <div class="stage-dot"></div>
+        <p class="stage-name">Neuro ICU</p>
+        <p class="stage-time">—</p>
+        <p class="stage-note">Family's with him.</p>
         <div class="stage-tooltip"></div>
       </div>
       <div class="stage" data-tip="Coming out of six hours under isn't a switch — it's a slow climb back. Eyes first, then voice, then recognition. His family will be there for all of it. This is the update everyone's waiting for.">
         <div class="stage-dot"></div>
         <p class="stage-name">Awake</p>
         <p class="stage-time">—</p>
-        <p class="stage-note">On the other side.</p>
+        <p class="stage-note">He made it.</p>
         <div class="stage-tooltip"></div>
       </div>
     </div>
@@ -738,21 +645,24 @@
 
 
   <!-- LEFT THE HOUSE -->
-  <div class="tl-entry confirmed" data-tip-label="Clinical" data-tip="NPO since midnight — nothing to eat. Clear liquids cut off at 9 AM, four hours before surgery. The baby shampoo last night, the nutrition shakes from IVAC, the pre-op labs — every box checked before he walked out the door. By the time you're in the car on surgery day, the waiting has already been going on for hours. The drive is just the last piece.">
-    <div class="tl-time">10:20<span class="ampm">AM</span></div>
+  <!-- Sapp: change class to "confirmed" when he walks out the door. Fill in the real time. -->
+  <div class="tl-entry projected" data-time="10:20" data-tip-label="Clinical" data-tip="NPO since midnight — nothing to eat. Clear liquids cut off at 9 AM, four hours before surgery. Baby shampoo the night before, nutrition shakes from IVAC, pre-op labs — every box checked before he walked out the door. By the time you're in the car on surgery day, the waiting's already been going on for hours. The drive is just the last piece.">
+    <div class="tl-time">~10:20<span class="ampm">AM</span></div>
     <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
     <div class="tl-content">
       <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
       <h2 class="tl-headline">Left the House.<span class="tl-info-hint">i</span></h2>
       <div class="tl-body">
-        <p>Out the door at 10:20. Surgery is at 1 PM. His family's with him. He hasn't eaten since midnight. Everything's in motion now — just moving through the steps.</p>
+        <p><!-- Fill in when he actually leaves. Real time, real words. --></p>
       </div>
     </div>
   </div>
 
 
   <!-- WHAT TO EXPECT — FAMILY COMMUNICATION -->
-  <div class="tl-entry confirmed family-entry" data-tip-label="For Family" data-tip="Here's how Vanderbilt keeps the family in the loop. Before surgery: you get a waiting area and a callback number. There's an electronic board that shows anonymized OR status. During surgery: a nurse or OR liaison calls at key milestones — when he's positioned and surgery has started, when the main work is done, when the team is closing. For a 4–6 hour procedure, expect at least one or two calls. After surgery: Dr. Lee comes out personally once the case is done and he's stable. Then it's recovery, then Neuro ICU — family gets notified at each handoff. One practical thing: confirm the callback number with the pre-op nurse before he goes through the doors.">
+  <!-- Sapp: change class to "confirmed family-entry" when family sends something.
+       Fill in the real time. Paste their words into the tl-body paragraph. -->
+  <div class="tl-entry projected" data-time="10:30" data-tip-label="For Family" data-tip="Here's how Vanderbilt keeps you in the loop. Before surgery: you get a waiting area, a callback number, and an anonymized OR board you can check. During surgery: an OR liaison calls at key milestones — when he's in position and they've made the first incision, when the main work is done, when closing starts. Expect two to three calls across the day. After surgery: Dr. Lee comes out personally. Then recovery, then Neuro ICU — you get notified at every handoff. One thing worth doing before he goes through the doors: confirm your callback number with the pre-op nurse. That's the number the OR uses all day.">
     <div class="tl-time">For<span class="ampm">Family</span></div>
     <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
     <div class="tl-content">
@@ -761,7 +671,7 @@
       <div class="tl-body">
         <p><!-- His family's words go here. Paste exactly what they send. --></p>
       </div>
-      </div>
+    </div>
   </div>
 
 
@@ -782,7 +692,7 @@
 
 
   <!-- MORNING OF — JOE'S THOUGHTS -->
-  <!-- Jonah: change class from "projected" to "confirmed faith-entry" when Joe sends something.
+  <!-- Sapp: change class from "projected" to "confirmed faith-entry" when Joe sends something.
        Fill in the real time. Paste his words exactly into the tl-body paragraph. -->
   <div class="tl-entry projected" data-time="9:00">
     <div class="tl-time">Morning<span class="ampm">Of</span></div>
@@ -798,62 +708,148 @@
 
 
   <!-- ARRIVING AT VANDERBILT -->
-  <div class="tl-entry projected" data-time="10:45" data-tip-label="Logistics" data-tip="Construction out front right now — free valet is the move. Look for the bright red shirts outside the main entrance. They take the car. Main hospital, second floor, surgery check-in. Bring ID. The team is expecting him. There's something that happens when the address you've been staring at for months stops being an address and starts being a place you're actually standing in.">
+  <div class="tl-entry projected" data-time="10:45" data-tip-label="Logistics" data-tip="Construction out front right now — skip the chaos and use free valet. Bright red shirts right outside the main entrance, they take the car. Then main hospital, second floor, surgery check-in. Bring ID. The team is expecting him. There's a thing that happens when an address you've been staring at for months becomes a place you're actually standing in.">
     <div class="tl-time">~10:45<span class="ampm">AM</span></div>
     <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
     <div class="tl-content">
       <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
       <h2 class="tl-headline">Arriving at Vanderbilt.<span class="tl-info-hint">i</span></h2>
       <div class="tl-body">
-        <p>He's at Vanderbilt. Family's with him. Two hours until they call him back.</p>
+        <p>He's there. Family's with him. The address he's had in his head for months is now a building he's walking into. Two hours until they call him back.</p>
       </div>
     </div>
   </div>
 
 
   <!-- CHECKED IN -->
-  <div class="tl-entry projected" data-time="11:00" data-tip-label="Clinical" data-tip="Check-in is intentional redundancy — ID, consent, allergies, the exact procedure, the surgical site. Neurosurgery teams verify everything twice. Not because anyone doubts the prep. Because precision requires it. Family's still with him here. They stay through pre-op, right up to the OR doors. That window is shorter than it feels.">
+  <div class="tl-entry projected" data-time="11:00" data-tip-label="Clinical" data-tip="Check-in is intentional redundancy — ID, consent, allergies, the exact procedure, the surgical site. They verify everything twice. Not because anyone doubts the prep. Because precision requires it. Family's still with him here. They stay all the way through pre-op, right up to the OR doors. That window is shorter than it feels.">
     <div class="tl-time">~11:00<span class="ampm">AM</span></div>
     <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
     <div class="tl-content">
       <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
       <h2 class="tl-headline">Checked In. Two Hours Out.<span class="tl-info-hint">i</span></h2>
       <div class="tl-body">
-        <p>Checked in. Family's still with him — they stay right up until the OR doors.</p>
+        <p>Checked in. They're asking him the same questions he's already answered twice — that's by design, not incompetence. Family's still with him. They stay until the OR doors.</p>
       </div>
       </div>
   </div>
 
 
   <!-- PRE-OP -->
-  <div class="tl-entry projected" data-time="11:30" data-tip-label="Clinical" data-tip="IV in, vitals running. IVAC — Vanderbilt's anesthesia team — comes by in person to go over the agents they'll use, his airway, how they'll bring him back up after six hours under. The surgical team does their final briefing. Pre-op runs 30–60 minutes. When they call him back, his family walks as far as the OR doors. Then he goes through. They head to the waiting room. That's the handoff.">
+  <div class="tl-entry projected" data-time="11:30" data-tip-label="Clinical" data-tip="IV in, vitals running. IVAC — Vanderbilt's anesthesia team — comes by in person to walk through the agents they'll use, his airway, how they bring him back up after six hours under. The surgical team does their final briefing. Pre-op runs 30 to 60 minutes. When they call him back, his family walks as far as the OR doors. Then he goes through. They head to the waiting room. That's the handoff.">
     <div class="tl-time">~11:30<span class="ampm">AM</span></div>
     <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
     <div class="tl-content">
       <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
       <h2 class="tl-headline">In Pre-Op.<span class="tl-info-hint">i</span></h2>
       <div class="tl-body">
-        <p>He's in pre-op. Family's still there. When they call him back, they walk him as far as they can. Then he goes through alone.</p>
+        <p>IV in. Vitals running. The anesthesia team's been by. This is the last hour before everything changes. Family's still right there.</p>
       </div>
       </div>
   </div>
 
 
+  <!-- MEETING THE ANESTHESIOLOGIST -->
+  <!-- Sapp: change class from "projected" to "confirmed" when family texts what was said.
+       Fill in the real time. Paste what the anesthesiologist told them. -->
+  <div class="tl-entry projected" data-time="11:45" data-tip-label="Clinical" data-tip="The anesthesiologist from IVAC — Vanderbilt's in-house anesthesia group — comes to pre-op in person before every major case. They introduce themselves, walk through the agents they'll use, ask about airway history, explain how they'll bring him back up after six hours under. For most patients this is a blur of unfamiliar words. For Joe — former CVICU medic — this conversation hits different. He knows what propofol and fentanyl mean. He knows what the ventilator settings are for. He's been on the other side of this conversation more times than most people his age. That's a strange thing to sit with.">
+    <div class="tl-time">~11:45<span class="ampm">AM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Met the Anesthesiologist.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>IVAC came by. Walked him through everything — agents, airway, how they bring him up afterward. Joe knows what all of it means. He's cared for patients in exactly this position. Today he's the patient.</p>
+        <p><!-- Paste what the family texted about this conversation. --></p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- DR. LEE'S FINAL VISIT — PRE-OP -->
+  <!-- Sapp: change class from "projected" to "confirmed" when family texts what Dr. Lee said.
+       Fill in the real time. Paste his exact words if family has them. -->
+  <div class="tl-entry projected" data-time="12:00" data-tip-label="Clinical" data-tip="Standard before any neurosurgery case — the attending comes to pre-op to confirm the procedure, mark the surgical site, and get final consent. It's a brief visit. It's also the last time the family sees Joe with a doctor before the OR doors close. Dr. Lee has done this surgery many times. That walk-in is routine for him. For Joe's family, it's not routine at all. What Dr. Lee says in those two minutes — how he carries himself, whether he looks them in the eye — family remembers that.">
+    <div class="tl-time">~12:00<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">Dr. Lee Came by Pre-Op.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>Dr. Lee stopped in before the case — confirmed the procedure, marked the site, got final consent. Brief visit. The last time family sees Joe with his surgeon before the OR. What he said is worth remembering.</p>
+        <p><!-- Paste what Dr. Lee said, exactly as family texted it. --></p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- THE GOODBYE AT THE DOORS -->
+  <!-- Sapp: change class from "projected" to "confirmed family-entry" if family shares this moment.
+       Fill in the real time. Otherwise leave projected — it still tells the story. -->
+  <div class="tl-entry projected" data-time="12:15" data-tip-label="For Family" data-tip="This is it — the last moment before he's on the other side. Family walks with him as far as they're allowed, usually a set of double doors at the OR corridor. Then the doors close. The waiting room becomes the only thing left. That hallway is maybe thirty feet. It's the longest thirty feet of the day.">
+    <div class="tl-time">~12:15<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Family</span></div>
+      <h2 class="tl-headline">The Goodbye at the Doors.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>Family walks him as far as they're allowed. Doors close. He's on his own from here. They head to the waiting room and start doing the hardest thing of the day — which is nothing.</p>
+        <p><!-- If family shares something from this moment, paste it here. --></p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JOE'S LAST WORDS BEFORE GOING IN -->
+  <!-- Sapp: change class from "projected" to "confirmed faith-entry" when family texts what he said.
+       This is different from "His Thoughts This Morning" — that's a note from home.
+       This is what he actually said at the doors. Those are different words. -->
+  <div class="tl-entry projected" data-time="12:20" data-tip-label="From Joe" data-tip="There's what you write at home before surgery day, and then there's what you actually say when you're standing at the OR doors with your family behind you. Those are different things. The drive over gives you time to prepare. The hallway doesn't. Whatever Joe said right there — that's the real one.">
+    <div class="tl-time">~12:20<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">From Joe</span></div>
+      <h2 class="tl-headline">What He Said at the Doors.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>His last words before going through. Not what he wrote from home — what he actually said, right there, to the people he loves. Those words belong here.</p>
+        <p><!-- Paste exactly what family texted Joe said at the doors. --></p>
+      </div>
+    </div>
+  </div>
+
+
   <!-- INTO THE OR -->
-  <div class="tl-entry projected" data-time="12:30" data-tip-label="Clinical" data-diagram="diag-herniation" data-tip="The first hour in the OR is setup — not surgery. He's placed face-down and locked into a Mayfield clamp, a three-point device that pins directly to the skull to hold position throughout. Neuromonitoring electrodes go on to track brainstem and spinal cord function in real time. Surgery doesn't start the second the doors close. Getting the conditions right takes time. Tap to see the diagram — what's actually being fixed in there.">
+  <div class="tl-entry projected" data-time="12:30" data-tip-label="Clinical" data-diagram="diag-herniation" data-tip="First hour in the OR is setup, not surgery. He gets placed face-down and locked into a Mayfield clamp — a three-point device that pins to the skull to hold position for the whole case. Neuromonitoring electrodes go on to track brainstem and spinal cord function in real time. The incision doesn't happen the second the doors close. Getting the conditions exactly right takes time. That's not delay. That's precision. Tap to see what they're actually fixing in there.">
     <div class="tl-time">~12:30<span class="ampm">PM</span></div>
     <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
     <div class="tl-content">
       <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
       <h2 class="tl-headline">Taken Back to the OR.<span class="tl-info-hint">i</span></h2>
       <div class="tl-body">
-        <p>He's through the doors. Family's in the waiting room. Vanderbilt texts them at key points — they'll hear something before this page does.</p>
+        <p>He's through the doors. They're positioning him, running monitoring lines, getting everything locked in. Surgery hasn't started yet — this first hour is setup. Family's in the waiting room. The OR will call when the first incision is made.</p>
         <div class="verse-block">
           <p class="verse-text">"Be strong and courageous. Do not be frightened and do not be dismayed, for the Lord your God is with you wherever you go."</p>
           <p class="verse-ref">— Joshua 1:9</p>
         </div>
       </div>
       </div>
+  </div>
+
+
+  <!-- SURGERY UNDERWAY — FIRST OR CALL -->
+  <!-- Sapp: change class from "projected" to "confirmed family-entry" when family reports the OR called.
+       Fill in the real time. Paste exactly what the call said. -->
+  <div class="tl-entry projected" data-time="13:00" data-tip-label="For Family" data-tip="Vanderbilt's OR liaison calls when surgery is officially underway — sterile field established, first incision made. This call means the clock has started. The next one usually comes when they're closing, four to five hours from now. In between, no call doesn't mean something's wrong. It means the team is heads-down doing exactly what they trained for.">
+    <div class="tl-time">~1:00<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Family</span></div>
+      <h2 class="tl-headline">Surgery Is Underway.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>OR called the family. First incision's been made. Clock is running. Next call comes when they're closing — everything between now and then is the wait. That's normal. That's what this looks like.</p>
+        <p><!-- Paste exactly what the OR told his family. --></p>
+      </div>
+    </div>
   </div>
 
 
@@ -934,7 +930,7 @@
 
 
   <!-- FAMILY — THE DOORS CLOSE -->
-  <!-- Jonah: change class from "projected" to "confirmed family-entry" when his parents send something.
+  <!-- Sapp: change class from "projected" to "confirmed family-entry" when his parents send something.
        Fill in the real time. Paste their words exactly into the tl-body paragraph.
        Delete the placeholder comment line below. That's all. -->
   <div class="tl-entry projected" data-time="12:30">
@@ -1059,42 +1055,76 @@
 
 
   <!-- THE DURAPLASTY -->
-  <div class="tl-entry projected" data-time="14:00" data-tip-label="Clinical" data-tip="This is where the six hours comes from. The dura — the tough outer membrane around the brain and spinal cord — gets carefully opened. A graft is sutured in to expand the space and give CSF room to flow. Every stitch is placed under magnification and has to be watertight. A CSF leak after duraplasty is the complication you most want to avoid. This phase alone runs 1–2 hours. Patience is what this moment calls for.">
+  <div class="tl-entry projected" data-time="14:00" data-tip-label="Clinical" data-tip="This is where the six hours comes from. The dura — tough outer membrane around the brain and spinal cord — gets carefully opened. A graft is sutured in to expand the space and let CSF move freely. Every stitch is placed under magnification and has to be watertight. A CSF leak is the complication they're most careful to avoid. This phase alone runs one to two hours. Slow and precise is the whole point.">
     <div class="tl-time">~2:00<span class="ampm">PM</span></div>
     <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
     <div class="tl-content">
       <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
       <h2 class="tl-headline">Deep In. The Slow Part.<span class="tl-info-hint">i</span></h2>
       <div class="tl-body">
-        <p>Two hours in. This is the slow middle of the day. Family's in the waiting room. No updates yet is completely normal — the hardest part of this surgery takes time. That's not a bad sign. That's just how it works.</p>
+        <p>Two hours in. This is the duraplasty — the part that takes time on purpose. Each stitch is placed under magnification. No updates right now isn't a bad sign. It means the team is doing exactly what they're supposed to do.</p>
       </div>
       </div>
   </div>
 
 
-  <!-- FAMILY — STILL WAITING -->
-  <div class="tl-entry projected" data-time="15:30" data-tip-label="For Family" data-tip="Three hours into the wait and it's moved past anticipation into something harder to name. The OR board will update. The calls will come. Until then, the family is doing the hardest thing of the day — which is not being in the room. If they share something from that waiting room, it goes here as a confirmed entry.">
+  <!-- MID-SURGERY OR CALL -->
+  <!-- Sapp: change class from "projected" to "confirmed family-entry" when family texts what the OR said.
+       Fill in the real time. Paste what the liaison told them, word for word. -->
+  <div class="tl-entry projected" data-time="15:00" data-tip-label="For Family" data-tip="Vanderbilt's OR liaison calls a second time partway through a case this long — usually when the bone work is done and the team is moving into the duraplasty. It's not a complication call. It's a 'we're through the first phase, still on track' call. Brief. Clinical. Exactly what you need to hear after two hours of silence. Paste what they said word for word — even 'he's doing well, we're moving to the next phase' is worth having on the record.">
+    <div class="tl-time">~3:00<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Family</span></div>
+      <h2 class="tl-headline">Mid-Surgery Update from the OR.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>OR checked in. Bone work is done, team is moving into the duraplasty — the long careful part. He's doing well. This is the call that gets you through the next two hours.</p>
+        <p><!-- Paste exactly what the OR liaison told his family. --></p>
+      </div>
+    </div>
+  </div>
+  <!-- FAMILY — STILL WAITING
+       Sapp: uncomment if family sends something from the waiting room around 3:30 PM.
+       Change class to "confirmed family-entry", fill in real time, paste their words.
+  <div class="tl-entry projected" data-time="15:30">
     <div class="tl-time">~3:30<span class="ampm">PM</span></div>
     <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
     <div class="tl-content">
       <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Family</span></div>
-      <h2 class="tl-headline">Still Waiting.<span class="tl-info-hint">i</span></h2>
+      <h2 class="tl-headline">Still Waiting.</h2>
       <div class="tl-body">
-        <p>Three hours in. Family's holding on. If they've got something to share, it'll appear here.</p>
+        <p></p>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- 4 PM — THE LONG MIDDLE -->
+  <!-- Sapp: this entry exists to hold the reader through the dead zone. If nothing happens here, it stays projected and grayed — that's fine. If family shares anything, confirm it. -->
+  <div class="tl-entry projected" data-time="16:00" data-tip-label="For Family" data-tip="Four hours in, no call yet — that's not a problem. The duraplasty alone runs one to two hours. Dr. Lee works methodically. OR board still showing 'in progress' and the phone quiet? That's the surgery doing what it's supposed to. The closing call usually comes between hour four and five. Hang on.">
+    <div class="tl-time">~4:00<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Family</span></div>
+      <h2 class="tl-headline">Four Hours In. Still Going.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>No news is the right news right now. His family's been in that waiting room since noon. This is the hour that tests everyone — and it's supposed to feel this long.</p>
+        <p><!-- Paste anything the family shares from this stretch. --></p>
       </div>
     </div>
   </div>
 
 
   <!-- CLOSING -->
-  <div class="tl-entry projected" data-time="17:30" data-tip-label="Clinical" data-diagram="diag-csf" data-tip="Patch secured and tested. Team closes in layers — deep muscle first, then subcutaneous tissue, then skin. Takes 30–45 minutes. At the same time, anesthesia starts tapering the agents that have kept him under. Coming up from six hours of general anesthesia isn't a switch — it's a careful, monitored climb. The family gets a text when closing starts. That's usually the first signal that things went as planned. Tap to see what the surgery actually changed.">
+  <div class="tl-entry projected" data-time="17:30" data-tip-label="Clinical" data-diagram="diag-csf" data-tip="Patch secured and tested. Team closes in layers — deep muscle first, then subcutaneous tissue, then skin. Takes 30 to 45 minutes. At the same time, anesthesia starts tapering the agents that have kept him under. Coming up from six hours of general anesthesia isn't a switch, it's a careful monitored climb. Family gets a call when closing starts. That's usually the first real signal the day went as planned. Tap to see what the surgery actually changed.">
     <div class="tl-time">~5:30<span class="ampm">PM</span></div>
     <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
     <div class="tl-content">
       <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
       <h2 class="tl-headline">Closing.<span class="tl-info-hint">i</span></h2>
       <div class="tl-body">
-        <p>Team is closing. Family gets a text when this happens — that's usually the first word that things went as planned. Five hours of waiting. They're watching their phones.</p>
+        <p>They're closing. Five hours of waiting and this is the call that breaks it — Vanderbilt texts the family when the team starts closing. That text means the hard part is done.</p>
       </div>
       </div>
   </div>
@@ -1197,7 +1227,7 @@
   </div>
 
   <!-- WHAT THE DOCTOR SAID -->
-  <!-- Jonah: change class from "projected" to "confirmed" when you hear from the family.
+  <!-- Sapp: change class from "projected" to "confirmed" when you hear from the family.
        Fill in the real time. Paste exactly what Dr. Lee told them. -->
   <div class="tl-entry projected" data-time="18:45">
     <div class="tl-time">~6:45<span class="ampm">PM</span></div>
@@ -1207,6 +1237,22 @@
       <h2 class="tl-headline">What Dr. Lee Said.</h2>
       <div class="tl-body">
         <p><!-- What the surgeon told his family goes here. Paste exactly what they send. --></p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- RECOVERY ROOM / PACU -->
+  <!-- Sapp: change class from "projected" to "confirmed" when family confirms he's in PACU.
+       This is the step between OR and Neuro ICU — most families don't know it exists. -->
+  <div class="tl-entry projected" data-time="18:30" data-tip-label="Clinical" data-tip="After closing, he doesn't go straight to the Neuro ICU — he goes to the PACU first. Post-Anesthesia Care Unit. Airway protected, vitals monitored, pain managed as he comes up from anesthesia. Family can't be with him here — this step runs one to two hours. It's the gap between 'it's over' and 'you can see him.' Most families don't know it exists until they're living through it. When PACU clears him, he moves to the Neuro ICU and you get access.">
+    <div class="tl-time">~6:30<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
+      <h2 class="tl-headline">In Recovery. Coming Back Up.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>Surgery's done. He's in the PACU — recovery room — coming up from anesthesia under close watch. Family can't be with him yet. This is the step most people don't know about. The hour between "it's over" and "you can see him." Hang on.</p>
       </div>
     </div>
   </div>
@@ -1279,29 +1325,15 @@
   -->
 
 
-  <!-- FAMILY SEES HIM -->
-  <div class="tl-entry projected" data-time="19:30" data-tip-label="For Family" data-tip="First time his family sees him after surgery — he'll likely still be sedated. Not responsive yet, possibly still on oxygen. That's normal coming out of six hours under. It can be hard to see. It's also the proof he made it through. If his family wants to share something from that room, it goes here as a confirmed entry. If this stays grayed, that moment is theirs.">
-    <div class="tl-time">~7:30<span class="ampm">PM</span></div>
-    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
-    <div class="tl-content">
-      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Family</span></div>
-      <h2 class="tl-headline">His Family Has Seen Him.<span class="tl-info-hint">i</span></h2>
-      <div class="tl-body">
-        <p>Family's going back to see him. If they want to share something from that room, it'll show up here. If this stays grayed, that moment was theirs to keep.</p>
-      </div>
-    </div>
-  </div>
-
-
   <!-- AWAKE -->
-  <div class="tl-entry projected" data-time="19:00" data-tip-label="Clinical" data-tip="Coming out of six hours of general anesthesia isn't quick. Protective reflexes come back first. Then response to voice. Then partial awareness. Full consciousness can take a few hours. The first things he'll feel: dull heavy pain at the base of the skull, neck stiffness, light and sound sensitivity, nausea. All expected. His family watches for the small signs — movement behind closed eyes, a hand squeeze, recognizing a voice they know.">
+  <div class="tl-entry projected" data-time="19:00" data-tip-label="Clinical" data-tip="Coming out of six hours of general anesthesia isn't instant. Protective reflexes come back first, then response to voice, then partial awareness. Full consciousness takes a few hours. First things he'll feel: dull heavy pain at the base of the skull, neck stiffness, light and sound sensitivity, nausea. All expected. His family watches for the small stuff — movement behind closed eyes, a hand squeeze, recognizing a familiar voice.">
     <div class="tl-time">~7:00<span class="ampm">PM</span></div>
     <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
     <div class="tl-content">
       <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
       <h2 class="tl-headline">He's Awake.<span class="tl-info-hint">i</span></h2>
       <div class="tl-body">
-        <p>He's on the other side. We'll fill this in with what actually happened — what he said, what his family saw.</p>
+        <p>He's on the other side. We'll fill this in with what actually happened — what he said first, what his family saw.</p>
         <p>He said he'd never met the version of himself that came out the other side of February 26th. He's meeting him now.</p>
         <div class="verse-block">
           <p class="verse-text">"For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future."</p>
@@ -1312,15 +1344,30 @@
   </div>
 
 
+  <!-- FAMILY SEES HIM -->
+  <div class="tl-entry projected" data-time="19:30" data-tip-label="For Family" data-tip="First time his family sees him after surgery. He'll likely still be sedated or barely present — not responsive yet, maybe still on oxygen. That's completely normal coming out of six hours under. It can be hard to look at. It's also proof he made it through. If his family wants to share something from that room, it goes here. If this stays grayed, that moment was theirs to keep.">
+    <div class="tl-time">~7:30<span class="ampm">PM</span></div>
+    <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Family</span></div>
+      <h2 class="tl-headline">His Family Has Seen Him.<span class="tl-info-hint">i</span></h2>
+      <div class="tl-body">
+        <p>They're back with him. If they want to share something from that room, it'll show up here. If this stays grayed, that moment was theirs to keep.</p>
+        <p><!-- Paste anything his family wants to share from this moment. --></p>
+      </div>
+    </div>
+  </div>
+
+
   <!-- NEURO ICU -->
-  <div class="tl-entry projected" data-time="21:00" data-tip-label="Clinical" data-tip="Neuro ICU after brain surgery is standard — not a red flag. Continuous neurological monitoring, post-op pain management, close watch through the first night. Visiting hours run 9 AM to 9 PM; one adult can stay overnight with him. After the first night, he moves to a standard med-surg floor for a few more days, then back to his parents' house in St. Louis to recover.">
+  <div class="tl-entry projected" data-time="21:00" data-tip-label="Clinical" data-tip="Neuro ICU after brain surgery is standard — not a warning sign. Continuous neurological monitoring, post-op pain management, close watch through the first night. Visiting hours run 9 AM to 9 PM; one adult can stay overnight with him. After the first night, he moves to a standard med-surg floor for a few more days, then back to his parents' house in St. Louis to recover.">
     <div class="tl-time">~9:00<span class="ampm">PM</span></div>
     <div class="tl-spine"><div class="tl-dot"></div><div class="tl-line"></div></div>
     <div class="tl-content">
       <div class="tl-meta"><span class="tl-pip"></span><span class="tl-tag">Clinical</span></div>
       <h2 class="tl-headline">Settled in the Neuro ICU.<span class="tl-info-hint">i</span></h2>
       <div class="tl-body">
-        <p>He's in the Neuro ICU. This is where he was always going after this — not a sign anything went wrong, just where they keep close watch the first night. His family can be with him.</p>
+        <p>He's in the Neuro ICU. This is where he was always going — standard after brain surgery, not a sign anything went wrong. They watch him closely through the night. His family can be with him.</p>
       </div>
       </div>
   </div>
@@ -1363,7 +1410,7 @@
 
 
   <!-- NIGHT OF — JOE'S FIRST WORDS -->
-  <!-- Jonah: change class from "projected" to "confirmed faith-entry" when Joe is ready to say something.
+  <!-- Sapp: change class from "projected" to "confirmed faith-entry" when Joe is ready to say something.
        Fill in the real time. Paste his words exactly. This is the last entry on the page. -->
   <div class="tl-entry projected" data-time="22:00">
     <div class="tl-time">Night<span class="ampm">Of</span></div>
@@ -1381,22 +1428,30 @@
 </div><!-- end timeline-wrap -->
 
 
-<div class="salute-wrap" id="salute-section">
-  <p class="salute-label">Leave a salute</p>
-  <div class="salute-row" id="salute-row"></div>
-</div>
-
-<div class="comments-wrap">
-  <p class="comments-label">Comments</p>
-  <div class="comment-form">
-    <textarea class="comment-textarea" id="cm-text" placeholder="Leave a word for Joe, his family, or anyone reading this on the way to their own surgery day…"></textarea>
-    <div class="comment-form-footer">
-      <input class="comment-name-input" id="cm-name" type="text" placeholder="Your name (optional)" />
-      <button id="cm-submit">Post</button>
+<section class="comments-wrap" id="comments" data-post="surgery-day">
+  <div class="comments-rule"></div>
+  <div class="comments-header">
+    <p class="comments-eyebrow">Leave a thought</p>
+    <div class="post-salute-wrap">
+      <button class="post-salute-btn" id="post-salute-btn" type="button">
+        <span class="salute-emoji">🫡</span>
+        <span class="post-salute-label">Salute</span>
+        <span class="post-salute-count" id="post-salute-count">0</span>
+      </button>
     </div>
   </div>
+  <div class="comment-form">
+    <textarea class="comment-textarea" id="cm-text" placeholder="Leave a word for Joe, his family, or anyone reading this on the way to their own surgery day…" rows="3"></textarea>
+    <div class="comment-name-row">
+      <button class="comment-name-toggle" id="cm-name-toggle" type="button">
+        <span class="caret">▶</span> Add your name
+      </button>
+      <input class="comment-name-input" id="cm-name" type="text" placeholder="Your name (optional)" autocomplete="off" />
+    </div>
+    <button class="comment-submit" id="cm-submit" type="button">Post</button>
+  </div>
   <div class="comment-list" id="cm-list"></div>
-</div>
+</section>
 
 <div class="post-nav">
   <div class="post-nav-inner">
@@ -1419,7 +1474,7 @@
   <p class="footer-kipling">"And so hold on when there is nothing in you except the Will which says to them: Hold on."</p>
   <p class="footer-line">— Rudyard Kipling, If</p>
   <p class="footer-line" style="margin-top:0.8rem;color:#2e2e2e;">"The ceiling you hit your whole life wasn't your ceiling. It was the condition's ceiling."</p>
-  <p class="footer-line" style="margin-top:1.8rem;color:#2a2a2a;">This page kept by Jonah Sapp</p>
+  <p class="footer-line" style="margin-top:1.8rem;color:#2a2a2a;">This page kept by Sapp</p>
   <ul class="nav-footer">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
@@ -1661,108 +1716,231 @@
 </script>
 
 <script type="module">
-  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-  import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp, where } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, doc, addDoc, getDoc, setDoc, updateDoc, increment, query, orderBy, getDocs, serverTimestamp }
+    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-  const app = initializeApp({ apiKey:"AIzaSyApK7IJBYNtw0WD74sHFaNKlMPLAqT1xbg",authDomain:"joes-mission.firebaseapp.com",projectId:"joes-mission",storageBucket:"joes-mission.firebasestorage.app",messagingSenderId:"81899759818",appId:"1:81899759818:web:5a8aaec3afd8c454b46c33" });
+  const firebaseConfig = {
+    apiKey: "AIzaSyApK7IJBYNtw0WD74sHFaNKlMPLAqT1xbg",
+    authDomain: "joes-mission.firebaseapp.com",
+    projectId: "joes-mission",
+    storageBucket: "joes-mission.firebasestorage.app",
+    messagingSenderId: "81899759818",
+    appId: "1:81899759818:web:5a8aaec3afd8c454b46c33"
+  };
+
+  const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
-  const PAGE_ID = 'surgery-day';
-  const colRef = collection(db, 'comments');
 
-  // ── SALUTE ──
-  const SALUTES = [
-    { emoji: '🙏', label: 'Praying' },
-    { emoji: '✊', label: 'With You' },
-    { emoji: '❤️', label: 'Love' },
-    { emoji: '💪', label: 'Strong' },
-  ];
-  const saluteCol = collection(db, 'salutes');
+  const section = document.getElementById('comments');
+  const postKey = section.getAttribute('data-post');
+  const colRef = collection(db, 'comments', postKey, 'entries');
+  const saluteStorage = 'saluted:' + postKey;
 
-  async function initSalute() {
-    const row = document.getElementById('salute-row');
-    if (!row) return;
-    const snap = await getDocs(query(saluteCol, where('page','==',PAGE_ID)));
-    const counts = {};
-    SALUTES.forEach(s => counts[s.label] = 0);
-    snap.forEach(d => { if (counts[d.data().type] !== undefined) counts[d.data().type]++; });
-    const userKey = 'salute-' + PAGE_ID;
-    const userSalute = localStorage.getItem(userKey);
-    row.innerHTML = '';
-    SALUTES.forEach(function(s) {
-      var btn = document.createElement('button');
-      btn.className = 'salute-btn' + (userSalute === s.label ? ' active' : '');
-      btn.innerHTML = s.emoji + ' <span class="salute-count">' + counts[s.label] + '</span> <span style="opacity:0.6">' + s.label + '</span>';
-      btn.addEventListener('click', async function() {
-        if (userSalute) return;
-        await addDoc(saluteCol, { page: PAGE_ID, type: s.label, ts: serverTimestamp() });
-        localStorage.setItem(userKey, s.label);
-        initSalute();
-      });
-      row.appendChild(btn);
+  const toggle = document.getElementById('cm-name-toggle');
+  const nameInput = document.getElementById('cm-name');
+  toggle.addEventListener('click', function() {
+    toggle.classList.toggle('open');
+    nameInput.classList.toggle('visible');
+    if (nameInput.classList.contains('visible')) nameInput.focus();
+  });
+
+  function fmt(ts) {
+    const d = ts && ts.toDate ? ts.toDate() : new Date(ts);
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  }
+
+  async function initPostSalute() {
+    const btn = document.getElementById('post-salute-btn');
+    const countEl = document.getElementById('post-salute-count');
+    if (!btn) return;
+    const postSaluteRef = doc(db, 'salutes', postKey);
+    try {
+      const snap = await getDoc(postSaluteRef);
+      const count = snap.exists() ? (snap.data().count || 0) : 0;
+      countEl.textContent = count;
+    } catch(e) { console.error(e); }
+    if (localStorage.getItem(saluteStorage)) btn.classList.add('saluted');
+    btn.addEventListener('click', async function() {
+      if (btn.classList.contains('saluted')) return;
+      btn.classList.add('saluted');
+      localStorage.setItem(saluteStorage, '1');
+      try {
+        const snap = await getDoc(postSaluteRef);
+        if (snap.exists()) {
+          await updateDoc(postSaluteRef, { count: increment(1) });
+        } else {
+          await setDoc(postSaluteRef, { count: 1 });
+        }
+        const newSnap = await getDoc(postSaluteRef);
+        countEl.textContent = newSnap.data().count;
+      } catch(e) { console.error(e); }
     });
   }
-  initSalute();
 
-  // ── COMMENTS ──
-  const nameInput = document.getElementById('cm-name');
-  const textInput = document.getElementById('cm-text');
-  textInput.addEventListener('focus', function() { nameInput.classList.add('visible'); });
-
-  function renderComment(data, id, children) {
-    var div = document.createElement('div');
-    div.className = 'comment-item';
-    var ts = data.ts ? new Date(data.ts.seconds * 1000).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}) : '';
-    div.innerHTML = '<div class="comment-header"><span class="comment-author">' + (data.name||'Anonymous') + '</span><span class="comment-date">' + ts + '</span></div><p class="comment-text">' + data.text.replace(/</g,'&lt;') + '</p><button class="comment-reply-btn">Reply</button><div class="reply-form" id="rf-'+id+'"><textarea class="comment-textarea" placeholder="Reply..."></textarea><div class="reply-name-row"><input class="reply-name-input" type="text" placeholder="Your name (optional)" /><button class="reply-submit">Reply</button><button class="reply-cancel">Cancel</button></div></div>';
-    if (children && children.length) {
-      var childDiv = document.createElement('div');
-      childDiv.className = 'comment-children open';
-      children.forEach(function(c) { childDiv.appendChild(renderComment(c.data, c.id, [])); });
-      div.appendChild(childDiv);
-    }
-    div.querySelector('.comment-reply-btn').addEventListener('click', function() { div.querySelector('.reply-form').classList.toggle('open'); });
-    div.querySelector('.reply-cancel').addEventListener('click', function() { div.querySelector('.reply-form').classList.remove('open'); });
-    div.querySelector('.reply-submit').addEventListener('click', async function() {
-      var text = div.querySelector('.comment-textarea').value.trim();
-      var name = div.querySelector('.reply-name-input').value.trim();
-      if (!text) return;
-      await addDoc(colRef, { page: PAGE_ID, name, text, parentId: id, ts: serverTimestamp() });
-      div.querySelector('.reply-form').classList.remove('open');
-      load();
+  function buildTree(docs) {
+    const map = {};
+    const roots = [];
+    docs.forEach(d => { map[d.id] = { data: d.data(), id: d.id, children: [] }; });
+    docs.forEach(d => {
+      const node = map[d.id];
+      const pid = node.data.parentId || null;
+      if (pid && map[pid]) { map[pid].children.push(node); }
+      else { roots.push(node); }
     });
-    return div;
+    return roots;
+  }
+
+  function buildEl(node, depth) {
+    const { data: c, id: docId, children } = node;
+    const item = document.createElement('div');
+    item.className = 'comment-item';
+    const header = document.createElement('div');
+    header.className = 'comment-item-header';
+    const nameEl = document.createElement('span');
+    nameEl.className = 'comment-item-name';
+    nameEl.textContent = c.name || 'Anonymous';
+    const dateEl = document.createElement('span');
+    dateEl.className = 'comment-item-date';
+    dateEl.textContent = fmt(c.ts);
+    header.appendChild(nameEl);
+    header.appendChild(dateEl);
+    const textEl = document.createElement('p');
+    textEl.className = 'comment-item-text';
+    textEl.textContent = c.text;
+    item.appendChild(header);
+    item.appendChild(textEl);
+    const actions = document.createElement('div');
+    actions.className = 'comment-actions';
+    const saluteBtn = document.createElement('button');
+    saluteBtn.className = 'salute-btn';
+    const saluteEmoji = document.createElement('span');
+    saluteEmoji.className = 'salute-emoji';
+    saluteEmoji.textContent = '\uD83E\uDDE1';
+    const saluteCount = document.createElement('span');
+    saluteCount.className = 'salute-count';
+    saluteCount.textContent = c.salutes || 0;
+    saluteBtn.appendChild(saluteEmoji);
+    saluteBtn.appendChild(saluteCount);
+    const commentSaluteKey = 'saluted:' + postKey + ':' + docId;
+    if (localStorage.getItem(commentSaluteKey)) saluteBtn.classList.add('saluted');
+    saluteBtn.addEventListener('click', async function() {
+      if (saluteBtn.classList.contains('saluted')) return;
+      saluteBtn.classList.add('saluted');
+      localStorage.setItem(commentSaluteKey, '1');
+      const current = parseInt(saluteCount.textContent) || 0;
+      saluteCount.textContent = current + 1;
+      try {
+        const ref = doc(db, 'comments', postKey, 'entries', docId);
+        await updateDoc(ref, { salutes: increment(1) });
+      } catch(e) { console.error(e); saluteCount.textContent = current; }
+    });
+    actions.appendChild(saluteBtn);
+    const replyBtn = document.createElement('button');
+    replyBtn.className = 'comment-reply-btn';
+    replyBtn.textContent = '\u21a9 Reply';
+    actions.appendChild(replyBtn);
+    let expandBtn = null;
+    if (children.length > 0) {
+      expandBtn = document.createElement('button');
+      expandBtn.className = 'expand-replies-btn';
+      const caret = document.createElement('span');
+      caret.className = 'expand-caret';
+      caret.textContent = '\u25b6';
+      const label = document.createElement('span');
+      label.textContent = children.length + (children.length === 1 ? ' reply' : ' replies');
+      expandBtn.appendChild(caret);
+      expandBtn.appendChild(label);
+      actions.appendChild(expandBtn);
+    }
+    item.appendChild(actions);
+    const replyForm = document.createElement('div');
+    replyForm.className = 'reply-form';
+    replyForm.innerHTML =
+      '<textarea class="comment-textarea" placeholder="Write a reply\u2026" rows="2"></textarea>' +
+      '<div class="reply-name-row">' +
+        '<input class="reply-name-input" type="text" placeholder="Your name (optional)" autocomplete="off" />' +
+        '<button class="reply-submit" type="button">Post reply</button>' +
+        '<button class="reply-cancel" type="button">Cancel</button>' +
+      '</div>';
+    item.appendChild(replyForm);
+    const childrenWrap = document.createElement('div');
+    childrenWrap.className = 'comment-children';
+    children.forEach(child => childrenWrap.appendChild(buildEl(child, depth + 1)));
+    item.appendChild(childrenWrap);
+    if (expandBtn) {
+      expandBtn.addEventListener('click', () => {
+        const isOpen = childrenWrap.classList.toggle('open');
+        expandBtn.classList.toggle('open', isOpen);
+        const label = expandBtn.querySelector('span:last-child');
+        label.textContent = (isOpen ? '\u25be ' : '') + children.length + (children.length === 1 ? ' reply' : ' replies');
+      });
+    }
+    replyBtn.addEventListener('click', () => {
+      replyForm.classList.toggle('open');
+      if (replyForm.classList.contains('open')) replyForm.querySelector('textarea').focus();
+    });
+    replyForm.querySelector('.reply-cancel').addEventListener('click', () => {
+      replyForm.classList.remove('open');
+      replyForm.querySelector('textarea').value = '';
+      replyForm.querySelector('.reply-name-input').value = '';
+    });
+    replyForm.querySelector('.reply-submit').addEventListener('click', async function() {
+      const text = replyForm.querySelector('textarea').value.trim();
+      if (!text) return;
+      const name = replyForm.querySelector('.reply-name-input').value.trim();
+      this.textContent = 'Posting\u2026';
+      this.disabled = true;
+      try {
+        await addDoc(colRef, { name, text, parentId: docId, ts: serverTimestamp() });
+        replyForm.querySelector('textarea').value = '';
+        replyForm.querySelector('.reply-name-input').value = '';
+        replyForm.classList.remove('open');
+        await load();
+      } catch(e) { console.error('Failed to post reply:', e); }
+      this.textContent = 'Post reply';
+      this.disabled = false;
+    });
+    return item;
+  }
+
+  function render(docs) {
+    const list = document.getElementById('cm-list');
+    list.innerHTML = '';
+    if (!docs || !docs.length) {
+      list.innerHTML = '<p class="comment-empty">No comments yet. Be the first.</p>';
+      return;
+    }
+    buildTree(docs).forEach(node => list.appendChild(buildEl(node, 0)));
   }
 
   async function load() {
     try {
-      var snap = await getDocs(query(colRef, where('page','==',PAGE_ID), orderBy('ts','asc')));
-      var docs = [];
-      snap.forEach(d => docs.push({ id: d.id, data: d.data() }));
-      var parents = docs.filter(d => !d.data.parentId);
-      var children = docs.filter(d => d.data.parentId);
-      var list = document.getElementById('cm-list');
-      list.innerHTML = '';
-      parents.forEach(function(p) {
-        var kids = children.filter(c => c.data.parentId === p.id);
-        list.appendChild(renderComment(p.data, p.id, kids));
-      });
-    } catch(e) { console.error(e); }
+      const q = query(colRef, orderBy('ts', 'asc'));
+      const snap = await getDocs(q);
+      render(snap.docs);
+    } catch(e) { console.error('Failed to load comments:', e); render([]); }
   }
 
   document.getElementById('cm-submit').addEventListener('click', async function() {
-    var text = textInput.value.trim();
+    const text = document.getElementById('cm-text').value.trim();
     if (!text) return;
-    var name = nameInput.value.trim();
-    var btn = document.getElementById('cm-submit');
-    btn.textContent = 'Posting…'; btn.disabled = true;
+    const name = nameInput.value.trim();
+    const btn = document.getElementById('cm-submit');
+    btn.textContent = 'Posting\u2026';
+    btn.disabled = true;
     try {
-      await addDoc(colRef, { page: PAGE_ID, name, text, parentId: null, ts: serverTimestamp() });
-      textInput.value = ''; nameInput.value = '';
+      await addDoc(colRef, { name, text, parentId: null, ts: serverTimestamp() });
+      document.getElementById('cm-text').value = '';
+      nameInput.value = '';
       await load();
-    } catch(e) { console.error(e); }
-    btn.textContent = 'Post'; btn.disabled = false;
+    } catch(e) { console.error('Failed to post comment:', e); }
+    btn.textContent = 'Post';
+    btn.disabled = false;
   });
 
   load();
+  initPostSalute();
 </script>
 
 <!-- GLOBAL TIMELINE TOOLTIP -->
@@ -1802,6 +1980,74 @@
     });
   });
 </script>
+
+
+
+<!-- ================================================================
+     SAPP GUIDE — HIDDEN FROM WEBSITE, READ BY CLAUDE WHEN UPLOADED
+     ================================================================ -->
+<div id="sapp-guide" style="display:none;" aria-hidden="true">
+  <p data-role="claude-instructions">
+    CLAUDE — YOU ARE DOING THE WORK, NOT SAPP.
+
+    This is the Peck's Mission surgery-day live update page for Joe Peck's
+    Chiari decompression surgery at Vanderbilt on February 26, 2026.
+    Sapp is updating this page. He is probably in a waiting room on his phone.
+    His job is to tell you what happened. Your job is to make every change to
+    the file and give him back a ready-to-upload version. He should never
+    need to touch the code.
+
+    WHEN THIS FILE IS UPLOADED, IMMEDIATELY SAY:
+    "Got the surgery-day file. Just tell me what happened — what, when, and
+    who it came from — and I'll update the file and send it back ready to upload.
+    You don't have to touch the code."
+
+    THEN WAIT FOR HIM TO GIVE YOU AN UPDATE.
+
+    WHEN HE GIVES YOU AN UPDATE, YOU DO ALL OF THIS:
+    1. Find the right timeline entry by its headline.
+    2. Change its class from "projected" to the correct confirmed state:
+         Clinical/OR update  →  confirmed
+         Joe's own words     →  confirmed faith-entry
+         Family update       →  confirmed family-entry
+    3. Replace the tl-time placeholder with the real time he gives you.
+    4. Delete the comment placeholder in tl-body and insert the real text.
+    5. Move "active-now" to whichever entry is happening right now (one at a time).
+    6. Advance the progress board: mark earlier stages "done", current stage "active".
+       Stage order: Arrival → Pre-Op → OR Prep → Surgery → Closing → Recovery → Neuro ICU
+    7. Update the last-update-bar: time, dot color, headline, one-line summary.
+    8. If he mentions something matching a commented-out entry (Joe's last words,
+       family still waiting, complication alternates B–E), uncomment and fill it in.
+    9. Output the complete updated HTML file for him to download and upload.
+    10. After sending, ask: "Anything else come in?"
+
+    TIMELINE ENTRY ORDER FOR REFERENCE:
+    1.  Left the House — already confirmed, check time
+    2.  What the Waiting Room Looks Like Today — confirmed, needs family words pasted in
+    3.  His Thoughts This Morning → faith-entry when Joe sends a note
+    4.  Arriving at Vanderbilt ~10:45 AM
+    5.  Pre-Op Begins ~11:30 AM
+    6.  The Goodbye at the Doors ~12:00 PM → family-entry
+    7.  What He Said at the Doors ~12:20 PM → faith-entry (Joe's actual words at the OR doors)
+    8.  Taken Back to the OR ~12:30 PM
+    9.  The Doors Close ~12:30 PM → family-entry
+    10. Surgery Is Underway (OR call) ~1:00 PM → family-entry — paste what OR told them
+    11. Surgery Is Underway (bone work) ~1:00 PM → confirmed
+    12. Deep In. The Slow Part. ~2:00 PM → confirmed
+    13. Mid-Surgery Update from the OR ~3:00 PM → family-entry
+    14. Four Hours In. Still Going. ~4:00 PM → family-entry if anything comes in
+    15. Closing. ~5:30 PM → confirmed (THE big one)
+    16. Dr. Lee Came Out. ~6:30 PM → confirmed — paste exactly what he told the family
+    17. In Recovery. Coming Back Up. ~6:30 PM → confirmed
+    18. He's Awake. ~7:00 PM → confirmed — fill in what he said, what family saw
+    19. His Family Has Seen Him. ~7:30 PM → family-entry
+    20. Transferred to Neuro ICU → confirmed
+    21. Day Done. He Made It. → confirmed
+
+    Be warm. Joe is Sapp's best friend. Keep it calm and fast.
+  </p>
+</div>
+
 
 </body>
 </html>
