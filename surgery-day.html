@@ -1597,75 +1597,14 @@
     item.classList.toggle('open');
     detail.classList.toggle('open');
   }
-  // ── AUTO-TOGGLE: drives projected entries off the clock ──
+  // ── AUTO-TOGGLE: disabled for manual updates — projected entries are never auto-advanced ──
   function autoToggle() {
-    const SURGERY_DATE = '2026-02-26';
-    const TZ = 'America/Chicago';
-    const now = new Date();
-    const formatter = new Intl.DateTimeFormat('en-CA', {
-      timeZone: TZ,
-      year: 'numeric', month: '2-digit', day: '2-digit',
-      hour: '2-digit', minute: '2-digit', hour12: false
-    });
-    const parts = formatter.formatToParts(now);
-    const get = type => parts.find(p => p.type === type).value;
-    const todayDate = `${get('year')}-${get('month')}-${get('day')}`;
-    const currentMinutes = parseInt(get('hour')) * 60 + parseInt(get('minute'));
-    if (todayDate !== SURGERY_DATE) return;
-    const entries = document.querySelectorAll('.tl-entry[data-time]');
-    const timed = Array.from(entries).map(el => {
-      const [h, m] = el.dataset.time.split(':').map(Number);
-      return { el, minutes: h * 60 + m };
-    });
-    timed.sort((a, b) => a.minutes - b.minutes);
-    const pastEntries = timed.filter(t => !t.el.classList.contains('confirmed') && t.minutes <= currentMinutes);
-    timed.forEach(({ el, minutes }) => {
-      if (el.classList.contains('confirmed')) return;
-      if (minutes <= currentMinutes) {
-        const isLast = pastEntries.length > 0 && pastEntries[pastEntries.length - 1].el === el;
-        el.classList.remove('projected', 'past-projected', 'active-now');
-        el.classList.add(isLast ? 'active-now' : 'past-projected');
-      } else {
-        el.classList.remove('active-now', 'past-projected');
-        el.classList.add('projected');
-      }
-    });
-    updateProgressBoard(currentMinutes);
+    // Entries are advanced manually by Sapp. This function intentionally does nothing.
+    return;
   }
 
-  function updateProgressBoard(currentMinutes) {
-    const stages = [
-      { threshold: 0    },
-      { threshold: 645  },
-      { threshold: 690  },
-      { threshold: 750  },
-      { threshold: 1110 },
-      { threshold: 1230 },
-    ];
-    const stageEls = document.querySelectorAll('.progress-stages .stage');
-    if (stageEls.length !== stages.length) return;
-    let activeIdx = 0;
-    for (let i = 0; i < stages.length; i++) {
-      if (currentMinutes >= stages[i].threshold) activeIdx = i;
-    }
-    stageEls.forEach((el, i) => {
-      const timeEl = el.querySelector('.stage-time');
-      const isManuallySet = timeEl && !timeEl.textContent.includes('—') && !timeEl.textContent.includes('~');
-      if (isManuallySet) return;
-      el.classList.remove('done', 'active');
-      if (i < activeIdx) el.classList.add('done');
-      else if (i === activeIdx) el.classList.add('active');
-    });
-    const updatedEl = document.querySelector('.progress-board-updated');
-    if (updatedEl && !updatedEl.dataset.manual) {
-      const t = now.toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit', hour12: true });
-      updatedEl.textContent = `Auto-updated · ${t}`;
-    }
-  }
-
-  // autoToggle() and setInterval disabled — entries are advanced manually by Sapp.
-  // autoToggle();
-  // setInterval(autoToggle, 60000);
+  autoToggle();
+  setInterval(autoToggle, 60000);
 
   // ── POPUP ──
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyaDNsViYx1XxdNgWhF_JViMJQ42qcGNS38ReZ6Lb0q8T16szKpikQD49hXs_B3Y7zo/exec';
